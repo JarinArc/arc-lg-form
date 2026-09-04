@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { Lock, Check, ArrowLeft, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { Lock, Check, ArrowLeft, ShieldCheck, CheckCircle2, XCircle } from "lucide-react";
 import * as XLSX from "xlsx";
 
 // ---------------------------------------------------------------------------
@@ -2071,7 +2071,8 @@ const BRANDS = [
           "type": "optional"
         }
       ]
-    }
+    },
+    "logoUrl": "https://www.benefitspro.com/_nuxt/img/bpro-blue.0a30307.png"
   },
   {
     "id": "TA",
@@ -2079,7 +2080,8 @@ const BRANDS = [
     "isCustom": null,
     "subAudiences": null,
     "customQuestions": {},
-    "filterOverrides": {}
+    "filterOverrides": {},
+    "logoUrl": "https://www.thinkadvisor.com/_nuxt/img/ALM_ThinkAdvisor.84d9263.png"
   },
   {
     "id": "PC360",
@@ -4128,7 +4130,8 @@ const BRANDS = [
           "type": "standard"
         }
       ]
-    }
+    },
+    "logoUrl": "https://www.propertycasualty360.com/_nuxt/img/pc360-blue.013d9ad.png"
   },
   {
     "id": "CUT",
@@ -4136,7 +4139,8 @@ const BRANDS = [
     "isCustom": null,
     "subAudiences": null,
     "customQuestions": {},
-    "filterOverrides": {}
+    "filterOverrides": {},
+    "logoUrl": "https://www.cutimes.com/_nuxt/img/logo-header-credit-union-times.f39782f.png"
   },
   {
     "id": "GST",
@@ -4144,7 +4148,8 @@ const BRANDS = [
     "isCustom": null,
     "subAudiences": null,
     "customQuestions": {},
-    "filterOverrides": {}
+    "filterOverrides": {},
+    "logoUrl": "https://www.globest.com/_nuxt/img/globest-blue.743e64e.png"
   },
   {
     "id": "HRE",
@@ -4152,7 +4157,8 @@ const BRANDS = [
     "isCustom": null,
     "subAudiences": null,
     "customQuestions": {},
-    "filterOverrides": {}
+    "filterOverrides": {},
+    "logoUrl": "https://hrexecutive.com/wp-content/uploads/HR_Executive_logo_RGB.png"
   },
   {
     "id": "DA",
@@ -4160,7 +4166,8 @@ const BRANDS = [
     "isCustom": null,
     "subAudiences": null,
     "customQuestions": {},
-    "filterOverrides": {}
+    "filterOverrides": {},
+    "logoUrl": "https://districtadministration.com/wp-content/uploads/District-Administration-Logo-full-color-1-300x80.png"
   },
   {
     "id": "UB",
@@ -4168,7 +4175,8 @@ const BRANDS = [
     "isCustom": null,
     "subAudiences": null,
     "customQuestions": {},
-    "filterOverrides": {}
+    "filterOverrides": {},
+    "logoUrl": "https://universitybusiness.com/wp-content/uploads/2022/08/ublogo2.png"
   },
   {
     "id": "custom",
@@ -4176,7 +4184,8 @@ const BRANDS = [
     "isCustom": true,
     "subAudiences": null,
     "customQuestions": {},
-    "filterOverrides": {}
+    "filterOverrides": {},
+    "logoUrl": null
   }
 ];
 
@@ -4288,7 +4297,7 @@ function buildSubmissionWorkbook(payload) {
 }
 
 export default function PackageFormPrototype() {
-  // stage: 'brand' | 'subaudience' | 'packages'
+  // stage: 'brand' | 'subaudience' | 'packages' | 'confirmation'
   const [stage, setStage] = useState("brand");
   const [brandId, setBrandId] = useState(null);
   const [subAudience, setSubAudience] = useState(null);
@@ -4371,6 +4380,25 @@ export default function PackageFormPrototype() {
       setSubmittedFilename(null);
       setDeliveryStatus(null);
     }
+  };
+
+  // Full reset — used by "Start new selection" on the confirmation screen.
+  const resetAll = () => {
+    setBrandId(null);
+    setSubAudience(null);
+    setCustomBrandName("");
+    setActivePkg(PACKAGES[0].id);
+    setOptionalSelections({});
+    setSelectedCustomQuestions({});
+    setCustomQAnswerSelections({});
+    setContactName("");
+    setContactEmail("");
+    setContactCompany("");
+    setCaptchaChecked(false);
+    setSubmitted(false);
+    setSubmittedFilename(null);
+    setDeliveryStatus(null);
+    setStage("brand");
   };
 
   const pkg = PACKAGES.find((p) => p.id === activePkg);
@@ -4487,17 +4515,59 @@ export default function PackageFormPrototype() {
         }
       `}</style>
       <div className="max-w-3xl mx-auto arc-form-wrap">
-        <div className="mb-8">
-          <h1 style={{ fontSize: "1.5rem", fontWeight: 600, letterSpacing: "-0.01em" }}>Audience package configuration</h1>
-          <p style={{ color: inkSoft, fontSize: "0.9rem", marginTop: "0.35rem" }}>
-            Select a brand, then a package, then adjust the audience filters included in each section.
-          </p>
-        </div>
+        {stage !== "confirmation" && (
+          <div className="mb-8">
+            <h1 style={{ fontSize: "1.5rem", fontWeight: 600, letterSpacing: "-0.01em" }}>Lead Gen Package Configuration</h1>
+            <div style={{ marginTop: "0.5rem" }}>
+              <p style={{ color: inkSoft, fontSize: "0.9rem", margin: 0 }}>1. Select a media brand</p>
+              <p style={{ color: inkSoft, fontSize: "0.9rem", margin: 0 }}>2. Select and configure audience target and filters</p>
+              <p style={{ color: inkSoft, fontSize: "0.9rem", margin: 0 }}>3. Submit selections</p>
+            </div>
+          </div>
+        )}
+
+        {/* ---------------- Screen 4: confirmation ---------------- */}
+        {stage === "confirmation" && (
+          <div style={{ textAlign: "center", padding: "3.5rem 1rem" }}>
+            <CheckCircle2 size={48} color={navy} style={{ marginBottom: "1.25rem" }} />
+            <h1 style={{ fontSize: "2rem", fontWeight: 800, color: ink, letterSpacing: "-0.01em", marginBottom: "0.9rem" }}>
+              Thank you!
+            </h1>
+            <p style={{ fontSize: "0.95rem", color: inkSoft, maxWidth: "26rem", margin: "0 auto", lineHeight: 1.6 }}>
+              We've received your selections. A copy of your selections has also started downloading for you. Please save for reference.
+            </p>
+            {submittedFilename && (
+              <div className="flex items-center justify-center gap-1.5" style={{ fontSize: "0.8rem", color: inkSoft, marginTop: "0.85rem" }}>
+                <span>
+                  Downloaded <strong style={{ color: ink }}>{submittedFilename}</strong>
+                </span>
+                {deliveryStatus === "sent" && <CheckCircle2 size={14} color="#1F8A5C" />}
+                {deliveryStatus === "error" && <XCircle size={14} color="#C23B3B" />}
+              </div>
+            )}
+            <button
+              onClick={resetAll}
+              style={{
+                marginTop: "2rem",
+                padding: "0.8rem 1.6rem",
+                borderRadius: "10px",
+                border: "none",
+                background: navy,
+                color: "#FFFFFF",
+                fontSize: "0.9rem",
+                fontWeight: 700,
+                cursor: "pointer",
+              }}
+            >
+              Start new selection
+            </button>
+          </div>
+        )}
 
         {/* ---------------- Screen 1: brand ---------------- */}
         {stage === "brand" && (
           <>
-            <div style={{ fontWeight: 600, fontSize: "0.95rem", marginBottom: "0.75rem" }}>Brand</div>
+            <div style={{ fontWeight: 600, fontSize: "0.95rem", marginBottom: "0.75rem" }}>Select a Media Brand</div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mb-6">
               {BRANDS.map((b) => {
                 const active = b.id === brandId;
@@ -4517,12 +4587,14 @@ export default function PackageFormPrototype() {
                       fontWeight: active ? 600 : 500,
                     }}
                   >
-                    {b.name}
-                    {brandNeedsSubAudience(b) && (
-                      <div style={{ fontSize: "0.72rem", color: inkSoft, marginTop: "0.2rem", fontWeight: 400 }}>
-                        Has sub-audiences
-                      </div>
+                    {b.logoUrl && (
+                      <img
+                        src={b.logoUrl}
+                        alt=""
+                        style={{ height: "24px", maxWidth: "100%", objectFit: "contain", marginBottom: "0.5rem", display: "block" }}
+                      />
                     )}
+                    {b.name}
                   </button>
                 );
               })}
@@ -4580,8 +4652,11 @@ export default function PackageFormPrototype() {
               {brand.name} — change brand
             </button>
 
+            {brand.logoUrl && (
+              <img src={brand.logoUrl} alt="" style={{ height: "32px", maxWidth: "220px", objectFit: "contain", marginBottom: "0.75rem" }} />
+            )}
             <div style={{ fontWeight: 600, fontSize: "1.05rem", marginBottom: "0.3rem" }}>{brand.name}</div>
-            <p style={{ color: inkSoft, fontSize: "0.85rem", marginBottom: "1.1rem" }}>Select a sub-audience to continue.</p>
+            <p style={{ color: inkSoft, fontSize: "0.85rem", marginBottom: "1.1rem" }}>Select audience segment to target</p>
 
             <div className="flex flex-col gap-2">
               {brand.subAudiences.map((s) => (
@@ -4617,8 +4692,12 @@ export default function PackageFormPrototype() {
             >
               <ArrowLeft size={14} />
               {brand.isCustom ? customBrandName || "Custom brand" : brand.name}
-              {subAudience ? ` · ${subAudience}` : ""} — {brandNeedsSubAudience(brand) ? "change sub-audience" : "change brand"}
+              {subAudience ? ` · ${subAudience}` : ""} — {brandNeedsSubAudience(brand) ? "change target audience" : "change brand"}
             </button>
+
+            {brand.logoUrl && (
+              <img src={brand.logoUrl} alt="" style={{ height: "32px", maxWidth: "220px", objectFit: "contain", marginBottom: "1rem" }} />
+            )}
 
             <div className="flex gap-2 mb-6" role="tablist">
               {PACKAGES.map((p) => {
@@ -4670,8 +4749,8 @@ export default function PackageFormPrototype() {
 
                 {/* ---- Section 2: optional, editable filters ---- */}
                 <SectionBlock
-                  title="Add additional options"
-                  subtitle={`Check anything beyond the defaults to include in your ${pkg.name} package`}
+                  title="Add Additional Selections"
+                  subtitle="If available, select anything beyond the default selections to include in your package"
                 >
                   {categoryList.map((cat) => {
                     const section = mergedSections[cat];
@@ -4754,6 +4833,7 @@ export default function PackageFormPrototype() {
                 XLSX.writeFile(wb, filename);
                 setSubmittedFilename(filename);
                 setSubmitted(true);
+                setStage("confirmation");
 
                 if (SUBMISSION_WEBHOOK_URL) {
                   setDeliveryStatus("sending");
@@ -4796,43 +4876,12 @@ export default function PackageFormPrototype() {
                 fontSize: "0.92rem",
                 fontWeight: 700,
                 cursor: isFormValid && !submitted ? "pointer" : "not-allowed",
-                marginBottom: submitted ? "0.5rem" : "1.25rem",
+                marginBottom: "1.25rem",
               }}
             >
               {submitted && <CheckCircle2 size={16} />}
               {submitted ? "Submitted" : "Submit Selections"}
             </button>
-
-            {submitted && submittedFilename && (
-              <div style={{ fontSize: "0.8rem", color: inkSoft, marginBottom: "1.25rem" }}>
-                Downloaded <strong style={{ color: ink }}>{submittedFilename}</strong>
-                {deliveryStatus === "sending" && <span> · Sending to SharePoint &amp; Outlook…</span>}
-                {deliveryStatus === "sent" && <span style={{ color: "#1F8A5C" }}> · Sent to the automation flow (check Zapier/Make to confirm it arrived) ✓</span>}
-                {deliveryStatus === "error" && <span style={{ color: "#C23B3B" }}> · Couldn't reach the SharePoint/email flow — file was still downloaded locally</span>}
-                {deliveryStatus === null && !SUBMISSION_WEBHOOK_URL && (
-                  <span style={{ opacity: 0.7 }}> · Add a Power Automate flow URL to also send this to SharePoint &amp; Outlook automatically</span>
-                )}
-              </div>
-            )}
-
-            <div style={{ marginTop: "1.75rem", background: "#1A1918", borderRadius: "12px", padding: "1.1rem 1.25rem" }}>
-              <div style={{ color: "#B9B4A9", fontSize: "0.78rem", marginBottom: "0.5rem", fontWeight: 600 }}>
-                Values passed to backend ({payload.filters.length} filters, {payload.customQuestions.length} custom questions (+${payload.customQuestionCost}/lead))
-              </div>
-              <pre
-                style={{
-                  color: "#EDEAE3",
-                  fontSize: "0.74rem",
-                  lineHeight: 1.55,
-                  whiteSpace: "pre-wrap",
-                  wordBreak: "break-word",
-                  margin: 0,
-                  fontFamily: "ui-monospace, 'SF Mono', monospace",
-                }}
-              >
-{JSON.stringify(payload, null, 2)}
-              </pre>
-            </div>
           </>
         )}
       </div>
