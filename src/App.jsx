@@ -4839,24 +4839,27 @@ export default function PackageFormPrototype() {
                   setDeliveryStatus("sending");
                   try {
                     const fileContentBase64 = XLSX.write(wb, { bookType: "xlsx", type: "base64" });
-                    // No custom Content-Type header, and mode: "no-cors" — Zapier's
-                    // Catch Hook endpoint doesn't handle the CORS preflight that a
-                    // custom header triggers, so the request would otherwise never
-                    // leave the browser. With no-cors we can't read the response, so
-                    // we treat "the fetch didn't throw" as success.
+                    // Sent as application/x-www-form-urlencoded (via URLSearchParams) rather
+                    // than JSON: it's one of the few Content-Types the browser treats as a
+                    // "simple" cross-origin request (no CORS preflight, so Zapier's Catch Hook
+                    // endpoint actually receives it), AND Zapier natively parses this format
+                    // into individual named fields — unlike a text/plain body, which Zapier's
+                    // trigger silently ignores. mode: "no-cors" means we still can't read the
+                    // response, so a non-throwing fetch is treated as "sent".
+                    const params = new URLSearchParams({
+                      filename,
+                      fileContentBase64,
+                      brand: payload.brand,
+                      subAudience: payload.subAudience || "",
+                      package: payload.package,
+                      contactName: payload.contact.name,
+                      contactEmail: payload.contact.email,
+                      contactCompany: payload.contact.company,
+                    });
                     await fetch(SUBMISSION_WEBHOOK_URL, {
                       method: "POST",
                       mode: "no-cors",
-                      body: JSON.stringify({
-                        filename,
-                        fileContentBase64,
-                        brand: payload.brand,
-                        subAudience: payload.subAudience || "",
-                        package: payload.package,
-                        contactName: payload.contact.name,
-                        contactEmail: payload.contact.email,
-                        contactCompany: payload.contact.company,
-                      }),
+                      body: params,
                     });
                     setDeliveryStatus("sent");
                   } catch (err) {
