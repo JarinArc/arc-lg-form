@@ -1,0 +1,13 @@
+# Cloudflare Workers configuration for the unified model (Pages is being
+# phased out in favor of this). `main` is our custom Worker script, which
+# handles /api/upload itself and falls back to serving the static site
+# (built into ./dist by `npm run build`) for everything else via the
+# ASSETS binding.
+
+name = "arc-audience-package-form"
+compatibility_date = "2026-09-08"
+main = "worker/index.js"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
