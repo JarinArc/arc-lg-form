@@ -4838,17 +4838,26 @@ export default function PackageFormPrototype() {
                 if (SUBMISSION_WEBHOOK_URL) {
                   setDeliveryStatus("sending");
                   try {
-                    const fileContentBase64 = XLSX.write(wb, { bookType: "xlsx", type: "base64" });
-                    // Sent as application/x-www-form-urlencoded (via URLSearchParams) rather
-                    // than JSON: it's one of the few Content-Types the browser treats as a
-                    // "simple" cross-origin request (no CORS preflight, so Zapier's Catch Hook
-                    // endpoint actually receives it), AND Zapier natively parses this format
-                    // into individual named fields — unlike a text/plain body, which Zapier's
-                    // trigger silently ignores. mode: "no-cors" means we still can't read the
-                    // response, so a non-throwing fetch is treated as "sent".
+                    // Upload the real binary file to our own Pages Function first
+                    // (same-origin, so no CORS concerns), and get back a public URL.
+                    // Zapier then fetches the file directly from that URL — a normal
+                    // file download — instead of us squeezing base64 file content
+                    // through the webhook, which is what kept breaking.
+                    const fileBytes = XLSX.write(wb, { bookType: "xlsx", type: "array" });
+                    const blob = new Blob([fileBytes], {
+                      type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                    });
+                    const uploadRes = await fetch("/api/upload", {
+                      method: "POST",
+                      headers: { "X-Filename": filename },
+                      body: blob,
+                    });
+                    if (!uploadRes.ok) throw new Error("Upload to storage failed");
+                    const { url: fileUrl } = await uploadRes.json();
+
                     const params = new URLSearchParams({
                       filename,
-                      fileContentBase64,
+                      file_url: fileUrl,
                       brand: payload.brand,
                       subAudience: payload.subAudience || "",
                       package: payload.package,
