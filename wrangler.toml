@@ -8,6 +8,10 @@
 #   2. PUBLIC_R2_URL -> the pub-xxxxxxxx.r2.dev URL from that bucket's
 #      public access settings
 
+name = "arc-audience-package-form"
+compatibility_date = "2026-09-08"
+pages_build_output_dir = "./dist"
+
 [[r2_buckets]]
 binding = "SUBMISSIONS_BUCKET"
 bucket_name = "arc-lg-form-submissions"
