@@ -46,7 +46,8 @@ const BRANDS = [
       "targeted": [
         {
           "id": "group-size",
-          "question": "Do you or your organization work with groups of the following size? (please select all that apply) ",
+          "question": "Do you or your organization work with groups of the following size? (must select at least two options)",
+          "type": "optional",
           "standard": [
             "50 lives or fewer"
           ],
@@ -62,7 +63,8 @@ const BRANDS = [
       "precision": [
         {
           "id": "group-size",
-          "question": "Do you or your organization work with groups of the following size? (please select all that apply) ",
+          "question": "Do you or your organization work with groups of the following size? (must select at least two options)",
+          "type": "optional",
           "standard": [
             "50 lives or fewer"
           ],
@@ -77,6 +79,7 @@ const BRANDS = [
         {
           "id": "self-funded",
           "question": "Do you work with self funded?",
+          "type": "optional",
           "standard": [
             "Yes (accepted)",
             "No (not accepted)"
@@ -86,6 +89,668 @@ const BRANDS = [
       ]
     },
     "filterOverrides": {
+      "precision": [
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "C-Level",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Industry/Sub-Industry",
+          "label": "Finance - Financial Services",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Level",
+          "label": "C-Level",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CHRO/Chief Human Resource Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Advertising/Marketing",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "50,000+",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Customer Support - Client Services/Account Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "50,000+",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CEO",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Aerospace/Aviation",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CLO/Chief Learning Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Level",
+          "label": "Executive VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Health",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "Executive VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "10,000 - 19,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "10,000 - 19,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Level",
+          "label": "Senior VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Agriculture",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CPO/Chief People Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Executives - President",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "Senior VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Insurance General",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Life",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Principal",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Automotive",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Level",
+          "label": "VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Compensation/Benefit Policy",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Biotech and Pharmaceuticals",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Level",
+          "label": "Senior Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Corporate Communications",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Partner",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "Senior Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "2,500 - 4,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "2,500 - 4,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Employee Benefits Broker/Consultant",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "1,000 - 2,499",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Computers and Technology",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Level",
+          "label": "Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Corporate Development",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "1,000 - 2,499",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "Senior Manager",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - General Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Diversity Management/EEO/Compliance",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "500 - 999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "500 - 999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Level",
+          "label": "Senior Manager",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Construction",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Independent Insurance Agent",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - General Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "250 - 499",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "Manager",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "250 - 499",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Level",
+          "label": "Manager",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Corporate Services",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "100 - 249",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "Individual Contributor",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "100 - 249",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Education",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Level",
+          "label": "Supervisor",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - HR Systems Administration",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Insurance Brokerage",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Planning/Advising",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "50 - 99",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "Owner",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Learning/Training",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Finance",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Level",
+          "label": "Individual Contributor",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "50 - 99",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "25 - 49",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "InsuranceSenior Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "25 - 49",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Level",
+          "label": "Consultant",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Government",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Organizational Development",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "Consultant",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "10 - 24",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Payroll/Benefits",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Healthcare/Medical",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Level",
+          "label": "Contractor",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "Contractor",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "10 - 24",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Sales - Agent/Broker",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Recruiting",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "5 - 9",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Sales - Sales",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "5 - 9",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "1 - 4",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Legal",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Sales - Senior Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "1 - 4",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Manufacturing",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Talent Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Media",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Wellness",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Non-Profit/Organizations",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Real Estate",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Retail and Consumer Goods",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Service Industry",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Telecommunications",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Transportation and Logistics",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Travel/Hospitality/Entertainment",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Utility/Energy",
+          "type": "optional"
+        }
+      ],
       "reach": [
         {
           "subAudience": "Benefits Brokers",
@@ -94,21 +759,15 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CHRO/Chief Human Resource Officer",
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "50,000+",
           "type": "standard"
         },
         {
           "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "C-Level",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "50,000+",
+          "category": "Industry/Sub-Industry",
+          "label": "Finance - Financial Services",
           "type": "standard"
         },
         {
@@ -124,33 +783,33 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Benefits Brokers",
+          "subAudience": "Human Resources",
           "category": "Number of Employees",
           "label": "50,000+",
           "type": "standard"
         },
         {
-          "subAudience": "Benefits Brokers",
-          "category": "Industry/Sub-Industry",
-          "label": "Finance - Financial Services",
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CHRO/Chief Human Resource Officer",
           "type": "standard"
         },
         {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "20,000 - 49,999",
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "C-Level",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "Executive VP",
           "type": "standard"
         },
         {
           "subAudience": "Human Resources",
           "category": "Job Area/Job Function",
           "label": "Executives - CLO/Chief Learning Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CEO",
           "type": "standard"
         },
         {
@@ -161,14 +820,20 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
           "category": "Job Level",
           "label": "Executive VP",
           "type": "standard"
         },
         {
           "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "Executive VP",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CEO",
           "type": "standard"
         },
         {
@@ -181,6 +846,30 @@ const BRANDS = [
           "subAudience": "Benefits Brokers",
           "category": "Number of Employees",
           "label": "20,000 - 49,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CPO/Chief People Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "10,000 - 19,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Level",
+          "label": "Senior VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Agriculture",
           "type": "standard"
         },
         {
@@ -197,38 +886,44 @@ const BRANDS = [
         },
         {
           "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "Senior VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
           "category": "Job Area/Job Function",
           "label": "Executives - President",
           "type": "standard"
         },
         {
           "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Principal",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
           "category": "Job Level",
-          "label": "Senior VP",
+          "label": "VP",
           "type": "standard"
         },
         {
-          "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "Senior VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Agriculture",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
+          "subAudience": "Benefits Brokers",
           "category": "Number of Employees",
-          "label": "10,000 - 19,999",
+          "label": "5,000 - 9,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Life",
           "type": "standard"
         },
         {
           "subAudience": "Human Resources",
           "category": "Job Area/Job Function",
-          "label": "Executives - CPO/Chief People Officer",
+          "label": "Human Resources - Compensation/Benefit Policy",
           "type": "standard"
         },
         {
@@ -251,44 +946,14 @@ const BRANDS = [
         },
         {
           "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "5,000 - 9,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Life",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Executives - Principal",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Compensation/Benefit Policy",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
           "category": "Job Level",
           "label": "Senior Director",
           "type": "standard"
         },
         {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Biotech and Pharmaceuticals",
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Partner",
           "type": "standard"
         },
         {
@@ -299,20 +964,20 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Corporate Communications",
+          "category": "Industry/Sub-Industry",
+          "label": "Biotech and Pharmaceuticals",
           "type": "standard"
         },
         {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Executives - Partner",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
+          "subAudience": "Human Resources",
           "category": "Job Level",
           "label": "Senior Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Corporate Communications",
           "type": "standard"
         },
         {
@@ -331,12 +996,6 @@ const BRANDS = [
           "subAudience": "Benefits Brokers",
           "category": "Number of Employees",
           "label": "1,000 - 2,499",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "Director",
           "type": "standard"
         },
         {
@@ -364,15 +1023,9 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Diversity Management/EEO/Compliance",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
+          "subAudience": "Benefits Brokers",
           "category": "Job Level",
-          "label": "Senior Manager",
+          "label": "Director",
           "type": "standard"
         },
         {
@@ -382,15 +1035,27 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Benefits Brokers",
+          "subAudience": "Human Resources",
           "category": "Job Level",
           "label": "Senior Manager",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Diversity Management/EEO/Compliance",
           "type": "standard"
         },
         {
           "subAudience": "Benefits Brokers",
           "category": "Number of Employees",
           "label": "500 - 999",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "Senior Manager",
           "type": "standard"
         },
         {
@@ -406,12 +1071,6 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Independent Insurance Agent",
-          "type": "standard"
-        },
-        {
           "subAudience": "Human Resources",
           "category": "Job Level",
           "label": "Manager",
@@ -424,9 +1083,9 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "250 - 499",
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Independent Insurance Agent",
           "type": "standard"
         },
         {
@@ -437,38 +1096,20 @@ const BRANDS = [
         },
         {
           "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "250 - 499",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
           "category": "Job Level",
           "label": "Manager",
           "type": "standard"
         },
         {
           "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "Individual Contributor",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Insurance Brokerage",
+          "category": "Number of Employees",
+          "label": "250 - 499",
           "type": "standard"
         },
         {
           "subAudience": "Human Resources",
           "category": "Number of Employees",
-          "label": "100 - 249",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Education",
+          "label": "250 - 499",
           "type": "standard"
         },
         {
@@ -479,14 +1120,38 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - HR Systems Administration",
+          "category": "Number of Employees",
+          "label": "100 - 249",
           "type": "standard"
         },
         {
           "subAudience": "Benefits Brokers",
           "category": "Number of Employees",
           "label": "100 - 249",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "Individual Contributor",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Education",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - HR Systems Administration",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Insurance Brokerage",
           "type": "standard"
         },
         {
@@ -503,8 +1168,14 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "Individual Contributor",
+          "category": "Industry/Sub-Industry",
+          "label": "Finance",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "50 - 99",
           "type": "standard"
         },
         {
@@ -514,18 +1185,6 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "50 - 99",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Finance",
-          "type": "standard"
-        },
-        {
           "subAudience": "Benefits Brokers",
           "category": "Number of Employees",
           "label": "50 - 99",
@@ -533,38 +1192,14 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Government",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "25 - 49",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Organizational Development",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
           "category": "Job Level",
-          "label": "Consultant",
+          "label": "Individual Contributor",
           "type": "standard"
         },
         {
           "subAudience": "Benefits Brokers",
           "category": "Number of Employees",
           "label": "25 - 49",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "Consultant",
           "type": "standard"
         },
         {
@@ -575,32 +1210,50 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Government",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Organizational Development",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
           "category": "Number of Employees",
-          "label": "10 - 24",
+          "label": "25 - 49",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Level",
+          "label": "Consultant",
           "type": "standard"
         },
         {
           "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "10 - 24",
+          "category": "Job Level",
+          "label": "Consultant",
           "type": "standard"
         },
         {
           "subAudience": "Benefits Brokers",
           "category": "Job Level",
           "label": "Contractor",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Sales - Agent/Broker",
           "type": "standard"
         },
         {
           "subAudience": "Human Resources",
           "category": "Job Level",
           "label": "Contractor",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "10 - 24",
           "type": "standard"
         },
         {
@@ -617,8 +1270,26 @@ const BRANDS = [
         },
         {
           "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "10 - 24",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
           "category": "Job Area/Job Function",
-          "label": "Sales - Sales",
+          "label": "Sales - Agent/Broker",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "5 - 9",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "5 - 9",
           "type": "standard"
         },
         {
@@ -629,32 +1300,14 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "5 - 9",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
           "category": "Job Area/Job Function",
           "label": "Human Resources - Recruiting",
           "type": "standard"
         },
         {
           "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "5 - 9",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "1 - 4",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
           "category": "Job Area/Job Function",
-          "label": "Sales - Senior Management",
+          "label": "Sales - Sales",
           "type": "standard"
         },
         {
@@ -665,12 +1318,24 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "1 - 4",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
           "category": "Job Area/Job Function",
           "label": "Human Resources - Senior Management",
           "type": "standard"
         },
         {
-          "subAudience": "Human Resources",
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Sales - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
           "category": "Number of Employees",
           "label": "1 - 4",
           "type": "standard"
@@ -746,694 +1411,14 @@ const BRANDS = [
           "category": "Industry/Sub-Industry",
           "label": "Utility/Energy",
           "type": "standard"
-        }
-      ],
-      "precision": [
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Industry/Sub-Industry",
-          "label": "Finance - Financial Services",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "50,000+",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "C-Level",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CHRO/Chief Human Resource Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "C-Level",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Customer Support - Client Services/Account Management",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "50,000+",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Advertising/Marketing",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "20,000 - 49,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Health",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CLO/Chief Learning Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Aerospace/Aviation",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "Executive VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "20,000 - 49,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "Executive VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CEO",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CPO/Chief People Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "Senior VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Executives - President",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Insurance General",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "10,000 - 19,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Agriculture",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "Senior VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "10,000 - 19,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Compensation/Benefit Policy",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Automotive",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Executives - Principal",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "5,000 - 9,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "5,000 - 9,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Life",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "2,500 - 4,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "2,500 - 4,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "Senior Director",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Biotech and Pharmaceuticals",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Executives - Partner",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "Senior Director",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Corporate Communications",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "Director",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Computers and Technology",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "Director",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Corporate Development",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "1,000 - 2,499",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Employee Benefits Broker/Consultant",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "1,000 - 2,499",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - General Management",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "500 - 999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "500 - 999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Construction",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Diversity Management/EEO/Compliance",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "Senior Manager",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "Senior Manager",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "250 - 499",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - General Management",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "Manager",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "250 - 499",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Corporate Services",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Independent Insurance Agent",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "Manager",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Education",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "Supervisor",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "100 - 249",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "Individual Contributor",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Insurance Brokerage",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - HR Systems Administration",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "100 - 249",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "Individual Contributor",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "50 - 99",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Finance",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "Owner",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "50 - 99",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Learning/Training",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Planning/Advising",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "InsuranceSenior Management",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "25 - 49",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Government",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Organizational Development",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "Consultant",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "Consultant",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "25 - 49",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "Contractor",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Payroll/Benefits",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "Contractor",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Healthcare/Medical",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "10 - 24",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "10 - 24",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Sales - Agent/Broker",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Sales - Sales",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Recruiting",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "5 - 9",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "5 - 9",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "1 - 4",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "1 - 4",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Senior Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Legal",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Sales - Senior Management",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Talent Management",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Manufacturing",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Media",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Wellness",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Non-Profit/Organizations",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Real Estate",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Retail and Consumer Goods",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Service Industry",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Telecommunications",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Transportation and Logistics",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Travel/Hospitality/Entertainment",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Utility/Energy",
-          "type": "optional"
         }
       ],
       "targeted": [
         {
-          "subAudience": "Human Resources",
+          "subAudience": "Benefits Brokers",
           "category": "Job Level",
           "label": "C-Level",
           "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CHRO/Chief Human Resource Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "50,000+",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Customer Support - Client Services/Account Management",
-          "type": "optional"
         },
         {
           "subAudience": "Benefits Brokers",
@@ -1442,15 +1427,15 @@ const BRANDS = [
           "type": "optional"
         },
         {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "C-Level",
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CHRO/Chief Human Resource Officer",
           "type": "standard"
         },
         {
           "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "50,000+",
+          "category": "Job Level",
+          "label": "C-Level",
           "type": "standard"
         },
         {
@@ -1461,8 +1446,50 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "50,000+",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
           "category": "Job Area/Job Function",
-          "label": "Executives - CLO/Chief Learning Officer",
+          "label": "Customer Support - Client Services/Account Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "50,000+",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Health",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "Executive VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CEO",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
           "type": "standard"
         },
         {
@@ -1479,74 +1506,8 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "20,000 - 49,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "Executive VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
           "category": "Job Area/Job Function",
-          "label": "Executives - CEO",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "20,000 - 49,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Health",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Insurance General",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "10,000 - 19,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Agriculture",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "Senior VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "10,000 - 19,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "Senior VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Executives - President",
+          "label": "Executives - CLO/Chief Learning Officer",
           "type": "standard"
         },
         {
@@ -1557,18 +1518,66 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
+          "category": "Job Level",
+          "label": "Senior VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
           "category": "Industry/Sub-Industry",
-          "label": "Automotive",
+          "label": "Agriculture",
           "type": "optional"
         },
         {
           "subAudience": "Human Resources",
           "category": "Number of Employees",
-          "label": "5,000 - 9,999",
+          "label": "10,000 - 19,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "10,000 - 19,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "Senior VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Insurance General",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Executives - President",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Principal",
           "type": "optional"
         },
         {
           "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Automotive",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
           "category": "Job Level",
           "label": "VP",
           "type": "standard"
@@ -1581,30 +1590,30 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Compensation/Benefit Policy",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
           "category": "Job Level",
           "label": "VP",
           "type": "standard"
         },
         {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Executives - Principal",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
+          "subAudience": "Human Resources",
           "category": "Number of Employees",
           "label": "5,000 - 9,999",
           "type": "optional"
         },
         {
-          "subAudience": "Benefits Brokers",
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Compensation/Benefit Policy",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Biotech and Pharmaceuticals",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
           "category": "Job Level",
           "label": "Senior Director",
           "type": "standard"
@@ -1617,6 +1626,18 @@ const BRANDS = [
         },
         {
           "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "Senior Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "2,500 - 4,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
           "category": "Number of Employees",
           "label": "2,500 - 4,999",
           "type": "optional"
@@ -1628,27 +1649,21 @@ const BRANDS = [
           "type": "optional"
         },
         {
-          "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "Senior Director",
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Employee Benefits Broker/Consultant",
           "type": "standard"
         },
         {
           "subAudience": "Human Resources",
           "category": "Industry/Sub-Industry",
-          "label": "Biotech and Pharmaceuticals",
+          "label": "Computers and Technology",
           "type": "optional"
         },
         {
           "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "2,500 - 4,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Employee Benefits Broker/Consultant",
+          "category": "Job Level",
+          "label": "Director",
           "type": "standard"
         },
         {
@@ -1659,20 +1674,8 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "Director",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
           "category": "Number of Employees",
           "label": "1,000 - 2,499",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Computers and Technology",
           "type": "optional"
         },
         {
@@ -1685,12 +1688,6 @@ const BRANDS = [
           "subAudience": "Benefits Brokers",
           "category": "Job Level",
           "label": "Director",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "500 - 999",
           "type": "standard"
         },
         {
@@ -1698,12 +1695,6 @@ const BRANDS = [
           "category": "Job Area/Job Function",
           "label": "Insurance - General Management",
           "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "Senior Manager",
-          "type": "standard"
         },
         {
           "subAudience": "Human Resources",
@@ -1731,39 +1722,15 @@ const BRANDS = [
         },
         {
           "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Independent Insurance Agent",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
           "category": "Number of Employees",
-          "label": "250 - 499",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - General Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "Manager",
+          "label": "500 - 999",
           "type": "standard"
         },
         {
           "subAudience": "Benefits Brokers",
           "category": "Job Level",
-          "label": "Manager",
+          "label": "Senior Manager",
           "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "250 - 499",
-          "type": "optional"
         },
         {
           "subAudience": "Human Resources",
@@ -1773,32 +1740,38 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Education",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "Supervisor",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
           "category": "Job Area/Job Function",
-          "label": "Human Resources - HR Systems Administration",
+          "label": "Human Resources - General Management",
           "type": "standard"
         },
         {
           "subAudience": "Human Resources",
           "category": "Number of Employees",
-          "label": "100 - 249",
+          "label": "250 - 499",
           "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Level",
+          "label": "Manager",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "Manager",
+          "type": "standard"
         },
         {
           "subAudience": "Benefits Brokers",
           "category": "Number of Employees",
-          "label": "100 - 249",
+          "label": "250 - 499",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Independent Insurance Agent",
           "type": "standard"
         },
         {
@@ -1816,8 +1789,32 @@ const BRANDS = [
         {
           "subAudience": "Human Resources",
           "category": "Number of Employees",
-          "label": "50 - 99",
+          "label": "100 - 249",
           "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - HR Systems Administration",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Education",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Level",
+          "label": "Supervisor",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "100 - 249",
+          "type": "standard"
         },
         {
           "subAudience": "Human Resources",
@@ -1827,8 +1824,8 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Finance",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Learning/Training",
           "type": "optional"
         },
         {
@@ -1839,8 +1836,14 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Learning/Training",
+          "category": "Number of Employees",
+          "label": "50 - 99",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Finance",
           "type": "optional"
         },
         {
@@ -1857,21 +1860,15 @@ const BRANDS = [
         },
         {
           "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "25 - 49",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "Consultant",
+          "category": "Job Area/Job Function",
+          "label": "InsuranceSenior Management",
           "type": "optional"
         },
         {
           "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "Consultant",
-          "type": "optional"
+          "category": "Number of Employees",
+          "label": "25 - 49",
+          "type": "standard"
         },
         {
           "subAudience": "Human Resources",
@@ -1881,8 +1878,8 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Government",
+          "category": "Job Level",
+          "label": "Consultant",
           "type": "optional"
         },
         {
@@ -1892,9 +1889,27 @@ const BRANDS = [
           "type": "optional"
         },
         {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Government",
+          "type": "optional"
+        },
+        {
           "subAudience": "Benefits Brokers",
-          "category": "Job Area/Job Function",
-          "label": "InsuranceSenior Management",
+          "category": "Job Level",
+          "label": "Consultant",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Job Level",
+          "label": "Contractor",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Healthcare/Medical",
           "type": "optional"
         },
         {
@@ -1905,20 +1920,14 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Healthcare/Medical",
+          "category": "Job Level",
+          "label": "Contractor",
           "type": "optional"
         },
         {
-          "subAudience": "Benefits Brokers",
+          "subAudience": "Human Resources",
           "category": "Number of Employees",
           "label": "10 - 24",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Job Level",
-          "label": "Contractor",
           "type": "optional"
         },
         {
@@ -1928,22 +1937,16 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Human Resources",
-          "category": "Number of Employees",
-          "label": "10 - 24",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Human Resources",
-          "category": "Job Level",
-          "label": "Contractor",
-          "type": "optional"
-        },
-        {
           "subAudience": "Benefits Brokers",
           "category": "Number of Employees",
-          "label": "5 - 9",
+          "label": "10 - 24",
           "type": "standard"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance",
+          "type": "optional"
         },
         {
           "subAudience": "Human Resources",
@@ -1958,16 +1961,22 @@ const BRANDS = [
           "type": "optional"
         },
         {
-          "subAudience": "Human Resources",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance",
-          "type": "optional"
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "5 - 9",
+          "type": "standard"
         },
         {
           "subAudience": "Benefits Brokers",
           "category": "Job Area/Job Function",
           "label": "Sales - Sales",
           "type": "optional"
+        },
+        {
+          "subAudience": "Benefits Brokers",
+          "category": "Number of Employees",
+          "label": "1 - 4",
+          "type": "standard"
         },
         {
           "subAudience": "Human Resources",
@@ -1977,27 +1986,21 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Senior Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
           "category": "Number of Employees",
           "label": "1 - 4",
           "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Senior Management",
+          "type": "standard"
         },
         {
           "subAudience": "Benefits Brokers",
           "category": "Job Area/Job Function",
           "label": "Sales - Senior Management",
           "type": "optional"
-        },
-        {
-          "subAudience": "Benefits Brokers",
-          "category": "Number of Employees",
-          "label": "1 - 4",
-          "type": "standard"
         },
         {
           "subAudience": "Human Resources",
@@ -2013,15 +2016,15 @@ const BRANDS = [
         },
         {
           "subAudience": "Human Resources",
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Wellness",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Human Resources",
           "category": "Industry/Sub-Industry",
           "label": "Media",
           "type": "optional"
+        },
+        {
+          "subAudience": "Human Resources",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Wellness",
+          "type": "standard"
         },
         {
           "subAudience": "Human Resources",
@@ -2085,6 +2088,7 @@ const BRANDS = [
         {
           "id": "firm-aum",
           "question": "What is your firm\u2019s assets under management:   ",
+          "type": "optional",
           "standard": [
             "$1B or more (must accept)  "
           ],
@@ -2100,6 +2104,7 @@ const BRANDS = [
         {
           "id": "ria",
           "question": "Are you an RIA?",
+          "type": "required",
           "standard": [
             "Yes (accepted)",
             "No (not accepted)"
@@ -2109,6 +2114,7 @@ const BRANDS = [
         {
           "id": "firm-aum",
           "question": "What is your firm\u2019s assets under management:   ",
+          "type": "optional",
           "standard": [
             "$1B or more (must accept)  "
           ],
@@ -2122,325 +2128,17 @@ const BRANDS = [
       ]
     },
     "filterOverrides": {
-      "reach": [
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "C-Level",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Financial Planning/Advising",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Finance - Financial (General)",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "50,000+",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Financial Product Sales/Brokerage",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Executive VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "20,000 - 49,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Finance - Financial Services",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Finance - Investment Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "10,000 - 19,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Investment Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Health",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "5,000 - 9,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Registered Investment Advisor",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior Director",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Registered Rep",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Insurance General",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "2,500 - 4,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Director",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Securities Analysis/Research",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "1,000 - 2,499",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Life",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Senior Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "500 - 999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior Manager",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Manager",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "250 - 499",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Actuarial Analysis",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Employee Benefits Broker/Consultant",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "100 - 249",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Supervisor",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "50 - 99",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Financial Analysis/Research",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior Employee",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Individual Contributor",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "25 - 49",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Insurance - General Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Independent Insurance Agent",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Owner",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "10 - 24",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Insurance Brokerage",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "5 - 9",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "1 - 4",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Investment Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Planning/Advising",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Policy Underwriting",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Risk Management/Compliance",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Senior Management",
-          "type": "standard"
-        }
-      ],
       "precision": [
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "50,000+",
+          "category": "Job Level",
+          "label": "C-Level",
           "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Finance - Financial (General)",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "C-Level",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CEO",
           "type": "standard"
         },
         {
@@ -2463,20 +2161,20 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CEO",
+          "category": "Number of Employees",
+          "label": "50,000+",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Industry/Sub-Industry",
-          "label": "Finance - Financial Services",
-          "type": "standard"
+          "label": "Finance - Financial (General)",
+          "type": "optional"
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Executive VP",
+          "category": "Industry/Sub-Industry",
+          "label": "Finance - Financial Services",
           "type": "standard"
         },
         {
@@ -2499,20 +2197,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "10,000 - 19,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Financial Product Sales/Brokerage",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
           "category": "Job Level",
-          "label": "Senior VP",
+          "label": "Executive VP",
           "type": "standard"
         },
         {
@@ -2524,19 +2210,19 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Job Level",
-          "label": "VP",
+          "label": "Senior VP",
           "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Health",
-          "type": "optional"
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Financial Product Sales/Brokerage",
+          "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Investment Management",
+          "category": "Number of Employees",
+          "label": "10,000 - 19,999",
           "type": "standard"
         },
         {
@@ -2547,20 +2233,20 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "2,500 - 4,999",
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Investment Management",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Industry/Sub-Industry",
-          "label": "Insurance - Insurance General",
+          "label": "Insurance - Health",
           "type": "optional"
         },
         {
           "subAudience": null,
           "category": "Job Level",
-          "label": "Senior Director",
+          "label": "VP",
           "type": "standard"
         },
         {
@@ -2571,14 +2257,32 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Registered Rep",
-          "type": "standard"
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Insurance General",
+          "type": "optional"
         },
         {
           "subAudience": null,
           "category": "Number of Employees",
-          "label": "1,000 - 2,499",
+          "label": "2,500 - 4,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Registered Rep",
           "type": "standard"
         },
         {
@@ -2589,14 +2293,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Director",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior Manager",
+          "category": "Number of Employees",
+          "label": "1,000 - 2,499",
           "type": "standard"
         },
         {
@@ -2613,6 +2311,18 @@ const BRANDS = [
         },
         {
           "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Manager",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Manager",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
           "category": "Number of Employees",
           "label": "250 - 499",
           "type": "standard"
@@ -2626,7 +2336,7 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Job Level",
-          "label": "Manager",
+          "label": "Supervisor",
           "type": "standard"
         },
         {
@@ -2637,27 +2347,9 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Supervisor",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Insurance - Actuarial Analysis",
           "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Employee Benefits Broker/Consultant",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "50 - 99",
-          "type": "standard"
         },
         {
           "subAudience": null,
@@ -2668,8 +2360,14 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Number of Employees",
-          "label": "25 - 49",
+          "label": "50 - 99",
           "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Employee Benefits Broker/Consultant",
+          "type": "optional"
         },
         {
           "subAudience": null,
@@ -2679,15 +2377,15 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Financial Analysis/Research",
-          "type": "optional"
+          "category": "Number of Employees",
+          "label": "25 - 49",
+          "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "10 - 24",
-          "type": "standard"
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Financial Analysis/Research",
+          "type": "optional"
         },
         {
           "subAudience": null,
@@ -2704,7 +2402,7 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Number of Employees",
-          "label": "5 - 9",
+          "label": "10 - 24",
           "type": "standard"
         },
         {
@@ -2715,15 +2413,21 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Insurance Brokerage",
-          "type": "optional"
+          "category": "Number of Employees",
+          "label": "5 - 9",
+          "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Number of Employees",
           "label": "1 - 4",
           "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Insurance Brokerage",
+          "type": "optional"
         },
         {
           "subAudience": null,
@@ -2756,17 +2460,17 @@ const BRANDS = [
           "type": "optional"
         }
       ],
-      "targeted": [
+      "reach": [
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Financial Planning/Advising",
+          "type": "standard"
+        },
         {
           "subAudience": null,
           "category": "Industry/Sub-Industry",
           "label": "Finance - Financial (General)",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "C-Level",
           "type": "standard"
         },
         {
@@ -2777,14 +2481,310 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Financial Planning/Advising",
+          "category": "Job Level",
+          "label": "C-Level",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Finance/Accounting - Financial Product Sales/Brokerage",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Executive VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Finance - Financial Services",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "10,000 - 19,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Finance - Investment Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Investment Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Registered Investment Advisor",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Health",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Insurance General",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Registered Rep",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "2,500 - 4,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "1,000 - 2,499",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Life",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Securities Analysis/Research",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "500 - 999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Manager",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Actuarial Analysis",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Manager",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "250 - 499",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Supervisor",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Employee Benefits Broker/Consultant",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "100 - 249",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "50 - 99",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Employee",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Financial Analysis/Research",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Insurance - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Individual Contributor",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "25 - 49",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "10 - 24",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Owner",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Independent Insurance Agent",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "5 - 9",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Insurance Brokerage",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Investment Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "1 - 4",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Planning/Advising",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Policy Underwriting",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Risk Management/Compliance",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Senior Management",
+          "type": "standard"
+        }
+      ],
+      "targeted": [
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "C-Level",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Financial Planning/Advising",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Finance - Financial (General)",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "50,000+",
           "type": "standard"
         },
         {
@@ -2807,8 +2807,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior VP",
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Financial Product Sales/Brokerage",
           "type": "standard"
         },
         {
@@ -2819,26 +2819,26 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Investment Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
           "category": "Number of Employees",
           "label": "10,000 - 19,999",
           "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Registered Investment Advisor",
+          "category": "Job Level",
+          "label": "Senior VP",
           "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "5,000 - 9,999",
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Investment Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Registered Investment Advisor",
           "type": "standard"
         },
         {
@@ -2856,13 +2856,19 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Number of Employees",
-          "label": "2,500 - 4,999",
+          "label": "5,000 - 9,999",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Finance/Accounting - Registered Rep",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "2,500 - 4,999",
           "type": "standard"
         },
         {
@@ -2885,12 +2891,6 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Securities Analysis/Research",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
           "category": "Industry/Sub-Industry",
           "label": "Insurance - Life",
           "type": "optional"
@@ -2904,8 +2904,8 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Senior Management",
-          "type": "standard"
+          "label": "Finance/Accounting - Securities Analysis/Research",
+          "type": "optional"
         },
         {
           "subAudience": null,
@@ -2921,8 +2921,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "250 - 499",
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Senior Management",
           "type": "standard"
         },
         {
@@ -2936,6 +2936,12 @@ const BRANDS = [
           "category": "Job Level",
           "label": "Manager",
           "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "250 - 499",
+          "type": "standard"
         },
         {
           "subAudience": null,
@@ -2963,14 +2969,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Financial Analysis/Research",
+          "category": "Job Level",
+          "label": "Senior Employee",
           "type": "optional"
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior Employee",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Financial Analysis/Research",
           "type": "optional"
         },
         {
@@ -3073,23 +3079,35 @@ const BRANDS = [
     ],
     "customQuestions": {},
     "filterOverrides": {
-      "targeted": [
+      "reach": [
         {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "50,000+",
-          "type": "optional"
+          "subAudience": "Agents & Brokers",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Automotive",
+          "type": "standard"
         },
         {
-          "subAudience": "Claims",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Agriculture",
-          "type": "optional"
+          "subAudience": "Agents & Brokers",
+          "category": "Number of Employees",
+          "label": "50,000+",
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "C-Level",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CCO/Chief Compliance Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Automotive",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "50,000+",
           "type": "standard"
         },
         {
@@ -3100,20 +3118,14 @@ const BRANDS = [
         },
         {
           "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "50,000+",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Automotive",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
           "category": "Job Level",
           "label": "C-Level",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CCO/Chief Compliance Officer",
           "type": "standard"
         },
         {
@@ -3123,13 +3135,49 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
+          "subAudience": "Claims",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Agriculture",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
           "category": "Number of Employees",
           "label": "50,000+",
           "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "C-Level",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "Executive VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "Executive VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
           "category": "Industry/Sub-Industry",
           "label": "Insurance - Automotive",
           "type": "standard"
@@ -3137,13 +3185,13 @@ const BRANDS = [
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
-          "label": "Executives - CCO/Chief Compliance Officer",
-          "type": "optional"
+          "label": "Executives - CDO/Chief Data Officer",
+          "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CCO/Chief Compliance Officer",
+          "subAudience": "Agents & Brokers",
+          "category": "Job Level",
+          "label": "Executive VP",
           "type": "standard"
         },
         {
@@ -3154,36 +3202,6 @@ const BRANDS = [
         },
         {
           "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Executive VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Insurance General",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "Executive VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "20,000 - 49,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CDO/Chief Data Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
           "category": "Industry/Sub-Industry",
           "label": "Insurance - Insurance General",
           "type": "standard"
@@ -3195,69 +3213,33 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "20,000 - 49,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Automotive",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Level",
-          "label": "Executive VP",
-          "type": "standard"
-        },
-        {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Executives - CDO/Chief Data Officer",
           "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Senior VP",
+          "subAudience": "Agents & Brokers",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Insurance General",
           "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "10,000 - 19,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Life",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Level",
-          "label": "Senior VP",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CEO",
           "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "10,000 - 19,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Health",
-          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "Senior VP",
+          "category": "Number of Employees",
+          "label": "10,000 - 19,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "10,000 - 19,999",
           "type": "standard"
         },
         {
@@ -3267,10 +3249,46 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Agents & Brokers",
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CEO",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Life",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "Senior VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "Senior VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Health",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
           "category": "Number of Employees",
           "label": "10,000 - 19,999",
-          "type": "optional"
+          "type": "standard"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Job Level",
+          "label": "Senior VP",
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
@@ -3279,15 +3297,57 @@ const BRANDS = [
           "type": "standard"
         },
         {
+          "subAudience": "Agents & Brokers",
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Job Level",
+          "label": "VP",
+          "type": "standard"
+        },
+        {
           "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CEO",
-          "type": "optional"
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Insurance General",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Property & Casualty",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "VP",
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
-          "label": "Executives - CEO",
+          "label": "Executives - CFO/Chief Financial Officer",
           "type": "standard"
         },
         {
@@ -3297,76 +3357,22 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "5,000 - 9,999",
-          "type": "optional"
-        },
-        {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Executives - CFO/Chief Financial Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "VP",
           "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "5,000 - 9,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Property & Casualty",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CFO/Chief Financial Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "5,000 - 9,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Insurance General",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Level",
-          "label": "VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Life",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
           "category": "Number of Employees",
           "label": "2,500 - 4,999",
-          "type": "optional"
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "Senior Director",
+          "type": "standard"
         },
         {
           "subAudience": "Claims",
@@ -3375,22 +3381,34 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CHRO/Chief Human Resource Officer",
-          "type": "optional"
+          "subAudience": "Agents & Brokers",
+          "category": "Job Level",
+          "label": "Senior Director",
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Number of Employees",
           "label": "2,500 - 4,999",
-          "type": "optional"
+          "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
+          "subAudience": "Claims",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Life",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
           "category": "Number of Employees",
           "label": "2,500 - 4,999",
-          "type": "optional"
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CHRO/Chief Human Resource Officer",
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
@@ -3400,26 +3418,14 @@ const BRANDS = [
         },
         {
           "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Senior Director",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Chairman",
           "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "Senior Director",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - Chairman",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Level",
-          "label": "Director",
+          "category": "Number of Employees",
+          "label": "1,000 - 2,499",
           "type": "standard"
         },
         {
@@ -3435,28 +3441,16 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CIO/Chief Information Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "1,000 - 2,499",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "1,000 - 2,499",
-          "type": "optional"
-        },
-        {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Executives - CHRO/Chief Human Resource Officer",
-          "type": "optional"
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "1,000 - 2,499",
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
@@ -3466,14 +3460,74 @@ const BRANDS = [
         },
         {
           "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CIO/Chief Information Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
           "category": "Number of Employees",
           "label": "1,000 - 2,499",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Claims",
           "category": "Industry/Sub-Industry",
           "label": "Insurance - Property & Casualty",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "500 - 999",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "Senior Manager",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "Senior Manager",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CISO/Chief Information Security Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "500 - 999",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Principal",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Number of Employees",
+          "label": "500 - 999",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Job Level",
+          "label": "Senior Manager",
           "type": "standard"
         },
         {
@@ -3484,99 +3538,33 @@ const BRANDS = [
         },
         {
           "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Senior Manager",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
           "category": "Number of Employees",
-          "label": "500 - 999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Executives - Principal",
+          "label": "250 - 499",
           "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "500 - 999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "500 - 999",
-          "type": "optional"
-        },
-        {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
-          "label": "Executives - CISO/Chief Information Security Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "Senior Manager",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Level",
-          "label": "Senior Manager",
+          "label": "Executives - CLO/Chief Learning Office",
           "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Level",
           "label": "Manager",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CISO/Chief Information Security Officer",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
           "label": "Executives - Proprietor",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "250 - 499",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "250 - 499",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
           "category": "Job Area/Job Function",
-          "label": "Executives - CLO/Chief Learning Office",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "Manager",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "250 - 499",
-          "type": "optional"
+          "label": "Executives - CISO/Chief Information Security Officer",
+          "type": "standard"
         },
         {
           "subAudience": "Claims",
@@ -3585,76 +3573,88 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CLO/Chief Learning Office",
-          "type": "optional"
-        },
-        {
           "subAudience": "Claims",
-          "category": "Job Level",
-          "label": "Supervisor",
-          "type": "optional"
+          "category": "Number of Employees",
+          "label": "250 - 499",
+          "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Supervisor",
-          "type": "optional"
+          "subAudience": "Agents & Brokers",
+          "category": "Number of Employees",
+          "label": "250 - 499",
+          "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
+          "subAudience": "Agents & Brokers",
+          "category": "Job Level",
+          "label": "Manager",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Agents & Brokers",
           "category": "Number of Employees",
           "label": "100 - 249",
-          "type": "optional"
+          "type": "standard"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Job Level",
+          "label": "Supervisor",
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
           "label": "Executives - Senior Management",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "100 - 249",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "Supervisor",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CMO/Chief Marketing Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "100 - 249",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Level",
-          "label": "Senior Employee",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
+          "label": "Executives - CLO/Chief Learning Office",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "Supervisor",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
           "label": "Executives - CMO/Chief Marketing Officer",
-          "type": "optional"
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "100 - 249",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "Supervisor",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "100 - 249",
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Number of Employees",
           "label": "50 - 99",
-          "type": "optional"
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "Senior Employee",
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
@@ -3663,70 +3663,52 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Senior Employee",
-          "type": "optional"
-        },
-        {
           "subAudience": "Agents & Brokers",
           "category": "Number of Employees",
           "label": "50 - 99",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Level",
           "label": "Senior Employee",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "50 - 99",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Executives - COO/Chief Operations Officer",
-          "type": "optional"
+          "type": "standard"
         },
         {
-          "subAudience": "Claims",
+          "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
-          "label": "Executives - CPO/Chief People Officer",
-          "type": "optional"
+          "label": "Executives - CMO/Chief Marketing Officer",
+          "type": "standard"
         },
         {
           "subAudience": "Claims",
           "category": "Number of Employees",
-          "label": "25 - 49",
-          "type": "optional"
+          "label": "50 - 99",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "Senior Employee",
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Number of Employees",
           "label": "25 - 49",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Level",
           "label": "Individual Contributor",
           "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Individual Contributor",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "25 - 49",
-          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
@@ -3735,6 +3717,18 @@ const BRANDS = [
           "type": "standard"
         },
         {
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "Individual Contributor",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "25 - 49",
+          "type": "standard"
+        },
+        {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Executives - COO/Chief Operations Officer",
@@ -3742,24 +3736,30 @@ const BRANDS = [
         },
         {
           "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CPO/Chief People Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
           "category": "Job Level",
           "label": "Individual Contributor",
-          "type": "optional"
+          "type": "standard"
         },
         {
-          "subAudience": "Agents & Brokers",
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "25 - 49",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
           "category": "Number of Employees",
           "label": "10 - 24",
-          "type": "optional"
+          "type": "standard"
         },
         {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "10 - 24",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
+          "subAudience": "Entire PC360 Audience",
           "category": "Job Level",
           "label": "Owner",
           "type": "standard"
@@ -3768,19 +3768,7 @@ const BRANDS = [
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Executives - CSO/Chief Security Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Owner",
           "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "10 - 24",
-          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
@@ -3789,10 +3777,28 @@ const BRANDS = [
           "type": "standard"
         },
         {
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "10 - 24",
+          "type": "standard"
+        },
+        {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Executives - CPO/Chief People Officer",
-          "type": "optional"
+          "type": "standard"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Number of Employees",
+          "label": "10 - 24",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "Owner",
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
@@ -3801,22 +3807,46 @@ const BRANDS = [
           "type": "standard"
         },
         {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CSO/Chief Security Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CTO/Chief Technology Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "5 - 9",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "Consultant",
+          "type": "standard"
+        },
+        {
           "subAudience": "Agents & Brokers",
           "category": "Number of Employees",
           "label": "5 - 9",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
           "label": "Insurance - Policy Underwriting",
-          "type": "optional"
+          "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CSO/Chief Security Officer",
-          "type": "optional"
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "5 - 9",
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
@@ -3825,57 +3855,33 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "5 - 9",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Consultant",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "5 - 9",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CTO/Chief Technology Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CTO/Chief Technology Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - General Manager",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
+          "subAudience": "Agents & Brokers",
           "category": "Number of Employees",
           "label": "1 - 4",
-          "type": "optional"
+          "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "1 - 4",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
+          "subAudience": "Agents & Brokers",
           "category": "Job Level",
           "label": "Contractor",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "1 - 4",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CTO/Chief Technology Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "1 - 4",
           "type": "standard"
         },
         {
@@ -3885,88 +3891,94 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Agents & Brokers",
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - General Manager",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
           "category": "Job Level",
           "label": "Contractor",
           "type": "standard"
         },
         {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "1 - 4",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - General Manager",
-          "type": "optional"
-        },
-        {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Executives - Other CXO",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
           "label": "Sales - Business Development",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - President",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
-          "label": "Executives - Other CXO",
-          "type": "optional"
+          "label": "Executives - General Manager",
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
           "label": "Sales - Field Service",
-          "type": "optional"
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - President",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Other CXO",
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
           "label": "Sales - General Management",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Executives - Owner/Co-owner",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Executives - Senior Management",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Actuarial Analysis",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Executives - Partner",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
           "label": "Sales - Product Sales",
-          "type": "optional"
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Actuarial Analysis",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - President",
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
@@ -3975,51 +3987,45 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - President",
-          "type": "standard"
-        },
-        {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Insurance - Appraiser",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - Principal",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Audit",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
           "label": "Sales - Sales Operations",
-          "type": "optional"
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Principal",
+          "type": "standard"
         },
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
-          "label": "Insurance - Bookkeeping",
-          "type": "optional"
+          "label": "Insurance - Audit",
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Executives - Proprietor",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
           "label": "Sales - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Bookkeeping",
           "type": "standard"
         },
         {
@@ -4038,66 +4044,60 @@ const BRANDS = [
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Executives - Treasurer",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Insurance - Financial Analysis/Research",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - General Management",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Insurance - Actuarial Analysis",
-          "type": "optional"
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - General Management",
+          "type": "standard"
         },
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Insurance - Investment Management",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Insurance - Appraiser",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Insurance - Policy Underwriting",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Insurance - Audit",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Insurance - Bookkeeping",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Insurance - Risk Management/Compliance",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Senior Management",
           "type": "standard"
         },
         {
@@ -4109,25 +4109,31 @@ const BRANDS = [
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
-          "label": "IT/Computers/Electronics - Business Intelligence/Data Science",
+          "label": "Insurance - Senior Management",
           "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Insurance - Financial Analysis/Research",
-          "type": "optional"
+          "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
+          "subAudience": "Claims",
           "category": "Job Area/Job Function",
-          "label": "Insurance - General Management",
-          "type": "optional"
+          "label": "IT/Computers/Electronics - Business Intelligence/Data Science",
+          "type": "standard"
         },
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "IT/Computers/Electronics - IT Infrastructure",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - General Management",
           "type": "standard"
         },
         {
@@ -4152,13 +4158,13 @@ const BRANDS = [
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Insurance - Investment Management",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Insurance - Planning/Advising",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
@@ -4188,37 +4194,37 @@ const BRANDS = [
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Sales - Business Development",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Sales - Field Service",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Sales - General Management",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Sales - International Sales",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Sales - Media/Advertising Sales",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Sales - Product Sales",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
@@ -4230,7 +4236,7 @@ const BRANDS = [
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Sales - Sales Operations",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
@@ -4242,93 +4248,75 @@ const BRANDS = [
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Sales - Telesales",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Finance/Accounting - Controller",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Finance/Accounting - Financial Analysis/Research",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Finance/Accounting - Financial Control",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Finance/Accounting - Financial Planning/Advising",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "IT/Computers/Electronics - Business Intelligence/Data Science",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "IT/Computers/Electronics - Cyber Security/Information Security",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "IT/Computers/Electronics - IT Infrastructure",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "IT/Computers/Electronics - Software Development",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "IT/Computers/Electronics - Senior Management",
-          "type": "optional"
+          "type": "standard"
         }
       ],
       "precision": [
         {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CCO/Chief Compliance Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "50,000+",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
+          "subAudience": "Agents & Brokers",
           "category": "Industry/Sub-Industry",
           "label": "Insurance - Automotive",
           "type": "optional"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "C-Level",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CCO/Chief Compliance Officer",
-          "type": "standard"
+          "subAudience": "Agents & Brokers",
+          "category": "Number of Employees",
+          "label": "50,000+",
+          "type": "optional"
         },
         {
           "subAudience": "Claims",
@@ -4338,33 +4326,45 @@ const BRANDS = [
         },
         {
           "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "50,000+",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "50,000+",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "C-Level",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Automotive",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CCO/Chief Compliance Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
           "category": "Job Level",
           "label": "C-Level",
           "type": "standard"
         },
         {
           "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "50,000+",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CCO/Chief Compliance Officer",
           "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Automotive",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "50,000+",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "C-Level",
-          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
@@ -4373,52 +4373,10 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CDO/Chief Data Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Automotive",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
+          "subAudience": "Agents & Brokers",
           "category": "Job Level",
-          "label": "Executive VP",
+          "label": "C-Level",
           "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "20,000 - 49,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "20,000 - 49,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CDO/Chief Data Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Executive VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Insurance General",
-          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
@@ -4433,10 +4391,52 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Agents & Brokers",
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CDO/Chief Data Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "Executive VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CDO/Chief Data Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Insurance General",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Automotive",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
           "category": "Number of Employees",
           "label": "20,000 - 49,999",
           "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "Executive VP",
+          "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
@@ -4447,25 +4447,19 @@ const BRANDS = [
         {
           "subAudience": "Agents & Brokers",
           "category": "Number of Employees",
-          "label": "10,000 - 19,999",
+          "label": "20,000 - 49,999",
           "type": "optional"
         },
         {
-          "subAudience": "Agents & Brokers",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Property & Casualty",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
+          "subAudience": "Claims",
           "category": "Job Level",
           "label": "Senior VP",
           "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Life",
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CEO",
           "type": "optional"
         },
         {
@@ -4482,30 +4476,18 @@ const BRANDS = [
         },
         {
           "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CEO",
-          "type": "standard"
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Life",
+          "type": "optional"
         },
         {
-          "subAudience": "Claims",
+          "subAudience": "Entire PC360 Audience",
           "category": "Number of Employees",
           "label": "10,000 - 19,999",
           "type": "optional"
         },
         {
           "subAudience": "Claims",
-          "category": "Job Level",
-          "label": "Senior VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CEO",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
           "category": "Number of Employees",
           "label": "10,000 - 19,999",
           "type": "optional"
@@ -4517,40 +4499,28 @@ const BRANDS = [
           "type": "optional"
         },
         {
+          "subAudience": "Agents & Brokers",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Property & Casualty",
+          "type": "standard"
+        },
+        {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Level",
-          "label": "VP",
+          "label": "Senior VP",
           "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
+          "category": "Number of Employees",
+          "label": "10,000 - 19,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
-          "label": "Executives - Managing Partner",
+          "label": "Executives - CEO",
           "type": "standard"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "5,000 - 9,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "5,000 - 9,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Level",
-          "label": "VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Insurance General",
-          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
@@ -4560,9 +4530,9 @@ const BRANDS = [
         },
         {
           "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "VP",
-          "type": "standard"
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
@@ -4577,6 +4547,12 @@ const BRANDS = [
           "type": "optional"
         },
         {
+          "subAudience": "Agents & Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Managing Partner",
+          "type": "standard"
+        },
+        {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Executives - CFO/Chief Financial Officer",
@@ -4584,30 +4560,36 @@ const BRANDS = [
         },
         {
           "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CHRO/Chief Human Resource Officer",
-          "type": "optional"
+          "category": "Job Level",
+          "label": "VP",
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "2,500 - 4,999",
-          "type": "optional"
+          "category": "Job Level",
+          "label": "VP",
+          "type": "standard"
         },
         {
-          "subAudience": "Claims",
+          "subAudience": "Agents & Brokers",
           "category": "Job Level",
-          "label": "Senior Director",
+          "label": "VP",
           "type": "standard"
         },
         {
           "subAudience": "Claims",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Life",
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
           "type": "optional"
         },
         {
           "subAudience": "Claims",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Insurance General",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Agents & Brokers",
           "category": "Number of Employees",
           "label": "2,500 - 4,999",
           "type": "optional"
@@ -4619,15 +4601,15 @@ const BRANDS = [
           "type": "optional"
         },
         {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "Senior Director",
-          "type": "standard"
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "2,500 - 4,999",
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Executives - Partner",
+          "category": "Job Level",
+          "label": "Senior Director",
           "type": "standard"
         },
         {
@@ -4637,19 +4619,61 @@ const BRANDS = [
           "type": "standard"
         },
         {
+          "subAudience": "Claims",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Life",
+          "type": "optional"
+        },
+        {
           "subAudience": "Agents & Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Partner",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
           "category": "Number of Employees",
           "label": "2,500 - 4,999",
           "type": "optional"
         },
         {
           "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CHRO/Chief Human Resource Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "Senior Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Executives - President",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
           "category": "Number of Employees",
           "label": "1,000 - 2,499",
           "type": "optional"
         },
         {
-          "subAudience": "Claims",
+          "subAudience": "Agents & Brokers",
+          "category": "Number of Employees",
+          "label": "1,000 - 2,499",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Job Level",
+          "label": "Director",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
           "category": "Job Level",
           "label": "Director",
           "type": "standard"
@@ -4661,27 +4685,15 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CHRO/Chief Human Resource Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "Director",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
+          "subAudience": "Claims",
           "category": "Number of Employees",
           "label": "1,000 - 2,499",
           "type": "optional"
         },
         {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Executives - President",
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "Director",
           "type": "standard"
         },
         {
@@ -4692,20 +4704,20 @@ const BRANDS = [
         },
         {
           "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "1,000 - 2,499",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CHRO/Chief Human Resource Officer",
           "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Director",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CIO/Chief Information Officer",
           "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Senior Manager",
+          "category": "Number of Employees",
+          "label": "500 - 999",
           "type": "optional"
         },
         {
@@ -4716,9 +4728,15 @@ const BRANDS = [
         },
         {
           "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CIO/Chief Information Officer",
-          "type": "standard"
+          "category": "Job Level",
+          "label": "Senior Manager",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "Senior Manager",
+          "type": "optional"
         },
         {
           "subAudience": "Claims",
@@ -4728,14 +4746,14 @@ const BRANDS = [
         },
         {
           "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "Senior Manager",
+          "category": "Number of Employees",
+          "label": "500 - 999",
           "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "500 - 999",
+          "category": "Job Level",
+          "label": "Senior Manager",
           "type": "optional"
         },
         {
@@ -4746,20 +4764,20 @@ const BRANDS = [
         },
         {
           "subAudience": "Claims",
-          "category": "Job Level",
-          "label": "Senior Manager",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CLO/Chief Learning Office",
           "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "500 - 999",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CISO/Chief Information Security Officer",
           "type": "optional"
         },
         {
           "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CLO/Chief Learning Office",
+          "category": "Job Level",
+          "label": "Manager",
           "type": "optional"
         },
         {
@@ -4769,9 +4787,21 @@ const BRANDS = [
           "type": "optional"
         },
         {
+          "subAudience": "Agents & Brokers",
+          "category": "Job Level",
+          "label": "Manager",
+          "type": "optional"
+        },
+        {
           "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CISO/Chief Information Security Officer",
+          "category": "Number of Employees",
+          "label": "250 - 499",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "250 - 499",
           "type": "optional"
         },
         {
@@ -4788,32 +4818,50 @@ const BRANDS = [
         },
         {
           "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "Manager",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Senior Management",
           "type": "optional"
         },
         {
-          "subAudience": "Claims",
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "Supervisor",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Agents & Brokers",
           "category": "Number of Employees",
-          "label": "250 - 499",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Level",
-          "label": "Manager",
+          "label": "100 - 249",
           "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Number of Employees",
-          "label": "250 - 499",
+          "label": "100 - 249",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Job Level",
+          "label": "Supervisor",
           "type": "optional"
         },
         {
           "subAudience": "Claims",
           "category": "Number of Employees",
           "label": "100 - 249",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "Supervisor",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CMO/Chief Marketing Officer",
           "type": "optional"
         },
         {
@@ -4824,60 +4872,12 @@ const BRANDS = [
         },
         {
           "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Supervisor",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "100 - 249",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "100 - 249",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "Supervisor",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Executives - Senior Management",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Level",
-          "label": "Supervisor",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CMO/Chief Marketing Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
           "category": "Number of Employees",
           "label": "50 - 99",
           "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CMO/Chief Marketing Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
           "category": "Job Level",
           "label": "Senior Employee",
           "type": "optional"
@@ -4889,69 +4889,39 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "50 - 99",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "50 - 99",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Senior Employee",
-          "type": "optional"
-        },
-        {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Executives - COO/Chief Operations Officer",
           "type": "optional"
         },
         {
-          "subAudience": "Claims",
+          "subAudience": "Agents & Brokers",
+          "category": "Number of Employees",
+          "label": "50 - 99",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Agents & Brokers",
           "category": "Job Level",
           "label": "Senior Employee",
           "type": "optional"
         },
         {
-          "subAudience": "Claims",
+          "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
-          "label": "Executives - CPO/Chief People Officer",
+          "label": "Executives - CMO/Chief Marketing Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "50 - 99",
           "type": "optional"
         },
         {
           "subAudience": "Claims",
           "category": "Job Level",
-          "label": "Individual Contributor",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Individual Contributor",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - COO/Chief Operations Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "25 - 49",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "25 - 49",
+          "label": "Senior Employee",
           "type": "optional"
         },
         {
@@ -4961,7 +4931,43 @@ const BRANDS = [
           "type": "optional"
         },
         {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "Individual Contributor",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "25 - 49",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - COO/Chief Operations Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CPO/Chief People Officer",
+          "type": "optional"
+        },
+        {
           "subAudience": "Agents & Brokers",
+          "category": "Job Level",
+          "label": "Individual Contributor",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Number of Employees",
+          "label": "25 - 49",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
           "category": "Job Level",
           "label": "Individual Contributor",
           "type": "optional"
@@ -4973,13 +4979,25 @@ const BRANDS = [
           "type": "optional"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CPO/Chief People Officer",
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "Owner",
           "type": "optional"
         },
         {
-          "subAudience": "Entire PC360 Audience",
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "10 - 24",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Job Level",
+          "label": "Owner",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Agents & Brokers",
           "category": "Number of Employees",
           "label": "10 - 24",
           "type": "optional"
@@ -4991,13 +5009,19 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Agents & Brokers",
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CPO/Chief People Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
           "category": "Number of Employees",
           "label": "10 - 24",
           "type": "optional"
         },
         {
-          "subAudience": "Claims",
+          "subAudience": "Entire PC360 Audience",
           "category": "Job Level",
           "label": "Owner",
           "type": "optional"
@@ -5009,27 +5033,33 @@ const BRANDS = [
           "type": "optional"
         },
         {
-          "subAudience": "Claims",
+          "subAudience": "Agents & Brokers",
           "category": "Number of Employees",
-          "label": "10 - 24",
+          "label": "5 - 9",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "5 - 9",
           "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Level",
-          "label": "Owner",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Owner",
+          "label": "Consultant",
           "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Level",
           "label": "Consultant",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CSO/Chief Security Officer",
           "type": "optional"
         },
         {
@@ -5039,39 +5069,21 @@ const BRANDS = [
           "type": "optional"
         },
         {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "Consultant",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "5 - 9",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "5 - 9",
-          "type": "optional"
-        },
-        {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Executives - CTO/Chief Technology Officer",
           "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CSO/Chief Security Officer",
-          "type": "optional"
-        },
-        {
           "subAudience": "Claims",
           "category": "Number of Employees",
           "label": "5 - 9",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "Contractor",
           "type": "optional"
         },
         {
@@ -5081,12 +5093,6 @@ const BRANDS = [
           "type": "optional"
         },
         {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "1 - 4",
-          "type": "optional"
-        },
-        {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Executives - CTO/Chief Technology Officer",
@@ -5094,8 +5100,8 @@ const BRANDS = [
         },
         {
           "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Contractor",
+          "category": "Number of Employees",
+          "label": "1 - 4",
           "type": "optional"
         },
         {
@@ -5117,7 +5123,7 @@ const BRANDS = [
           "type": "optional"
         },
         {
-          "subAudience": "Entire PC360 Audience",
+          "subAudience": "Claims",
           "category": "Number of Employees",
           "label": "1 - 4",
           "type": "optional"
@@ -5129,19 +5135,13 @@ const BRANDS = [
           "type": "optional"
         },
         {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - Other CXO",
-          "type": "optional"
-        },
-        {
           "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
           "label": "Sales - Business Development",
           "type": "optional"
         },
         {
-          "subAudience": "Entire PC360 Audience",
+          "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Executives - Other CXO",
           "type": "optional"
@@ -5153,9 +5153,21 @@ const BRANDS = [
           "type": "optional"
         },
         {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Other CXO",
+          "type": "optional"
+        },
+        {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Executives - President",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Owner/Co-owner",
           "type": "optional"
         },
         {
@@ -5173,25 +5185,19 @@ const BRANDS = [
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
-          "label": "Executives - Owner/Co-owner",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
           "label": "Executives - Partner",
-          "type": "optional"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Sales - Product Sales",
           "type": "optional"
         },
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Insurance - Actuarial Analysis",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Sales - Product Sales",
           "type": "optional"
         },
         {
@@ -5231,9 +5237,9 @@ const BRANDS = [
           "type": "optional"
         },
         {
-          "subAudience": "Agents & Brokers",
+          "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
-          "label": "Sales - Senior Management",
+          "label": "Executives - Proprietor",
           "type": "optional"
         },
         {
@@ -5243,16 +5249,10 @@ const BRANDS = [
           "type": "optional"
         },
         {
-          "subAudience": "Entire PC360 Audience",
+          "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
-          "label": "Executives - Proprietor",
+          "label": "Sales - Senior Management",
           "type": "optional"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Claims Review/Adjusting",
-          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
@@ -5263,8 +5263,8 @@ const BRANDS = [
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
-          "label": "Insurance - Financial Analysis/Research",
-          "type": "optional"
+          "label": "Insurance - Claims Review/Adjusting",
+          "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
@@ -5275,13 +5275,19 @@ const BRANDS = [
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
-          "label": "Insurance - General Management",
+          "label": "Insurance - Financial Analysis/Research",
           "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Insurance - Actuarial Analysis",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - General Management",
           "type": "optional"
         },
         {
@@ -5297,15 +5303,15 @@ const BRANDS = [
           "type": "optional"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Audit",
-          "type": "optional"
-        },
-        {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Insurance - Policy Underwriting",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Audit",
           "type": "optional"
         },
         {
@@ -5321,15 +5327,15 @@ const BRANDS = [
           "type": "optional"
         },
         {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Senior Management",
-          "type": "standard"
-        },
-        {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Insurance - Claims Review/Adjusting",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Senior Management",
           "type": "standard"
         },
         {
@@ -5345,27 +5351,27 @@ const BRANDS = [
           "type": "optional"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - General Management",
-          "type": "optional"
-        },
-        {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "IT/Computers/Electronics - IT Infrastructure",
           "type": "optional"
         },
         {
-          "subAudience": "Claims",
+          "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
-          "label": "IT/Computers/Electronics - Senior Management",
-          "type": "standard"
+          "label": "Insurance - General Management",
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Insurance - Independent Insurance Agent",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Senior Management",
           "type": "standard"
         },
         {
@@ -5525,7 +5531,55 @@ const BRANDS = [
           "type": "optional"
         }
       ],
-      "reach": [
+      "targeted": [
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CCO/Chief Compliance Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CCO/Chief Compliance Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "C-Level",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "C-Level",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Automotive",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "50,000+",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Agriculture",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "50,000+",
+          "type": "optional"
+        },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
@@ -5542,97 +5596,25 @@ const BRANDS = [
           "subAudience": "Agents & Brokers",
           "category": "Industry/Sub-Industry",
           "label": "Insurance - Automotive",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Number of Employees",
           "label": "50,000+",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Automotive",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "50,000+",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "50,000+",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Agriculture",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "C-Level",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CCO/Chief Compliance Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Level",
-          "label": "C-Level",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CCO/Chief Compliance Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "20,000 - 49,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "20,000 - 49,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Insurance General",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Automotive",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "20,000 - 49,999",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Industry/Sub-Industry",
           "label": "Insurance - Insurance General",
           "type": "standard"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
@@ -5647,15 +5629,21 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CDO/Chief Data Officer",
+          "subAudience": "Claims",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Automotive",
           "type": "standard"
         },
         {
           "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CDO/Chief Data Officer",
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
           "type": "standard"
         },
         {
@@ -5665,141 +5653,99 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Claims",
-          "category": "Job Level",
-          "label": "Executive VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Level",
-          "label": "Senior VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "Senior VP",
-          "type": "standard"
-        },
-        {
           "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CEO",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "10,000 - 19,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Property & Casualty",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Senior VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CEO",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Executives - Owner/Co-owner",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Health",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "10,000 - 19,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "10,000 - 19,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Life",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "5,000 - 9,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CFO/Chief Financial Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CFO/Chief Financial Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Property & Casualty",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "5,000 - 9,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
           "category": "Industry/Sub-Industry",
           "label": "Insurance - Insurance General",
           "type": "standard"
         },
         {
           "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CDO/Chief Data Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CDO/Chief Data Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
           "category": "Job Level",
-          "label": "VP",
+          "label": "Executive VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "10,000 - 19,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Property & Casualty",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Number of Employees",
+          "label": "10,000 - 19,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Job Level",
+          "label": "Senior VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Health",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "Senior VP",
           "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "VP",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CEO",
           "type": "standard"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Number of Employees",
-          "label": "5,000 - 9,999",
+          "label": "10,000 - 19,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "Senior VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Life",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CEO",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Owner/Co-owner",
           "type": "standard"
         },
         {
@@ -5809,10 +5755,88 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Agents & Brokers",
+          "subAudience": "Claims",
           "category": "Job Area/Job Function",
-          "label": "Executives - Partner",
+          "label": "Executives - CFO/Chief Financial Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Property & Casualty",
           "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CFO/Chief Financial Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Job Level",
+          "label": "VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Insurance General",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "Senior Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "2,500 - 4,999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Chairman",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CHRO/Chief Human Resource Officer",
+          "type": "optional"
         },
         {
           "subAudience": "Claims",
@@ -5824,19 +5848,13 @@ const BRANDS = [
           "subAudience": "Claims",
           "category": "Industry/Sub-Industry",
           "label": "Insurance - Life",
-          "type": "standard"
+          "type": "optional"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Senior Director",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
+          "subAudience": "Agents & Brokers",
           "category": "Number of Employees",
           "label": "2,500 - 4,999",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
@@ -5846,48 +5864,54 @@ const BRANDS = [
         },
         {
           "subAudience": "Agents & Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Partner",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
           "category": "Number of Employees",
           "label": "2,500 - 4,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "2,500 - 4,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CHRO/Chief Human Resource Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - Chairman",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "1,000 - 2,499",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Number of Employees",
           "label": "1,000 - 2,499",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "1,000 - 2,499",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance - Property & Casualty",
           "type": "standard"
         },
         {
-          "subAudience": "Agents & Brokers",
+          "subAudience": "Claims",
           "category": "Job Level",
           "label": "Director",
           "type": "standard"
         },
         {
-          "subAudience": "Claims",
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CHRO/Chief Human Resource Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "1,000 - 2,499",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
           "category": "Job Level",
           "label": "Director",
           "type": "standard"
@@ -5899,27 +5923,9 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CHRO/Chief Human Resource Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance - Property & Casualty",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
+          "subAudience": "Agents & Brokers",
           "category": "Job Level",
           "label": "Director",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "1,000 - 2,499",
           "type": "standard"
         },
         {
@@ -5929,28 +5935,22 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Agents & Brokers",
+          "subAudience": "Claims",
           "category": "Job Area/Job Function",
-          "label": "Executives - Principal",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Senior Manager",
-          "type": "standard"
+          "label": "Executives - CISO/Chief Information Security Officer",
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Number of Employees",
           "label": "500 - 999",
-          "type": "standard"
+          "type": "optional"
         },
         {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CISO/Chief Information Security Officer",
-          "type": "standard"
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "Senior Manager",
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
@@ -5960,171 +5960,147 @@ const BRANDS = [
         },
         {
           "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "500 - 999",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Agents & Brokers",
           "category": "Job Level",
           "label": "Senior Manager",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "500 - 999",
           "type": "standard"
         },
         {
           "subAudience": "Claims",
-          "category": "Job Level",
-          "label": "Senior Manager",
-          "type": "standard"
+          "category": "Number of Employees",
+          "label": "500 - 999",
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
+          "category": "Job Level",
+          "label": "Senior Manager",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Number of Employees",
+          "label": "500 - 999",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Principal",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CLO/Chief Learning Office",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "250 - 499",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
           "category": "Job Level",
           "label": "Manager",
           "type": "standard"
         },
         {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Area/Job Function",
-          "label": "Executives - Proprietor",
-          "type": "standard"
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "250 - 499",
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Executives - CISO/Chief Information Security Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "250 - 499",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Level",
           "label": "Manager",
-          "type": "standard"
+          "type": "optional"
         },
         {
-          "subAudience": "Claims",
+          "subAudience": "Agents & Brokers",
           "category": "Job Level",
           "label": "Manager",
-          "type": "standard"
+          "type": "optional"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Proprietor",
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Number of Employees",
           "label": "250 - 499",
-          "type": "standard"
+          "type": "optional"
         },
         {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CLO/Chief Learning Office",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "250 - 499",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
+          "subAudience": "Agents & Brokers",
           "category": "Number of Employees",
           "label": "100 - 249",
-          "type": "standard"
+          "type": "optional"
         },
         {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "100 - 249",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
+          "subAudience": "Agents & Brokers",
           "category": "Job Level",
           "label": "Supervisor",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Level",
-          "label": "Supervisor",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
           "label": "Executives - Senior Management",
-          "type": "standard"
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "100 - 249",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "Supervisor",
+          "type": "optional"
         },
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Executives - CMO/Chief Marketing Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "100 - 249",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "Supervisor",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Executives - CLO/Chief Learning Office",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Senior Employee",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Number of Employees",
-          "label": "50 - 99",
-          "type": "standard"
+          "label": "100 - 249",
+          "type": "optional"
         },
         {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "50 - 99",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "50 - 99",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
+          "subAudience": "Entire PC360 Audience",
           "category": "Job Level",
-          "label": "Senior Employee",
-          "type": "standard"
+          "label": "Supervisor",
+          "type": "optional"
         },
         {
-          "subAudience": "Claims",
+          "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
-          "label": "Executives - COO/Chief Operations Officer",
-          "type": "standard"
+          "label": "Executives - CMO/Chief Marketing Officer",
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
@@ -6134,21 +6110,63 @@ const BRANDS = [
         },
         {
           "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "Senior Employee",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CMO/Chief Marketing Officer",
-          "type": "standard"
+          "category": "Number of Employees",
+          "label": "50 - 99",
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Level",
+          "label": "Senior Employee",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "Senior Employee",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "50 - 99",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - COO/Chief Operations Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "50 - 99",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "Senior Employee",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "25 - 49",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Level",
           "label": "Individual Contributor",
-          "type": "standard"
+          "type": "optional"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Number of Employees",
+          "label": "25 - 49",
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
@@ -6157,28 +6175,28 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CPO/Chief People Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
+          "subAudience": "Agents & Brokers",
           "category": "Job Level",
           "label": "Individual Contributor",
           "type": "standard"
         },
         {
           "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CPO/Chief People Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
           "category": "Number of Employees",
           "label": "25 - 49",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Level",
           "label": "Individual Contributor",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
@@ -6187,21 +6205,15 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "25 - 49",
-          "type": "standard"
-        },
-        {
           "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "25 - 49",
-          "type": "standard"
+          "category": "Job Area/Job Function",
+          "label": "Executives - CPO/Chief People Officer",
+          "type": "optional"
         },
         {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CSO/Chief Security Officer",
+          "subAudience": "Agents & Brokers",
+          "category": "Job Level",
+          "label": "Owner",
           "type": "standard"
         },
         {
@@ -6211,52 +6223,82 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Agents & Brokers",
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "10 - 24",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CSO/Chief Security Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
           "category": "Job Level",
           "label": "Owner",
           "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "10 - 24",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Level",
+          "label": "Owner",
+          "type": "standard"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Number of Employees",
+          "label": "10 - 24",
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
-          "label": "Executives - CPO/Chief People Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Owner",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "10 - 24",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "10 - 24",
-          "type": "standard"
+          "label": "Executives - CSO/Chief Security Officer",
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "10 - 24",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
           "category": "Job Level",
-          "label": "Owner",
+          "label": "Consultant",
           "type": "standard"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
           "label": "Insurance - Policy Underwriting",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Number of Employees",
+          "label": "5 - 9",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Number of Employees",
+          "label": "5 - 9",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "Consultant",
           "type": "standard"
+        },
+        {
+          "subAudience": "Agents & Brokers",
+          "category": "Number of Employees",
+          "label": "5 - 9",
+          "type": "optional"
         },
         {
           "subAudience": "Claims",
@@ -6265,75 +6307,33 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Agents & Brokers",
-          "category": "Number of Employees",
-          "label": "5 - 9",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CSO/Chief Security Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Agents & Brokers",
-          "category": "Job Level",
-          "label": "Consultant",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Number of Employees",
-          "label": "5 - 9",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Consultant",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Number of Employees",
-          "label": "5 - 9",
-          "type": "standard"
-        },
-        {
           "subAudience": "Claims",
           "category": "Number of Employees",
           "label": "1 - 4",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Level",
+          "label": "Contractor",
           "type": "standard"
         },
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Executives - General Manager",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
-          "category": "Job Level",
-          "label": "Contractor",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Agents & Brokers",
           "category": "Number of Employees",
           "label": "1 - 4",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Level",
           "label": "Contractor",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - CTO/Chief Technology Officer",
           "type": "standard"
         },
         {
@@ -6343,82 +6343,88 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Entire PC360 Audience",
+          "subAudience": "Agents & Brokers",
           "category": "Number of Employees",
           "label": "1 - 4",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CTO/Chief Technology Officer",
           "type": "standard"
         },
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Executives - Other CXO",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
           "label": "Sales - Business Development",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Executives - General Manager",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Executives - President",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Executives - Other CXO",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
           "label": "Sales - Field Service",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
           "label": "Sales - General Management",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Executives - Senior Management",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Executives - Owner/Co-owner",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - Partner",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
           "label": "Sales - Product Sales",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Insurance - Actuarial Analysis",
-          "type": "standard"
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Partner",
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
@@ -6430,7 +6436,7 @@ const BRANDS = [
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Insurance - Appraiser",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
@@ -6439,40 +6445,40 @@ const BRANDS = [
           "type": "standard"
         },
         {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Audit",
-          "type": "standard"
-        },
-        {
           "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
           "label": "Sales - Sales Operations",
-          "type": "standard"
+          "type": "optional"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Audit",
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Executives - Principal",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Claims",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Bookkeeping",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Executives - Proprietor",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Agents & Brokers",
           "category": "Job Area/Job Function",
           "label": "Sales - Senior Management",
           "type": "standard"
+        },
+        {
+          "subAudience": "Claims",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Bookkeeping",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Proprietor",
+          "type": "optional"
         },
         {
           "subAudience": "Claims",
@@ -6490,60 +6496,66 @@ const BRANDS = [
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Insurance - Financial Analysis/Research",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Executives - Treasurer",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Insurance - Actuarial Analysis",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Insurance - General Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - Appraiser",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Insurance - Investment Management",
-          "type": "standard"
+          "type": "optional"
         },
         {
-          "subAudience": "Claims",
+          "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
-          "label": "Insurance - Policy Underwriting",
-          "type": "standard"
+          "label": "Insurance - Appraiser",
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Insurance - Audit",
-          "type": "standard"
+          "type": "optional"
         },
         {
-          "subAudience": "Entire PC360 Audience",
+          "subAudience": "Claims",
           "category": "Job Area/Job Function",
-          "label": "Insurance - Bookkeeping",
-          "type": "standard"
+          "label": "Insurance - Policy Underwriting",
+          "type": "optional"
         },
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "Insurance - Risk Management/Compliance",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Bookkeeping",
+          "type": "optional"
+        },
+        {
+          "subAudience": "Entire PC360 Audience",
+          "category": "Job Area/Job Function",
+          "label": "Insurance - Claims Review/Adjusting",
           "type": "standard"
         },
         {
@@ -6555,8 +6567,8 @@ const BRANDS = [
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
-          "label": "Insurance - Claims Review/Adjusting",
-          "type": "standard"
+          "label": "Insurance - Financial Analysis/Research",
+          "type": "optional"
         },
         {
           "subAudience": "Claims",
@@ -6567,19 +6579,13 @@ const BRANDS = [
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
-          "label": "Insurance - Financial Analysis/Research",
-          "type": "standard"
+          "label": "Insurance - General Management",
+          "type": "optional"
         },
         {
           "subAudience": "Claims",
           "category": "Job Area/Job Function",
           "label": "IT/Computers/Electronics - IT Infrastructure",
-          "type": "standard"
-        },
-        {
-          "subAudience": "Entire PC360 Audience",
-          "category": "Job Area/Job Function",
-          "label": "Insurance - General Management",
           "type": "standard"
         },
         {
@@ -6604,13 +6610,13 @@ const BRANDS = [
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Insurance - Investment Management",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Insurance - Planning/Advising",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
@@ -6640,37 +6646,37 @@ const BRANDS = [
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Sales - Business Development",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Sales - Field Service",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Sales - General Management",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Sales - International Sales",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Sales - Media/Advertising Sales",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Sales - Product Sales",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
@@ -6682,7 +6688,7 @@ const BRANDS = [
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Sales - Sales Operations",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
@@ -6694,61 +6700,61 @@ const BRANDS = [
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Sales - Telesales",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Finance/Accounting - Controller",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Finance/Accounting - Financial Analysis/Research",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Finance/Accounting - Financial Control",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "Finance/Accounting - Financial Planning/Advising",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "IT/Computers/Electronics - Business Intelligence/Data Science",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "IT/Computers/Electronics - Cyber Security/Information Security",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "IT/Computers/Electronics - IT Infrastructure",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "IT/Computers/Electronics - Software Development",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": "Entire PC360 Audience",
           "category": "Job Area/Job Function",
           "label": "IT/Computers/Electronics - Senior Management",
-          "type": "standard"
+          "type": "optional"
         }
       ]
     }
@@ -6764,6 +6770,7 @@ const BRANDS = [
         {
           "id": "cu-bank-asset-size",
           "question": "Credit Union / Bank Asset Size?",
+          "type": "optional",
           "standard": [
             "More than $10 billion (accepted)",
             "$4 billion - <$10 billion (accepted)",
@@ -6780,6 +6787,7 @@ const BRANDS = [
         {
           "id": "cu-bank-asset-size",
           "question": "Credit Union / Bank Asset Size?",
+          "type": "optional",
           "standard": [
             "More than $10 billion (accepted)",
             "$4 billion - <$10 billion (accepted)",
@@ -6794,662 +6802,6 @@ const BRANDS = [
       ]
     },
     "filterOverrides": {
-      "precision": [
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "50,000+",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Analyst",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "C-Level",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Finance - Accounting",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "20,000 - 49,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Audit",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Finance - Banking",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Executive VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Finance - Credit Unions",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Banking",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "10,000 - 19,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Finance - Financial (General)",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Branch Manager",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "5,000 - 9,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "2,500 - 4,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Finance - Financial Services",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior Director",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Broker",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Finance - Investment Banking/Venture",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "1,000 - 2,499",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Director",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Credit",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Finance - Investment Management",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "500 - 999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - General Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior Manager",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "250 - 499",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Lending",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Manager",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "100 - 249",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Supervisor",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Mergers/Acquisitions",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "50 - 99",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Senior Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior Employee",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Teller",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "25 - 49",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Owner",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Title/Escrow",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "10 - 24",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Underwriter",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "5 - 9",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - Board Member",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "1 - 4",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CCO/Chief Compliance Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CDO/Chief Data Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CEO",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CFO/Chief Financial Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CHRO/Chief Human Resource Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CIO/Chief Information Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CISO/Chief Information Security Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CLO/Chief Learning Office",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CMO/Chief Marketing Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - COO/Chief Operations Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CPO/Chief People Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CSO/Chief Security Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CTO/Chief Technology Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - General Manager",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - Other CXO",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - President",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - Senior Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Accounting",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Accounts Payable/Receivable",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Analyst",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Audit",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Bookkeeping",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Collections",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Controller",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Corporate",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Credit Review/Analysis",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Financial Analysis/Research",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Financial Control",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Financial Planning/Advising",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Financial Product Sales/Brokerage",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Fund Accounting",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - General Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Investment Management",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Procurement",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Risk Management/Compliance",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Securities Analysis/Research",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Senior Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Finance/Accounting - Tax Assessment/Collections",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Affiliate Marketing",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Brand/Product Marketing",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Channel Marketing",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Content Marketing",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Copy Writing/Editing",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Corporate Marketing",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Demand/Lead Generation",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Digital Marketing",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Direct Marketing",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Events/Promotional Marketing",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Fundraising",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - General Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Investor/Public/Media Relations",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Market Research",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Marketing Communications",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Marketing Operations",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Marketing Production/Traffic",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Media Planning/Buying",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Product Management",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Public Relations",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Senior Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - SEO",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Social Media",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Telemarketing",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Marketing - Visual/Display Merchandising",
-          "type": "optional"
-        }
-      ],
       "reach": [
         {
           "subAudience": null,
@@ -7477,8 +6829,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Audit",
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
           "type": "standard"
         },
         {
@@ -7489,26 +6841,26 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "20,000 - 49,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
           "category": "Industry/Sub-Industry",
           "label": "Finance - Banking",
           "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior VP",
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Audit",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Banking/Mortgage - Banking",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior VP",
           "type": "standard"
         },
         {
@@ -7525,8 +6877,20 @@ const BRANDS = [
         },
         {
           "subAudience": null,
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Banking/Mortgage - Branch Manager",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Finance - Financial (General)",
           "type": "standard"
         },
         {
@@ -7538,19 +6902,13 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Industry/Sub-Industry",
-          "label": "Finance - Financial (General)",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "5,000 - 9,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
           "label": "Finance - Financial Services",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Broker",
           "type": "standard"
         },
         {
@@ -7568,19 +6926,7 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Broker",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Finance - Investment Banking/Venture",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "1,000 - 2,499",
+          "label": "Banking/Mortgage - Credit",
           "type": "standard"
         },
         {
@@ -7591,26 +6937,20 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Credit",
+          "category": "Number of Employees",
+          "label": "1,000 - 2,499",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Industry/Sub-Industry",
-          "label": "Finance - Investment Management",
+          "label": "Finance - Investment Banking/Venture",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Job Level",
           "label": "Senior Manager",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "500 - 999",
           "type": "standard"
         },
         {
@@ -7622,7 +6962,13 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Number of Employees",
-          "label": "250 - 499",
+          "label": "500 - 999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Finance - Investment Management",
           "type": "standard"
         },
         {
@@ -7633,14 +6979,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Manager",
+          "category": "Number of Employees",
+          "label": "250 - 499",
           "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "100 - 249",
+          "category": "Job Level",
+          "label": "Manager",
           "type": "standard"
         },
         {
@@ -7653,6 +6999,18 @@ const BRANDS = [
           "subAudience": null,
           "category": "Job Level",
           "label": "Supervisor",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "100 - 249",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Senior Management",
           "type": "standard"
         },
         {
@@ -7670,25 +7028,19 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Senior Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
           "label": "Banking/Mortgage - Teller",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Owner",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Number of Employees",
           "label": "25 - 49",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Owner",
           "type": "standard"
         },
         {
@@ -7705,14 +7057,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Underwriter",
+          "category": "Number of Employees",
+          "label": "5 - 9",
           "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "5 - 9",
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Underwriter",
           "type": "standard"
         },
         {
@@ -8106,23 +7458,17 @@ const BRANDS = [
           "type": "standard"
         }
       ],
-      "targeted": [
+      "precision": [
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "C-Level",
-          "type": "standard"
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Analyst",
+          "type": "optional"
         },
         {
           "subAudience": null,
           "category": "Industry/Sub-Industry",
           "label": "Finance - Accounting",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Analyst",
           "type": "optional"
         },
         {
@@ -8134,7 +7480,675 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Job Level",
+          "label": "C-Level",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Audit",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
           "label": "Executive VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Finance - Banking",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Banking",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Finance - Credit Unions",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "10,000 - 19,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Finance - Financial (General)",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Branch Manager",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "2,500 - 4,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Broker",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Finance - Financial Services",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "1,000 - 2,499",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Credit",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Finance - Investment Banking/Venture",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Finance - Investment Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "500 - 999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Manager",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "250 - 499",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Manager",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Lending",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "100 - 249",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Mergers/Acquisitions",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Supervisor",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "50 - 99",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Employee",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Owner",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Teller",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "25 - 49",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "10 - 24",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Title/Escrow",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "5 - 9",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Underwriter",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Board Member",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "1 - 4",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CCO/Chief Compliance Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CDO/Chief Data Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CEO",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CFO/Chief Financial Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CHRO/Chief Human Resource Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CIO/Chief Information Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CISO/Chief Information Security Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CLO/Chief Learning Office",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CMO/Chief Marketing Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - COO/Chief Operations Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CPO/Chief People Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CSO/Chief Security Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CTO/Chief Technology Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - General Manager",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Other CXO",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - President",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Accounting",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Accounts Payable/Receivable",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Analyst",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Audit",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Bookkeeping",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Collections",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Controller",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Corporate",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Credit Review/Analysis",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Financial Analysis/Research",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Financial Control",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Financial Planning/Advising",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Financial Product Sales/Brokerage",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Fund Accounting",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Investment Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Procurement",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Risk Management/Compliance",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Securities Analysis/Research",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Tax Assessment/Collections",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Affiliate Marketing",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Brand/Product Marketing",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Channel Marketing",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Content Marketing",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Copy Writing/Editing",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Corporate Marketing",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Demand/Lead Generation",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Digital Marketing",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Direct Marketing",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Events/Promotional Marketing",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Fundraising",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Investor/Public/Media Relations",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Market Research",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Marketing Communications",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Marketing Operations",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Marketing Production/Traffic",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Media Planning/Buying",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Product Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Public Relations",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - SEO",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Social Media",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Telemarketing",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Visual/Display Merchandising",
+          "type": "optional"
+        }
+      ],
+      "targeted": [
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "50,000+",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Analyst",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Finance - Accounting",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "C-Level",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Executive VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Finance - Banking",
           "type": "standard"
         },
         {
@@ -8147,12 +8161,6 @@ const BRANDS = [
           "subAudience": null,
           "category": "Number of Employees",
           "label": "20,000 - 49,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Finance - Banking",
           "type": "standard"
         },
         {
@@ -8205,15 +8213,15 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior Director",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
           "category": "Industry/Sub-Industry",
           "label": "Finance - Financial Services",
           "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Director",
+          "type": "standard"
         },
         {
           "subAudience": null,
@@ -8229,15 +8237,9 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Finance - Investment Banking/Venture",
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Credit",
           "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "1,000 - 2,499",
-          "type": "standard"
         },
         {
           "subAudience": null,
@@ -8247,9 +8249,15 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Credit",
+          "category": "Industry/Sub-Industry",
+          "label": "Finance - Investment Banking/Venture",
           "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "1,000 - 2,499",
+          "type": "standard"
         },
         {
           "subAudience": null,
@@ -8265,26 +8273,26 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - General Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
           "category": "Industry/Sub-Industry",
           "label": "Finance - Investment Management",
           "type": "optional"
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Manager",
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - General Management",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Number of Employees",
           "label": "250 - 499",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Manager",
           "type": "standard"
         },
         {
@@ -8301,21 +8309,15 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "100 - 249",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
           "category": "Job Level",
           "label": "Supervisor",
           "type": "optional"
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Senior Management",
-          "type": "standard"
+          "category": "Number of Employees",
+          "label": "100 - 249",
+          "type": "optional"
         },
         {
           "subAudience": null,
@@ -8328,6 +8330,12 @@ const BRANDS = [
           "category": "Job Level",
           "label": "Senior Employee",
           "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Senior Management",
+          "type": "standard"
         },
         {
           "subAudience": null,
@@ -8349,12 +8357,6 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "10 - 24",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Banking/Mortgage - Title/Escrow",
           "type": "optional"
@@ -8362,13 +8364,19 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Number of Employees",
-          "label": "5 - 9",
+          "label": "10 - 24",
           "type": "optional"
         },
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Banking/Mortgage - Underwriter",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "5 - 9",
           "type": "optional"
         },
         {
@@ -8775,8 +8783,20 @@ const BRANDS = [
       "reach": [
         {
           "subAudience": null,
+          "category": "Number of Employees",
+          "label": "50,000+",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
           "category": "Job Level",
           "label": "C-Level",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Real Estate - Commercial Real Estate",
           "type": "standard"
         },
         {
@@ -8788,25 +8808,7 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Number of Employees",
-          "label": "50,000+",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Real Estate - Commercial Real Estate",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Executive VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Lending",
+          "label": "20,000 - 49,999",
           "type": "standard"
         },
         {
@@ -8817,14 +8819,20 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "20,000 - 49,999",
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Lending",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Job Level",
-          "label": "Senior VP",
+          "label": "Executive VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "10,000 - 19,999",
           "type": "standard"
         },
         {
@@ -8841,14 +8849,20 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "10,000 - 19,999",
+          "category": "Job Level",
+          "label": "Senior VP",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Industry/Sub-Industry",
           "label": "Real Estate - Real Estate (General)",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
           "type": "standard"
         },
         {
@@ -8865,14 +8879,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "5,000 - 9,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior Director",
+          "category": "Industry/Sub-Industry",
+          "label": "Real Estate - Residential Real Estate",
           "type": "standard"
         },
         {
@@ -8883,8 +8891,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Real Estate - Residential Real Estate",
+          "category": "Job Level",
+          "label": "Senior Director",
           "type": "standard"
         },
         {
@@ -8913,26 +8921,20 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "500 - 999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Executives - CFO/Chief Financial Officer",
           "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior Manager",
+          "category": "Number of Employees",
+          "label": "500 - 999",
           "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "250 - 499",
+          "category": "Job Level",
+          "label": "Senior Manager",
           "type": "standard"
         },
         {
@@ -8945,6 +8947,12 @@ const BRANDS = [
           "subAudience": null,
           "category": "Job Level",
           "label": "Manager",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "250 - 499",
           "type": "standard"
         },
         {
@@ -8967,8 +8975,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CIO/Chief Information Officer",
+          "category": "Number of Employees",
+          "label": "50 - 99",
           "type": "standard"
         },
         {
@@ -8979,8 +8987,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "50 - 99",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CIO/Chief Information Officer",
           "type": "standard"
         },
         {
@@ -8997,14 +9005,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CLO/Chief Learning Office",
+          "category": "Number of Employees",
+          "label": "10 - 24",
           "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "10 - 24",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CLO/Chief Learning Office",
           "type": "standard"
         },
         {
@@ -9021,14 +9029,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - COO/Chief Operations Officer",
+          "category": "Number of Employees",
+          "label": "1 - 4",
           "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "1 - 4",
+          "category": "Job Area/Job Function",
+          "label": "Executives - COO/Chief Operations Officer",
           "type": "standard"
         },
         {
@@ -9227,20 +9235,8 @@ const BRANDS = [
       "precision": [
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Credit",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
           "category": "Job Level",
           "label": "C-Level",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "50,000+",
           "type": "standard"
         },
         {
@@ -9251,8 +9247,20 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Real Estate - Mortgage",
+          "category": "Number of Employees",
+          "label": "50,000+",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Credit",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Lending",
           "type": "optional"
         },
         {
@@ -9263,26 +9271,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Real Estate - Mortgage",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
           "category": "Number of Employees",
           "label": "20,000 - 49,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Lending",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Real Estate - Property Management",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior VP",
           "type": "standard"
         },
         {
@@ -9299,9 +9295,27 @@ const BRANDS = [
         },
         {
           "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Real Estate - Property Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
           "category": "Industry/Sub-Industry",
           "label": "Real Estate - Real Estate (General)",
           "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
+          "type": "optional"
         },
         {
           "subAudience": null,
@@ -9317,14 +9331,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "5,000 - 9,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "2,500 - 4,999",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CDO/Chief Data Officer",
           "type": "optional"
         },
         {
@@ -9335,8 +9343,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CDO/Chief Data Officer",
+          "category": "Number of Employees",
+          "label": "2,500 - 4,999",
           "type": "optional"
         },
         {
@@ -9347,8 +9355,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Director",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CEO",
           "type": "standard"
         },
         {
@@ -9359,14 +9367,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CEO",
+          "category": "Job Level",
+          "label": "Director",
           "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CFO/Chief Financial Officer",
+          "category": "Job Level",
+          "label": "Senior Manager",
           "type": "optional"
         },
         {
@@ -9377,8 +9385,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior Manager",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CFO/Chief Financial Officer",
           "type": "optional"
         },
         {
@@ -9389,14 +9397,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - Chairman",
+          "category": "Number of Employees",
+          "label": "250 - 499",
           "type": "optional"
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "250 - 499",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Chairman",
           "type": "optional"
         },
         {
@@ -9437,26 +9445,26 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CISO/Chief Information Security Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
           "category": "Number of Employees",
           "label": "25 - 49",
           "type": "optional"
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "10 - 24",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CISO/Chief Information Security Officer",
           "type": "optional"
         },
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Executives - CLO/Chief Learning Office",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "10 - 24",
           "type": "optional"
         },
         {
@@ -9473,14 +9481,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "1 - 4",
+          "category": "Job Area/Job Function",
+          "label": "Executives - COO/Chief Operations Officer",
           "type": "optional"
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - COO/Chief Operations Officer",
+          "category": "Number of Employees",
+          "label": "1 - 4",
           "type": "optional"
         },
         {
@@ -9679,20 +9687,14 @@ const BRANDS = [
       "targeted": [
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "C-Level",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "50,000+",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
           "category": "Industry/Sub-Industry",
           "label": "Real Estate - Commercial Real Estate",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "C-Level",
           "type": "standard"
         },
         {
@@ -9703,9 +9705,9 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Banking/Mortgage - Lending",
-          "type": "optional"
+          "category": "Number of Employees",
+          "label": "50,000+",
+          "type": "standard"
         },
         {
           "subAudience": null,
@@ -9715,8 +9717,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Real Estate - Mortgage",
+          "category": "Job Area/Job Function",
+          "label": "Banking/Mortgage - Lending",
           "type": "optional"
         },
         {
@@ -9728,13 +9730,13 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Industry/Sub-Industry",
-          "label": "Real Estate - Property Management",
-          "type": "standard"
+          "label": "Real Estate - Mortgage",
+          "type": "optional"
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior VP",
+          "category": "Industry/Sub-Industry",
+          "label": "Real Estate - Property Management",
           "type": "standard"
         },
         {
@@ -9752,13 +9754,7 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Job Level",
-          "label": "VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Real Estate - Real Estate (General)",
+          "label": "Senior VP",
           "type": "standard"
         },
         {
@@ -9769,20 +9765,20 @@ const BRANDS = [
         },
         {
           "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Real Estate - Real Estate (General)",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
           "category": "Number of Employees",
           "label": "5,000 - 9,999",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CDO/Chief Data Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "2,500 - 4,999",
           "type": "optional"
         },
         {
@@ -9799,9 +9795,15 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Director",
-          "type": "standard"
+          "category": "Job Area/Job Function",
+          "label": "Executives - CDO/Chief Data Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "2,500 - 4,999",
+          "type": "optional"
         },
         {
           "subAudience": null,
@@ -9817,14 +9819,20 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "500 - 999",
-          "type": "optional"
+          "category": "Job Level",
+          "label": "Director",
+          "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Executives - CFO/Chief Financial Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "500 - 999",
           "type": "optional"
         },
         {
@@ -9835,14 +9843,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "250 - 499",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Chairman",
           "type": "optional"
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - Chairman",
+          "category": "Number of Employees",
+          "label": "250 - 499",
           "type": "optional"
         },
         {
@@ -9889,12 +9897,6 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "25 - 49",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Executives - CISO/Chief Information Security Officer",
           "type": "optional"
@@ -9902,13 +9904,19 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Number of Employees",
-          "label": "10 - 24",
+          "label": "25 - 49",
           "type": "optional"
         },
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Executives - CLO/Chief Learning Office",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "10 - 24",
           "type": "optional"
         },
         {
@@ -10147,6 +10155,12 @@ const BRANDS = [
         },
         {
           "subAudience": null,
+          "category": "Number of Employees",
+          "label": "50,000+",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
           "category": "Industry/Sub-Industry",
           "label": "Advertising/Marketing",
           "type": "standard"
@@ -10159,14 +10173,20 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "50,000+",
+          "category": "Job Level",
+          "label": "Executive VP",
           "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Executive VP",
+          "category": "Industry/Sub-Industry",
+          "label": "Aerospace/Aviation",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
           "type": "standard"
         },
         {
@@ -10178,13 +10198,19 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Number of Employees",
-          "label": "20,000 - 49,999",
+          "label": "10,000 - 19,999",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Industry/Sub-Industry",
-          "label": "Aerospace/Aviation",
+          "label": "Agriculture",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior VP",
           "type": "standard"
         },
         {
@@ -10196,25 +10222,13 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Industry/Sub-Industry",
-          "label": "Agriculture",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "10,000 - 19,999",
+          "label": "Automotive",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Job Level",
-          "label": "Senior VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Automotive",
+          "label": "VP",
           "type": "standard"
         },
         {
@@ -10232,13 +10246,7 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Job Level",
-          "label": "VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "2,500 - 4,999",
+          "label": "Senior Director",
           "type": "standard"
         },
         {
@@ -10249,14 +10257,20 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior Director",
+          "category": "Industry/Sub-Industry",
+          "label": "Biotech and Pharmaceuticals",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "2,500 - 4,999",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Industry/Sub-Industry",
-          "label": "Biotech and Pharmaceuticals",
+          "label": "Computers and Technology",
           "type": "standard"
         },
         {
@@ -10279,14 +10293,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Computers and Technology",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "500 - 999",
+          "category": "Job Level",
+          "label": "Senior Manager",
           "type": "standard"
         },
         {
@@ -10303,8 +10311,20 @@ const BRANDS = [
         },
         {
           "subAudience": null,
+          "category": "Number of Employees",
+          "label": "500 - 999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
           "category": "Job Level",
-          "label": "Senior Manager",
+          "label": "Manager",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - General Management",
           "type": "standard"
         },
         {
@@ -10321,20 +10341,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - General Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Manager",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
           "category": "Industry/Sub-Industry",
           "label": "Education",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "100 - 249",
           "type": "standard"
         },
         {
@@ -10352,12 +10366,6 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Number of Employees",
-          "label": "100 - 249",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
           "label": "50 - 99",
           "type": "standard"
         },
@@ -10369,14 +10377,20 @@ const BRANDS = [
         },
         {
           "subAudience": null,
+          "category": "Job Level",
+          "label": "Individual Contributor",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Human Resources - Learning/Training",
           "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Individual Contributor",
+          "category": "Number of Employees",
+          "label": "25 - 49",
           "type": "standard"
         },
         {
@@ -10399,20 +10413,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "25 - 49",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
           "category": "Industry/Sub-Industry",
           "label": "Healthcare/Medical",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "10 - 24",
           "type": "standard"
         },
         {
@@ -10429,8 +10431,20 @@ const BRANDS = [
         },
         {
           "subAudience": null,
+          "category": "Number of Employees",
+          "label": "10 - 24",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Human Resources - Recruiting",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance",
           "type": "standard"
         },
         {
@@ -10441,8 +10455,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Senior Management",
           "type": "standard"
         },
         {
@@ -10460,19 +10474,13 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
-          "label": "Human Resources - Senior Management",
+          "label": "Human Resources - Talent Management",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Industry/Sub-Industry",
           "label": "Manufacturing",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Talent Management",
           "type": "standard"
         },
         {
@@ -10534,411 +10542,13 @@ const BRANDS = [
           "category": "Industry/Sub-Industry",
           "label": "Utility/Energy",
           "type": "standard"
-        }
-      ],
-      "precision": [
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "C-Level",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CHRO/Chief Human Resource Officer",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "50,000+",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Advertising/Marketing",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CLO/Chief Learning Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Executive VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Aerospace/Aviation",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "20,000 - 49,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CPO/Chief People Officer",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Agriculture",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "10,000 - 19,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Compensation/Benefit Policy",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "5,000 - 9,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Automotive",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Biotech and Pharmaceuticals",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "2,500 - 4,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior Director",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Corporate Communications",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "1,000 - 2,499",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Computers and Technology",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Director",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Corporate Development",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior Manager",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "500 - 999",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Construction",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Diversity Management/EEO/Compliance",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Manager",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - General Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "250 - 499",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Corporate Services",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "100 - 249",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Education",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Supervisor",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - HR Systems Administration",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Individual Contributor",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Finance",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "50 - 99",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Learning/Training",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Organizational Development",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Consultant",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "25 - 49",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Government",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Contractor",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Healthcare/Medical",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "10 - 24",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Payroll/Benefits",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Recruiting",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "5 - 9",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "1 - 4",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Legal",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Senior Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Manufacturing",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Talent Management",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Wellness",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Media",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Non-Profit/Organizations",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Real Estate",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Retail and Consumer Goods",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Service Industry",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Telecommunications",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Transportation and Logistics",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Travel/Hospitality/Entertainment",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Utility/Energy",
-          "type": "optional"
         }
       ],
       "targeted": [
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "C-Level",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CHRO/Chief Human Resource Officer",
           "type": "standard"
         },
         {
@@ -10949,32 +10559,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CHRO/Chief Human Resource Officer",
+          "category": "Job Level",
+          "label": "C-Level",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Industry/Sub-Industry",
           "label": "Advertising/Marketing",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Executive VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "20,000 - 49,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Aerospace/Aviation",
           "type": "optional"
         },
         {
@@ -10986,8 +10578,26 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Job Level",
-          "label": "Senior VP",
+          "label": "Executive VP",
           "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Aerospace/Aviation",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Agriculture",
+          "type": "optional"
         },
         {
           "subAudience": null,
@@ -10997,15 +10607,21 @@ const BRANDS = [
         },
         {
           "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
           "category": "Number of Employees",
           "label": "10,000 - 19,999",
           "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Agriculture",
-          "type": "optional"
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
+          "type": "standard"
         },
         {
           "subAudience": null,
@@ -11017,12 +10633,6 @@ const BRANDS = [
           "subAudience": null,
           "category": "Job Level",
           "label": "VP",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "5,000 - 9,999",
           "type": "standard"
         },
         {
@@ -11045,26 +10655,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Biotech and Pharmaceuticals",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
           "category": "Job Level",
           "label": "Senior Director",
           "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "1,000 - 2,499",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
           "category": "Industry/Sub-Industry",
-          "label": "Computers and Technology",
+          "label": "Biotech and Pharmaceuticals",
           "type": "optional"
         },
         {
@@ -11081,20 +10679,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior Manager",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Diversity Management/EEO/Compliance",
-          "type": "optional"
+          "category": "Number of Employees",
+          "label": "1,000 - 2,499",
+          "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Industry/Sub-Industry",
-          "label": "Construction",
+          "label": "Computers and Technology",
           "type": "optional"
         },
         {
@@ -11105,15 +10697,21 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Manager",
+          "category": "Industry/Sub-Industry",
+          "label": "Construction",
           "type": "optional"
         },
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
-          "label": "Human Resources - General Management",
-          "type": "standard"
+          "label": "Human Resources - Diversity Management/EEO/Compliance",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Manager",
+          "type": "optional"
         },
         {
           "subAudience": null,
@@ -11129,9 +10727,21 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "100 - 249",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - General Management",
           "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Manager",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Supervisor",
+          "type": "optional"
         },
         {
           "subAudience": null,
@@ -11141,14 +10751,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Education",
-          "type": "optional"
+          "category": "Number of Employees",
+          "label": "100 - 249",
+          "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Supervisor",
+          "category": "Industry/Sub-Industry",
+          "label": "Education",
           "type": "optional"
         },
         {
@@ -11177,20 +10787,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Consultant",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
           "category": "Industry/Sub-Industry",
           "label": "Government",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Human Resources - Organizational Development",
           "type": "optional"
         },
         {
@@ -11202,13 +10800,19 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Job Level",
-          "label": "Contractor",
+          "label": "Consultant",
           "type": "optional"
         },
         {
           "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Healthcare/Medical",
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Organizational Development",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Contractor",
           "type": "optional"
         },
         {
@@ -11219,14 +10823,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "10 - 24",
+          "category": "Industry/Sub-Industry",
+          "label": "Healthcare/Medical",
           "type": "optional"
         },
         {
           "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Insurance",
+          "category": "Number of Employees",
+          "label": "10 - 24",
           "type": "optional"
         },
         {
@@ -11243,8 +10847,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "1 - 4",
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance",
           "type": "optional"
         },
         {
@@ -11252,6 +10856,12 @@ const BRANDS = [
           "category": "Job Area/Job Function",
           "label": "Human Resources - Senior Management",
           "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "1 - 4",
+          "type": "optional"
         },
         {
           "subAudience": null,
@@ -11269,6 +10879,404 @@ const BRANDS = [
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Human Resources - Talent Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Media",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Wellness",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Non-Profit/Organizations",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Real Estate",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Retail and Consumer Goods",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Service Industry",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Telecommunications",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Transportation and Logistics",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Travel/Hospitality/Entertainment",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Utility/Energy",
+          "type": "optional"
+        }
+      ],
+      "precision": [
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Advertising/Marketing",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CHRO/Chief Human Resource Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "C-Level",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "50,000+",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CLO/Chief Learning Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Executive VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Aerospace/Aviation",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "10,000 - 19,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Agriculture",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CPO/Chief People Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Compensation/Benefit Policy",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Automotive",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Corporate Communications",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Biotech and Pharmaceuticals",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "2,500 - 4,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "1,000 - 2,499",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Computers and Technology",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Corporate Development",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Diversity Management/EEO/Compliance",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Manager",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "500 - 999",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Construction",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Manager",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Corporate Services",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "250 - 499",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Education",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Supervisor",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - HR Systems Administration",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "100 - 249",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Finance",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "50 - 99",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Individual Contributor",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Learning/Training",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Organizational Development",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Consultant",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "25 - 49",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Government",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "10 - 24",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Healthcare/Medical",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Contractor",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Payroll/Benefits",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Insurance",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "5 - 9",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Recruiting",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Legal",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "1 - 4",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Talent Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Manufacturing",
           "type": "optional"
         },
         {
@@ -11340,25 +11348,119 @@ const BRANDS = [
     "isCustom": null,
     "logoUrl": "https://districtadministration.com/wp-content/uploads/District-Administration-Logo-full-color-1-300x80.png",
     "subAudiences": null,
-    "customQuestions": {},
-    "filterOverrides": {
+    "customQuestions": {
+      "targeted": [
+        {
+          "id": "da-job-title",
+          "question": "What is your job title?",
+          "type": "optional",
+          "standard": [
+            "Superintendent",
+            "Assistant/Deputy/Associate/Regional Superintendent"
+          ],
+          "optional": [
+            "Curriculum Manager/Director",
+            "Chief Academic Officer (CAO)",
+            "Business Officer",
+            "Academic Affairs",
+            "Student Services/Affairs",
+            "College and Career Ed/CTE",
+            "Counselor ",
+            "Nursing",
+            "School Board",
+            "Professional Development",
+            "Food Services",
+            "Health Services"
+          ]
+        },
+        {
+          "id": "da-district-size",
+          "question": "School Districts Size: # of students",
+          "type": "optional",
+          "standard": [],
+          "optional": [
+            "1 - 249",
+            "250 - 499",
+            "500-999",
+            "1000-2499",
+            "2500-4999",
+            "5000 - 9999",
+            "10,000+"
+          ]
+        }
+      ],
+      "reach": [
+        {
+          "id": "da-job-title",
+          "question": "What is your job title?",
+          "type": "optional",
+          "standard": [
+            "Superintendent",
+            "Assistant/Deputy/Associate/Regional Superintendent"
+          ],
+          "optional": [
+            "Curriculum Manager/Director",
+            "Chief Academic Officer (CAO)",
+            "Business Officer",
+            "Academic Affairs",
+            "Student Services/Affairs",
+            "College and Career Ed/CTE",
+            "Counselor ",
+            "Nursing",
+            "School Board",
+            "Professional Development",
+            "Food Services",
+            "Health Services"
+          ]
+        }
+      ],
       "precision": [
+        {
+          "id": "da-job-title",
+          "question": "What is your job title?",
+          "type": "optional",
+          "standard": [
+            "Superintendent",
+            "Assistant/Deputy/Associate/Regional Superintendent"
+          ],
+          "optional": [
+            "Curriculum Manager/Director",
+            "Chief Academic Officer (CAO)",
+            "Business Officer",
+            "Academic Affairs",
+            "Student Services/Affairs",
+            "College and Career Ed/CTE",
+            "Counselor ",
+            "Nursing",
+            "School Board",
+            "Professional Development",
+            "Food Services",
+            "Health Services"
+          ]
+        },
+        {
+          "id": "da-district-size",
+          "question": "School Districts Size: # of students",
+          "type": "optional",
+          "standard": [],
+          "optional": [
+            "1 - 249",
+            "250 - 499",
+            "500-999",
+            "1000-2499",
+            "2500-4999",
+            "5000 - 9999",
+            "10,000+"
+          ]
+        }
+      ]
+    },
+    "filterOverrides": {
+      "targeted": [
         {
           "subAudience": null,
           "category": "Industry/Sub-Industry",
           "label": "Education - E-Learning",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "C-Level",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Education - Administrator",
           "type": "optional"
         },
         {
@@ -11369,15 +11471,21 @@ const BRANDS = [
         },
         {
           "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Administrator",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
           "category": "Job Level",
-          "label": "Executive VP",
+          "label": "C-Level",
           "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Education - Education (General)",
-          "type": "optional"
+          "category": "Job Level",
+          "label": "Executive VP",
+          "type": "standard"
         },
         {
           "subAudience": null,
@@ -11393,14 +11501,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Education - Archivist/Curator",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
           "category": "Industry/Sub-Industry",
-          "label": "Education - Education Management",
+          "label": "Education - Education (General)",
           "type": "optional"
         },
         {
@@ -11411,9 +11513,21 @@ const BRANDS = [
         },
         {
           "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Archivist/Curator",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
           "category": "Number of Employees",
           "label": "10,000 - 19,999",
           "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Education - Education Management",
+          "type": "optional"
         },
         {
           "subAudience": null,
@@ -11423,8 +11537,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Education - K-12",
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
           "type": "standard"
         },
         {
@@ -11435,20 +11549,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "5,000 - 9,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "2,500 - 4,999",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior Director",
+          "category": "Industry/Sub-Industry",
+          "label": "Education - K-12",
           "type": "standard"
         },
         {
@@ -11465,8 +11567,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
+          "category": "Number of Employees",
+          "label": "2,500 - 4,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
           "category": "Job Level",
-          "label": "Director",
+          "label": "Senior Director",
           "type": "standard"
         },
         {
@@ -11484,13 +11592,7 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Job Level",
-          "label": "Senior Manager",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Education - General Management",
+          "label": "Director",
           "type": "standard"
         },
         {
@@ -11501,9 +11603,21 @@ const BRANDS = [
         },
         {
           "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
           "category": "Job Level",
-          "label": "Manager",
+          "label": "Senior Manager",
           "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "250 - 499",
+          "type": "standard"
         },
         {
           "subAudience": null,
@@ -11513,9 +11627,9 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "250 - 499",
-          "type": "standard"
+          "category": "Job Level",
+          "label": "Manager",
+          "type": "optional"
         },
         {
           "subAudience": null,
@@ -11539,7 +11653,7 @@ const BRANDS = [
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Education - Special Education",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": null,
@@ -11555,6 +11669,12 @@ const BRANDS = [
         },
         {
           "subAudience": null,
+          "category": "Job Level",
+          "label": "Consultant",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
           "category": "Number of Employees",
           "label": "25 - 49",
           "type": "standard"
@@ -11567,8 +11687,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Consultant",
+          "category": "Job Area/Job Function",
+          "label": "Executives - CCO/Chief Compliance Officer",
           "type": "optional"
         },
         {
@@ -11576,12 +11696,6 @@ const BRANDS = [
           "category": "Number of Employees",
           "label": "10 - 24",
           "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - CCO/Chief Compliance Officer",
-          "type": "optional"
         },
         {
           "subAudience": null,
@@ -11623,7 +11737,7 @@ const BRANDS = [
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Executives - CHRO/Chief Human Resource Officer",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": null,
@@ -11653,13 +11767,13 @@ const BRANDS = [
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Executives - CMO/Chief Marketing Officer",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Executives - CPO/Chief People Officer",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": null,
@@ -11725,13 +11839,13 @@ const BRANDS = [
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Human Resources - General Management",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Human Resources - Senior Management",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": null,
@@ -11845,7 +11959,7 @@ const BRANDS = [
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Installation/Maintenance/Repair - Facilities",
-          "type": "optional"
+          "type": "standard"
         },
         {
           "subAudience": null,
@@ -11959,12 +12073,6 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "50,000+",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Education - Administrator",
           "type": "standard"
@@ -11978,13 +12086,13 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Number of Employees",
-          "label": "20,000 - 49,999",
+          "label": "50,000+",
           "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Education - Admissions/Advising",
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
           "type": "standard"
         },
         {
@@ -12001,8 +12109,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Education - Education Management",
+          "category": "Job Area/Job Function",
+          "label": "Education - Admissions/Advising",
           "type": "standard"
         },
         {
@@ -12013,14 +12121,32 @@ const BRANDS = [
         },
         {
           "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Archivist/Curator",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Education - Education Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
           "category": "Job Level",
           "label": "Senior VP",
           "type": "standard"
         },
         {
           "subAudience": null,
+          "category": "Job Level",
+          "label": "VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
           "category": "Job Area/Job Function",
-          "label": "Education - Archivist/Curator",
+          "label": "Education - Early Childhood Care/Development",
           "type": "standard"
         },
         {
@@ -12038,13 +12164,7 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
-          "label": "Education - Early Childhood Care/Development",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "VP",
+          "label": "Education - Faculty",
           "type": "standard"
         },
         {
@@ -12055,8 +12175,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Education - Faculty",
+          "category": "Industry/Sub-Industry",
+          "label": "Education - Research",
           "type": "standard"
         },
         {
@@ -12067,8 +12187,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Education - Research",
+          "category": "Number of Employees",
+          "label": "1,000 - 2,499",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Fitness/Sports Training",
           "type": "standard"
         },
         {
@@ -12080,19 +12206,7 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
-          "label": "Education - Fitness/Sports Training",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "1,000 - 2,499",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "500 - 999",
+          "label": "Education - General Management",
           "type": "standard"
         },
         {
@@ -12103,14 +12217,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Education - General Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
           "category": "Number of Employees",
-          "label": "250 - 499",
+          "label": "500 - 999",
           "type": "standard"
         },
         {
@@ -12127,8 +12235,8 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Education - Senior Management",
+          "category": "Number of Employees",
+          "label": "250 - 499",
           "type": "standard"
         },
         {
@@ -12139,14 +12247,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Level",
-          "label": "Supervisor",
+          "category": "Job Area/Job Function",
+          "label": "Education - Senior Management",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Job Level",
-          "label": "Senior Employee",
+          "label": "Supervisor",
           "type": "standard"
         },
         {
@@ -12163,14 +12271,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "25 - 49",
+          "category": "Job Level",
+          "label": "Senior Employee",
           "type": "standard"
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Executives - Board Member",
+          "category": "Number of Employees",
+          "label": "25 - 49",
           "type": "standard"
         },
         {
@@ -12181,14 +12289,20 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "10 - 24",
+          "category": "Job Area/Job Function",
+          "label": "Executives - Board Member",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Executives - CCO/Chief Compliance Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "10 - 24",
           "type": "standard"
         },
         {
@@ -12558,18 +12672,18 @@ const BRANDS = [
           "type": "standard"
         }
       ],
-      "targeted": [
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Education - Administrator",
-          "type": "optional"
-        },
+      "precision": [
         {
           "subAudience": null,
           "category": "Number of Employees",
           "label": "50,000+",
           "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Administrator",
+          "type": "optional"
         },
         {
           "subAudience": null,
@@ -12609,15 +12723,9 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Industry/Sub-Industry",
-          "label": "Education - Education Management",
+          "category": "Job Area/Job Function",
+          "label": "Education - Archivist/Curator",
           "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "10,000 - 19,999",
-          "type": "standard"
         },
         {
           "subAudience": null,
@@ -12627,20 +12735,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Education - Archivist/Curator",
+          "category": "Industry/Sub-Industry",
+          "label": "Education - Education Management",
           "type": "optional"
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Education - Early Childhood Care/Development",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "VP",
+          "category": "Number of Employees",
+          "label": "10,000 - 19,999",
           "type": "standard"
         },
         {
@@ -12657,9 +12759,21 @@ const BRANDS = [
         },
         {
           "subAudience": null,
+          "category": "Job Level",
+          "label": "VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
           "category": "Job Area/Job Function",
-          "label": "Education - Faculty",
+          "label": "Education - Early Childhood Care/Development",
           "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "2,500 - 4,999",
+          "type": "standard"
         },
         {
           "subAudience": null,
@@ -12675,20 +12789,20 @@ const BRANDS = [
         },
         {
           "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Faculty",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
           "category": "Number of Employees",
-          "label": "2,500 - 4,999",
+          "label": "1,000 - 2,499",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Job Level",
           "label": "Director",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "1,000 - 2,499",
           "type": "standard"
         },
         {
@@ -12717,9 +12831,9 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Education - Librarian",
-          "type": "optional"
+          "category": "Number of Employees",
+          "label": "250 - 499",
+          "type": "standard"
         },
         {
           "subAudience": null,
@@ -12729,20 +12843,14 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "250 - 499",
-          "type": "standard"
+          "category": "Job Area/Job Function",
+          "label": "Education - Librarian",
+          "type": "optional"
         },
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Education - Senior Management",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Number of Employees",
-          "label": "100 - 249",
           "type": "standard"
         },
         {
@@ -12753,15 +12861,9 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Job Area/Job Function",
-          "label": "Education - Special Education",
+          "category": "Number of Employees",
+          "label": "100 - 249",
           "type": "standard"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Level",
-          "label": "Senior Employee",
-          "type": "optional"
         },
         {
           "subAudience": null,
@@ -12772,7 +12874,13 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Job Level",
-          "label": "Consultant",
+          "label": "Senior Employee",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Special Education",
           "type": "optional"
         },
         {
@@ -12789,6 +12897,12 @@ const BRANDS = [
         },
         {
           "subAudience": null,
+          "category": "Job Level",
+          "label": "Consultant",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Executives - CCO/Chief Compliance Officer",
           "type": "optional"
@@ -12801,12 +12915,6 @@ const BRANDS = [
         },
         {
           "subAudience": null,
-          "category": "Number of Employees",
-          "label": "5 - 9",
-          "type": "standard"
-        },
-        {
-          "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Executives - CDO/Chief Data Officer",
           "type": "optional"
@@ -12814,7 +12922,7 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Number of Employees",
-          "label": "1 - 4",
+          "label": "5 - 9",
           "type": "standard"
         },
         {
@@ -12822,6 +12930,12 @@ const BRANDS = [
           "category": "Job Area/Job Function",
           "label": "Executives - CEO",
           "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "1 - 4",
+          "type": "standard"
         },
         {
           "subAudience": null,
@@ -12839,7 +12953,7 @@ const BRANDS = [
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Executives - CHRO/Chief Human Resource Officer",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": null,
@@ -12869,13 +12983,13 @@ const BRANDS = [
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Executives - CMO/Chief Marketing Officer",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Executives - CPO/Chief People Officer",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": null,
@@ -12941,13 +13055,812 @@ const BRANDS = [
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Human Resources - General Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Senior Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Payroll/Benefits",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Business Intelligence/Data Science",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Computer/Network Security",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Cyber Security/Information Security",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Data Center",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Hardware ",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - IT Infrastructure",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - IT Project Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - IT Systems Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Network/Server Administration",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Storage Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - System Admin/Desktop Support",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - System Analysis",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Telecommunications & Wireless",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - Computer/Electronics",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - Equipment",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - Facilities",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - General Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - HVAC",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - Janitorial/Cleaning",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - Plumbing/Pipefitting",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - Senior Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Logistics/Transportation - Car/Truck/Van/Bus Driving",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Logistics/Transportation - General Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Logistics/Transportation - Logistics",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Logistics/Transportation - Senior Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Logistics/Transportation - Vehicle Dispatch/Routing/Scheduling",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Medical and Health - Medical Practitioner",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Medical and Health - Mental Health",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Security Services - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Security Services - Police-Law Enforcement",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Security Services - Security Guard",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Security Services - Security Intelligence/Analysis",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Security Services - Senior Management",
+          "type": "standard"
+        }
+      ]
+    }
+  },
+  {
+    "id": "UB",
+    "name": "University Business",
+    "isCustom": null,
+    "logoUrl": "https://universitybusiness.com/wp-content/uploads/2022/08/ublogo2.png",
+    "subAudiences": null,
+    "customQuestions": {
+      "precision": [
+        {
+          "id": "ub-job-title",
+          "question": "What is your job title?",
+          "type": "optional",
+          "standard": [
+            "Provost",
+            "Chief Academic Officer (CAO)"
+          ],
+          "optional": [
+            "Academic Affairs",
+            "Student Services/Affairs",
+            "Career Ed/CTE",
+            "Professional Development",
+            "Counselor ",
+            "Food Services ",
+            "Health Services ",
+            "Registrar",
+            "Dean",
+            "Bursar/Financial Aid",
+            "Enrollment"
+          ]
+        },
+        {
+          "id": "ub-discipline",
+          "question": "Discipline? (Select all that apply)",
+          "type": "optional",
+          "standard": [],
+          "optional": [
+            "Agriculture/Animal Science",
+            "Allied Health",
+            "Business",
+            "Communications",
+            "Computer Science",
+            "Dental Science",
+            "Engineering",
+            "English Language & Literature",
+            "Fine & Applied Arts",
+            "Foreign Languages and Literature",
+            "General Studies",
+            "Interdisciplinary Studies",
+            "Law",
+            "Mathematics",
+            "Medicine",
+            "Military Science",
+            "Nature & Physical Science",
+            "Nursing",
+            "Physical Education",
+            "Social Sciences",
+            "Vocational Education"
+          ]
+        },
+        {
+          "id": "ub-institution-type",
+          "question": "Institution Type? (select all that apply)",
+          "type": "optional",
+          "standard": [],
+          "optional": [
+            "Public 2 year",
+            "Public 4 year",
+            "Private 2 year",
+            "Private 4 year",
+            "Community College"
+          ]
+        },
+        {
+          "id": "ub-enrollment-size",
+          "question": "Enrollment Size? (select all that apply)",
+          "type": "optional",
+          "standard": [],
+          "optional": [
+            "Under 500",
+            "500 - 1999",
+            "2000 - 4999",
+            "5000+"
+          ]
+        }
+      ],
+      "targeted": [
+        {
+          "id": "ub-job-title",
+          "question": "What is your job title?",
+          "type": "optional",
+          "standard": [
+            "Provost",
+            "Chief Academic Officer (CAO)"
+          ],
+          "optional": [
+            "Academic Affairs",
+            "Student Services/Affairs",
+            "Career Ed/CTE",
+            "Professional Development",
+            "Counselor ",
+            "Food Services ",
+            "Health Services ",
+            "Registrar",
+            "Dean",
+            "Bursar/Financial Aid",
+            "Enrollment"
+          ]
+        },
+        {
+          "id": "ub-discipline",
+          "question": "Discipline? (Select all that apply)",
+          "type": "optional",
+          "standard": [],
+          "optional": [
+            "Agriculture/Animal Science",
+            "Allied Health",
+            "Business",
+            "Communications",
+            "Computer Science",
+            "Dental Science",
+            "Engineering",
+            "English Language & Literature",
+            "Fine & Applied Arts",
+            "Foreign Languages and Literature",
+            "General Studies",
+            "Interdisciplinary Studies",
+            "Law",
+            "Mathematics",
+            "Medicine",
+            "Military Science",
+            "Nature & Physical Science",
+            "Nursing",
+            "Physical Education",
+            "Social Sciences",
+            "Vocational Education"
+          ]
+        },
+        {
+          "id": "ub-institution-type",
+          "question": "Institution Type? (select all that apply)",
+          "type": "optional",
+          "standard": [],
+          "optional": [
+            "Public 2 year",
+            "Public 4 year",
+            "Private 2 year",
+            "Private 4 year",
+            "Community College"
+          ]
+        },
+        {
+          "id": "ub-enrollment-size",
+          "question": "Enrollment Size? (select all that apply)",
+          "type": "optional",
+          "standard": [],
+          "optional": [
+            "Under 500",
+            "500 - 1999",
+            "2000 - 4999",
+            "5000+"
+          ]
+        }
+      ],
+      "reach": [
+        {
+          "id": "ub-job-title",
+          "question": "What is your job title?",
+          "type": "optional",
+          "standard": [
+            "Provost",
+            "Chief Academic Officer (CAO)"
+          ],
+          "optional": [
+            "Academic Affairs",
+            "Student Services/Affairs",
+            "Career Ed/CTE",
+            "Professional Development",
+            "Counselor ",
+            "Food Services ",
+            "Health Services ",
+            "Registrar",
+            "Dean",
+            "Bursar/Financial Aid",
+            "Enrollment"
+          ]
+        }
+      ]
+    },
+    "filterOverrides": {
+      "targeted": [
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "C-Level",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Education - E-Learning",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "50,000+",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Business - Fundraising",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Administrator",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Education - Education (General)",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Executive VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Admissions/Advising",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Education - Education Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "10,000 - 19,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Education - Higher Education",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Archivist/Curator",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Education - Research",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "2,500 - 4,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Fitness/Sports Training",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "1,000 - 2,499",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Manager",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "500 - 999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "250 - 499",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Manager",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Board Member",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CCO/Chief Compliance Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "100 - 249",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Supervisor",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CDO/Chief Data Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "50 - 99",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Employee",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "25 - 49",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CEO",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Consultant",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CFO/Chief Financial Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "10 - 24",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Chancellor",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "5 - 9",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "1 - 4",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Chairman",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CHRO/Chief Human Resource Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CIO/Chief Information Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CISO/Chief Information Security Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CLO/Chief Learning Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - COO/Chief Operations Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CMO/Chief Marketing Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CPO/Chief People Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CSO/Chief Security Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CTO/Chief Technology Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - President",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Other CXO",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Senior Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Treasurer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Procurement",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Food Services/Hospitality - General Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Food Services/Hospitality - Senior Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Compensation/Benefit Policy",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - General Management",
           "type": "standard"
         },
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Human Resources - Senior Management",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": null,
@@ -13072,25 +13985,25 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
-          "label": "Installation/Maintenance/Repair - HVAC",
-          "type": "optional"
-        },
-        {
-          "subAudience": null,
-          "category": "Job Area/Job Function",
           "label": "Installation/Maintenance/Repair - Janitorial/Cleaning",
           "type": "optional"
         },
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
-          "label": "Installation/Maintenance/Repair - Plumbing/Pipefitting",
+          "label": "Installation/Maintenance/Repair - Senior Management",
           "type": "optional"
         },
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
-          "label": "Installation/Maintenance/Repair - Senior Management",
+          "label": "Legal - General Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Legal - Senior Management",
           "type": "optional"
         },
         {
@@ -13120,13 +14033,13 @@ const BRANDS = [
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
-          "label": "Logistics/Transportation - Vehicle Dispatch/Routing/Scheduling",
+          "label": "Marketing - General Management",
           "type": "optional"
         },
         {
           "subAudience": null,
           "category": "Job Area/Job Function",
-          "label": "Medical and Health - Medical Practitioner",
+          "label": "Marketing - Senior Management",
           "type": "optional"
         },
         {
@@ -13165,17 +14078,1224 @@ const BRANDS = [
           "label": "Security Services - Senior Management",
           "type": "standard"
         }
+      ],
+      "precision": [
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Education - E-Learning",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "C-Level",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "50,000+",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Business - Fundraising",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Administrator",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Education - Education (General)",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Executive VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "10,000 - 19,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Admissions/Advising",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Education - Education Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Archivist/Curator",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Education - Higher Education",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "2,500 - 4,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Fitness/Sports Training",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Education - Research",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "1,000 - 2,499",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Manager",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "500 - 999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "250 - 499",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Manager",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Board Member",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CCO/Chief Compliance Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Supervisor",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "100 - 249",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Employee",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "50 - 99",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CDO/Chief Data Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Consultant",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CEO",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "25 - 49",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "10 - 24",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CFO/Chief Financial Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Chancellor",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "5 - 9",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Chairman",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "1 - 4",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CHRO/Chief Human Resource Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CIO/Chief Information Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CISO/Chief Information Security Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CLO/Chief Learning Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - COO/Chief Operations Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CMO/Chief Marketing Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CPO/Chief People Officer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CSO/Chief Security Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CTO/Chief Technology Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - President",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Other CXO",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Senior Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Treasurer",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Procurement",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Food Services/Hospitality - General Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Food Services/Hospitality - Senior Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Compensation/Benefit Policy",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - General Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Senior Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Payroll/Benefits",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Business Intelligence/Data Science",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Computer/Network Security",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Cyber Security/Information Security",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Data Center",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Hardware ",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - IT Infrastructure",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - IT Project Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - IT Systems Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Network/Server Administration",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Storage Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - System Admin/Desktop Support",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - System Analysis",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Telecommunications & Wireless",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - Computer/Electronics",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - Equipment",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - Facilities",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - General Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - Janitorial/Cleaning",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - Senior Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Legal - General Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Legal - Senior Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Logistics/Transportation - Car/Truck/Van/Bus Driving",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Logistics/Transportation - General Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Logistics/Transportation - Logistics",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Logistics/Transportation - Senior Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - General Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Senior Management",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Medical and Health - Mental Health",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Security Services - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Security Services - Police-Law Enforcement",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Security Services - Security Guard",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Security Services - Security Intelligence/Analysis",
+          "type": "optional"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Security Services - Senior Management",
+          "type": "standard"
+        }
+      ],
+      "reach": [
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "C-Level",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Education - E-Learning",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Business - Fundraising",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "50,000+",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "20,000 - 49,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Administrator",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Executive VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Education - Education (General)",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Education - Education Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Admissions/Advising",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "10,000 - 19,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Archivist/Curator",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "VP",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Education - Higher Education",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "5,000 - 9,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Fitness/Sports Training",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Industry/Sub-Industry",
+          "label": "Education - Research",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "2,500 - 4,999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Director",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "1,000 - 2,499",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Education - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "500 - 999",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Manager",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Board Member",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "250 - 499",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Manager",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "100 - 249",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Supervisor",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CCO/Chief Compliance Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "50 - 99",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Senior Employee",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CDO/Chief Data Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "25 - 49",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CEO",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Level",
+          "label": "Consultant",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "10 - 24",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CFO/Chief Financial Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Chancellor",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "5 - 9",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Chairman",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Number of Employees",
+          "label": "1 - 4",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CHRO/Chief Human Resource Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CIO/Chief Information Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CISO/Chief Information Security Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CLO/Chief Learning Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - COO/Chief Operations Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CMO/Chief Marketing Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CPO/Chief People Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CSO/Chief Security Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - CTO/Chief Technology Officer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - President",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Other CXO",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Executives - Treasurer",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Finance/Accounting - Procurement",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Food Services/Hospitality - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Food Services/Hospitality - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Compensation/Benefit Policy",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Human Resources - Payroll/Benefits",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Business Intelligence/Data Science",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Computer/Network Security",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Cyber Security/Information Security",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Data Center",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Hardware ",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - IT Infrastructure",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - IT Project Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - IT Systems Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Network/Server Administration",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Storage Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - System Admin/Desktop Support",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - System Analysis",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "IT/Computers/Electronics - Telecommunications & Wireless",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - Computer/Electronics",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - Equipment",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - Facilities",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - Janitorial/Cleaning",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Installation/Maintenance/Repair - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Legal - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Legal - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Logistics/Transportation - Car/Truck/Van/Bus Driving",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Logistics/Transportation - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Logistics/Transportation - Logistics",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Logistics/Transportation - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Marketing - Senior Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Medical and Health - Mental Health",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Security Services - General Management",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Security Services - Police-Law Enforcement",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Security Services - Security Guard",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Security Services - Security Intelligence/Analysis",
+          "type": "standard"
+        },
+        {
+          "subAudience": null,
+          "category": "Job Area/Job Function",
+          "label": "Security Services - Senior Management",
+          "type": "standard"
+        }
       ]
     }
-  },
-  {
-    "id": "UB",
-    "name": "University Business",
-    "isCustom": null,
-    "logoUrl": "https://universitybusiness.com/wp-content/uploads/2022/08/ublogo2.png",
-    "subAudiences": null,
-    "customQuestions": {},
-    "filterOverrides": {}
   },
   {
     "id": "custom",
@@ -13281,14 +15401,16 @@ function buildSubmissionWorkbook(payload) {
     XLSX.utils.book_append_sheet(wb, sheet, sheetName);
   });
 
-  // ---- Custom questions (only if at least one was selected) ----
+  // ---- Custom questions (required ones always included, plus any selected optional ones) ----
   if (payload.customQuestions.length > 0) {
-    const rows = [["Question", "Answer", "Type"]];
+    const rows = [["Question", "Required", "Answer", "Type"]];
     payload.customQuestions.forEach((q) => {
-      q.filters.forEach((f) => rows.push([q.question, f.value, f.source === "standard" ? "Standard" : "Optional"]));
+      q.filters.forEach((f) =>
+        rows.push([q.question, q.required ? "Yes" : "No", f.value, f.source === "standard" ? "Standard" : "Optional"])
+      );
     });
     const sheet = XLSX.utils.aoa_to_sheet(rows);
-    sheet["!cols"] = [{ wch: 45 }, { wch: 40 }, { wch: 12 }];
+    sheet["!cols"] = [{ wch: 45 }, { wch: 10 }, { wch: 40 }, { wch: 12 }];
     XLSX.utils.book_append_sheet(wb, sheet, "Custom Questions");
   }
 
@@ -13432,6 +15554,8 @@ export default function PackageFormPrototype() {
   const optSelKey = (cat) => `${brand ? brand.id : ""}:${subAudience || ""}:${activePkg}:${cat}`;
 
   const availableQuestions = (brand && brand.customQuestions ? brand.customQuestions[activePkg] : null) || [];
+  const requiredQuestions = availableQuestions.filter((q) => q.type === "required");
+  const optionalQuestions = availableQuestions.filter((q) => q.type !== "required");
   const questionSetKey = brand ? `${brand.id}:${activePkg}` : null;
   const selectedQIds = (questionSetKey && selectedCustomQuestions[questionSetKey]) || [];
 
@@ -13478,15 +15602,21 @@ export default function PackageFormPrototype() {
       (optionalSelections[optSelKey(cat)] || new Set()).forEach((f) => filters.push({ category: cat, value: f, source: "optional" }));
     });
 
-    const customQuestions = selectedQIds.map((qId) => {
-      const qDef = availableQuestions.find((q) => q.id === qId);
-      const answerKey = `${questionSetKey}:${qId}`;
+    const buildQuestionEntry = (qDef, isRequired) => {
+      const answerKey = `${questionSetKey}:${qDef.id}`;
       const selectedAnswers = customQAnswerSelections[answerKey] || new Set();
       const qFilters = [];
       qDef.standard.forEach((f) => qFilters.push({ value: f, source: "standard" }));
       selectedAnswers.forEach((f) => qFilters.push({ value: f, source: "optional" }));
-      return { question: qDef.question, filters: qFilters };
+      return { question: qDef.question, filters: qFilters, required: isRequired };
+    };
+
+    const requiredQuestionEntries = requiredQuestions.map((qDef) => buildQuestionEntry(qDef, true));
+    const selectedOptionalEntries = selectedQIds.map((qId) => {
+      const qDef = optionalQuestions.find((q) => q.id === qId);
+      return buildQuestionEntry(qDef, false);
     });
+    const customQuestions = [...requiredQuestionEntries, ...selectedOptionalEntries];
 
     return {
       contact: {
@@ -13500,9 +15630,9 @@ export default function PackageFormPrototype() {
       package: pkg.name,
       filters,
       customQuestions,
-      customQuestionCost: customQuestions.length * CUSTOM_QUESTION_COST,
+      customQuestionCost: selectedOptionalEntries.length * CUSTOM_QUESTION_COST,
     };
-  }, [stage, pkg, mergedSections, categoryList, optionalSelections, activePkg, brand, subAudience, customBrandName, selectedQIds, availableQuestions, questionSetKey, customQAnswerSelections, contactName, contactEmail, contactCompany, captchaChecked]);
+  }, [stage, pkg, mergedSections, categoryList, optionalSelections, activePkg, brand, subAudience, customBrandName, selectedQIds, requiredQuestions, optionalQuestions, questionSetKey, customQAnswerSelections, contactName, contactEmail, contactCompany, captchaChecked]);
 
   return (
     <div style={{ background: paper, color: ink, minHeight: "100%", fontFamily: "'Inter', ui-sans-serif, system-ui, sans-serif" }} className="p-6 md:p-10">
@@ -13744,6 +15874,40 @@ export default function PackageFormPrototype() {
                       </FilterGroup>
                     );
                   })}
+
+                  {requiredQuestions.length > 0 && (
+                    <div>
+                      <div style={{ fontWeight: 700, fontSize: "0.95rem", color: ink, marginBottom: "0.6rem" }}>
+                        Required Custom Qualifying Questions
+                      </div>
+                      <div className="flex flex-col gap-4">
+                        {requiredQuestions.map((q) => {
+                          const answerKey = `${questionSetKey}:${q.id}`;
+                          const selectedAnswers = customQAnswerSelections[answerKey] || new Set();
+                          return (
+                            <div key={q.id}>
+                              <div style={{ fontSize: "0.86rem", fontWeight: 600, color: ink, marginBottom: "0.5rem" }}>
+                                {q.question}
+                              </div>
+                              <div className="flex flex-col gap-2">
+                                {q.standard.map((label) => (
+                                  <LockedRow key={label} label={label} />
+                                ))}
+                                {q.optional.map((label) => (
+                                  <OptionRow
+                                    key={label}
+                                    label={label}
+                                    checked={selectedAnswers.has(label)}
+                                    onToggle={() => toggleCustomQAnswer(q.id, label)}
+                                  />
+                                ))}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
                 </SectionBlock>
 
                 {/* ---- Section 2: optional, editable filters ---- */}
@@ -13768,7 +15932,7 @@ export default function PackageFormPrototype() {
             )}
 
             {/* ---- Section 3: optional custom qualifying questions ---- */}
-            {availableQuestions.length > 0 && (
+            {optionalQuestions.length > 0 && (
               <SectionBlock
                 title="Optional Custom Qualifying Questions"
                 subtitle={`Each additional question adds a $${CUSTOM_QUESTION_COST}/lead cost. Select up to ${MAX_CUSTOM_QUESTIONS} questions and any additional qualifying answers.`}
@@ -13776,7 +15940,7 @@ export default function PackageFormPrototype() {
                 <div style={{ fontSize: "0.78rem", color: inkSoft, marginTop: "-0.6rem", marginBottom: "0.2rem" }}>
                   {selectedQIds.length} of {MAX_CUSTOM_QUESTIONS} selected
                 </div>
-                {availableQuestions.map((q) => {
+                {optionalQuestions.map((q) => {
                   const checked = selectedQIds.includes(q.id);
                   const atCap = selectedQIds.length >= MAX_CUSTOM_QUESTIONS && !checked;
                   const answerKey = `${questionSetKey}:${q.id}`;
