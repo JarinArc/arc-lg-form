@@ -42,6 +42,16 @@ const BRANDS = [
       "Human Resources",
       "Brokers & HR"
     ],
+    "accountReps": [
+      {
+        "name": "Alicia Robledo",
+        "email": "alicia.robledo@arc-network.com"
+      },
+      {
+        "name": "Kelly Davisson",
+        "email": "kelly.davisson@arc-network.com"
+      }
+    ],
     "customQuestions": {
       "targeted": [
         {
@@ -2083,6 +2093,16 @@ const BRANDS = [
     "isCustom": null,
     "logoUrl": "https://www.thinkadvisor.com/_nuxt/img/ALM_ThinkAdvisor.84d9263.png",
     "subAudiences": null,
+    "accountReps": [
+      {
+        "name": "Archer Montague",
+        "email": "archer.montague@arc-network.com"
+      },
+      {
+        "name": "David Spindler",
+        "email": "david.spindler@arc-network.com"
+      }
+    ],
     "customQuestions": {
       "targeted": [
         {
@@ -3076,6 +3096,16 @@ const BRANDS = [
       "Agents & Brokers",
       "Carriers",
       "Claims"
+    ],
+    "accountReps": [
+      {
+        "name": "Susan Gould",
+        "email": "Susan.Gould@arc-network.com"
+      },
+      {
+        "name": "Kelly Davisson",
+        "email": "kelly.davisson@arc-network.com"
+      }
     ],
     "customQuestions": {},
     "filterOverrides": {
@@ -6765,6 +6795,12 @@ const BRANDS = [
     "isCustom": null,
     "logoUrl": "https://www.cutimes.com/_nuxt/img/logo-header-credit-union-times.f39782f.png",
     "subAudiences": null,
+    "accountReps": [
+      {
+        "name": "Stacy Barrett",
+        "email": "stacy.barrett@arc-network.com"
+      }
+    ],
     "customQuestions": {
       "precision": [
         {
@@ -8778,6 +8814,16 @@ const BRANDS = [
     "isCustom": null,
     "logoUrl": "https://www.globest.com/_nuxt/img/globest-blue.743e64e.png",
     "subAudiences": null,
+    "accountReps": [
+      {
+        "name": "Eric Gordon",
+        "email": "eric.gordon@arc-network.com"
+      },
+      {
+        "name": "Elizabeth Ames",
+        "email": "elizabeth.ames@arc-network.com"
+      }
+    ],
     "customQuestions": {},
     "filterOverrides": {
       "reach": [
@@ -10144,6 +10190,16 @@ const BRANDS = [
     "isCustom": null,
     "logoUrl": "https://hrexecutive.com/wp-content/uploads/HR_Executive_logo_RGB.png",
     "subAudiences": null,
+    "accountReps": [
+      {
+        "name": "Steve Menc",
+        "email": "steve.menc@arc-network.com"
+      },
+      {
+        "name": "Jill Schiffman",
+        "email": "jill.schiffman@arc-network.com"
+      }
+    ],
     "customQuestions": {},
     "filterOverrides": {
       "reach": [
@@ -11348,6 +11404,20 @@ const BRANDS = [
     "isCustom": null,
     "logoUrl": "https://districtadministration.com/wp-content/uploads/District-Administration-Logo-full-color-1-300x80.png",
     "subAudiences": null,
+    "accountReps": [
+      {
+        "name": "Amanda Holsclaw",
+        "email": "amanda.holsclaw@arc-network.com"
+      },
+      {
+        "name": "Fern Sheinman",
+        "email": "Fern.Sheinman@arc-network.com"
+      },
+      {
+        "name": "Caliann Mitoulis",
+        "email": "caliann.mitoulis@arc-network.com"
+      }
+    ],
     "customQuestions": {
       "targeted": [
         {
@@ -13288,6 +13358,16 @@ const BRANDS = [
     "isCustom": null,
     "logoUrl": "https://universitybusiness.com/wp-content/uploads/2022/08/ublogo2.png",
     "subAudiences": null,
+    "accountReps": [
+      {
+        "name": "Caliann Mitoulis",
+        "email": "caliann.mitoulis@arc-network.com"
+      },
+      {
+        "name": "Amanda Holsclaw",
+        "email": "amanda.holsclaw@arc-network.com"
+      }
+    ],
     "customQuestions": {
       "precision": [
         {
@@ -15303,6 +15383,7 @@ const BRANDS = [
     "isCustom": true,
     "logoUrl": null,
     "subAudiences": null,
+    "accountReps": [],
     "customQuestions": {},
     "filterOverrides": {}
   }
@@ -15370,6 +15451,10 @@ function buildSubmissionWorkbook(payload) {
   overviewRows.push(["Brand", payload.brand]);
   if (payload.subAudience) overviewRows.push(["Sub-Audience", payload.subAudience]);
   overviewRows.push(["Package", payload.package]);
+  if (payload.accountRep) {
+    overviewRows.push(["Account Rep", payload.accountRep.name]);
+    overviewRows.push(["Account Rep Email", payload.accountRep.email]);
+  }
   overviewRows.push(["Submitter Name", payload.contact.name]);
   overviewRows.push(["Submitter Email", payload.contact.email]);
   overviewRows.push(["Company Name", payload.contact.company]);
@@ -15433,6 +15518,7 @@ export default function PackageFormPrototype() {
   const selectBrand = (id) => {
     setBrandId(id);
     setSubAudience(null);
+    setAccountRep("");
     const b = BRANDS.find((x) => x.id === id);
     if (b.isCustom) {
       setStage("brand");
@@ -15470,6 +15556,9 @@ export default function PackageFormPrototype() {
 
   // ---- Contact fields + captcha, shown once a package is being viewed.
   // Not tied to brand/package selection — it's the requester's own info.
+  // accountRep IS tied to brand (its options come from that brand's
+  // AccountReps rows), which is why selectBrand resets it above.
+  const [accountRep, setAccountRep] = useState(""); // stores the selected rep's email
   const [contactName, setContactName] = useState("");
   const [contactEmail, setContactEmail] = useState("");
   const [contactCompany, setContactCompany] = useState("");
@@ -15480,6 +15569,7 @@ export default function PackageFormPrototype() {
 
   const emailLooksValid = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
   const isFormValid =
+    accountRep.trim().length > 0 &&
     contactName.trim().length > 0 &&
     contactEmail.trim().length > 0 &&
     emailLooksValid(contactEmail) &&
@@ -15508,6 +15598,7 @@ export default function PackageFormPrototype() {
     setBrandId(null);
     setSubAudience(null);
     setCustomBrandName("");
+    setAccountRep("");
     setActivePkg(PACKAGES[0].id);
     setOptionalSelections({});
     setSelectedCustomQuestions({});
@@ -15618,7 +15709,10 @@ export default function PackageFormPrototype() {
     });
     const customQuestions = [...requiredQuestionEntries, ...selectedOptionalEntries];
 
+    const selectedRep = (brand.accountReps || []).find((r) => r.email === accountRep) || null;
+
     return {
+      accountRep: selectedRep,
       contact: {
         name: contactName.trim(),
         email: contactEmail.trim(),
@@ -15632,7 +15726,7 @@ export default function PackageFormPrototype() {
       customQuestions,
       customQuestionCost: selectedOptionalEntries.length * CUSTOM_QUESTION_COST,
     };
-  }, [stage, pkg, mergedSections, categoryList, optionalSelections, activePkg, brand, subAudience, customBrandName, selectedQIds, requiredQuestions, optionalQuestions, questionSetKey, customQAnswerSelections, contactName, contactEmail, contactCompany, captchaChecked]);
+  }, [stage, pkg, mergedSections, categoryList, optionalSelections, activePkg, brand, subAudience, customBrandName, accountRep, selectedQIds, requiredQuestions, optionalQuestions, questionSetKey, customQAnswerSelections, contactName, contactEmail, contactCompany, captchaChecked]);
 
   return (
     <div style={{ background: paper, color: ink, minHeight: "100%", fontFamily: "'Inter', ui-sans-serif, system-ui, sans-serif" }} className="p-6 md:p-10">
@@ -15972,6 +16066,13 @@ export default function PackageFormPrototype() {
             {/* ---- Contact info (required to submit) ---- */}
             <SectionBlock title="Your information" subtitle="Required to submit your selections">
               <div className="flex flex-col gap-4">
+                <SelectField
+                  label="Account Rep"
+                  value={accountRep}
+                  onChange={updateContactField(setAccountRep)}
+                  placeholder={(brand.accountReps || []).length > 0 ? "Select an account rep" : "No account reps configured for this brand"}
+                  options={(brand.accountReps || []).map((r) => ({ value: r.email, label: r.name }))}
+                />
                 <TextField label="Full name" value={contactName} onChange={updateContactField(setContactName)} placeholder="Jane Smith" />
                 <TextField label="Work email" value={contactEmail} onChange={updateContactField(setContactEmail)} placeholder="jane@company.com" type="email" error={contactEmail.trim().length > 0 && !emailLooksValid(contactEmail) ? "Enter a valid email address" : null} />
                 <TextField label="Company name" value={contactCompany} onChange={updateContactField(setContactCompany)} placeholder="Acme Inc." />
@@ -16024,6 +16125,8 @@ export default function PackageFormPrototype() {
                       brand: payload.brand,
                       subAudience: payload.subAudience || "",
                       package: payload.package,
+                      accountRepName: payload.accountRep ? payload.accountRep.name : "",
+                      accountRepEmail: payload.accountRep ? payload.accountRep.email : "",
                       contactName: payload.contact.name,
                       contactEmail: payload.contact.email,
                       contactCompany: payload.contact.company,
@@ -16086,6 +16189,37 @@ function TextField({ label, value, onChange, placeholder, type = "text", error }
         }}
       />
       {error && <div style={{ fontSize: "0.74rem", color: "#C23B3B", marginTop: "0.3rem" }}>{error}</div>}
+    </div>
+  );
+}
+
+function SelectField({ label, value, onChange, options, placeholder, helperText }) {
+  return (
+    <div>
+      <label style={{ fontSize: "0.82rem", color: inkSoft, display: "block", marginBottom: "0.4rem" }}>
+        {label} <span style={{ color: "#C23B3B" }}>*</span>
+      </label>
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        style={{
+          width: "100%",
+          padding: "0.6rem 0.8rem",
+          borderRadius: "8px",
+          border: `1px solid ${line}`,
+          fontSize: "0.88rem",
+          background: paperRaised,
+          color: value ? ink : inkSoft,
+        }}
+      >
+        <option value="">{placeholder || "Select..."}</option>
+        {options.map((opt) => (
+          <option key={opt.value} value={opt.value}>
+            {opt.label}
+          </option>
+        ))}
+      </select>
+      {helperText && <div style={{ fontSize: "0.74rem", color: inkSoft, marginTop: "0.3rem" }}>{helperText}</div>}
     </div>
   );
 }
