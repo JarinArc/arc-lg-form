@@ -42,6 +42,12 @@ const BRANDS = [
       "Human Resources",
       "Brokers & HR"
     ],
+    "subAudienceCombos": {
+      "Brokers & HR": [
+        "Benefits Brokers",
+        "Human Resources"
+      ]
+    },
     "accountReps": [
       {
         "name": "Alicia Robledo",
@@ -58,6 +64,7 @@ const BRANDS = [
           "id": "group-size",
           "question": "Do you or your organization work with groups of the following size? (must select at least two options)",
           "type": "optional",
+          "subAudience": "Benefits Brokers",
           "standard": [
             "50 lives or fewer"
           ],
@@ -75,6 +82,7 @@ const BRANDS = [
           "id": "group-size",
           "question": "Do you or your organization work with groups of the following size? (must select at least two options)",
           "type": "optional",
+          "subAudience": "Benefits Brokers",
           "standard": [
             "50 lives or fewer"
           ],
@@ -90,6 +98,7 @@ const BRANDS = [
           "id": "self-funded",
           "question": "Do you work with self funded?",
           "type": "optional",
+          "subAudience": "Benefits Brokers",
           "standard": [
             "Yes (accepted)",
             "No (not accepted)"
@@ -2093,6 +2102,7 @@ const BRANDS = [
     "isCustom": null,
     "logoUrl": "https://www.thinkadvisor.com/_nuxt/img/ALM_ThinkAdvisor.84d9263.png",
     "subAudiences": null,
+    "subAudienceCombos": {},
     "accountReps": [
       {
         "name": "Archer Montague",
@@ -2109,6 +2119,7 @@ const BRANDS = [
           "id": "firm-aum",
           "question": "What is your firm\u2019s assets under management:   ",
           "type": "optional",
+          "subAudience": null,
           "standard": [
             "$1B or more (must accept)  "
           ],
@@ -2125,6 +2136,7 @@ const BRANDS = [
           "id": "ria",
           "question": "Are you an RIA?",
           "type": "required",
+          "subAudience": null,
           "standard": [
             "Yes (accepted)",
             "No (not accepted)"
@@ -2135,6 +2147,7 @@ const BRANDS = [
           "id": "firm-aum",
           "question": "What is your firm\u2019s assets under management:   ",
           "type": "optional",
+          "subAudience": null,
           "standard": [
             "$1B or more (must accept)  "
           ],
@@ -3097,6 +3110,7 @@ const BRANDS = [
       "Carriers",
       "Claims"
     ],
+    "subAudienceCombos": {},
     "accountReps": [
       {
         "name": "Susan Gould",
@@ -6795,6 +6809,7 @@ const BRANDS = [
     "isCustom": null,
     "logoUrl": "https://www.cutimes.com/_nuxt/img/logo-header-credit-union-times.f39782f.png",
     "subAudiences": null,
+    "subAudienceCombos": {},
     "accountReps": [
       {
         "name": "Stacy Barrett",
@@ -6807,6 +6822,7 @@ const BRANDS = [
           "id": "cu-bank-asset-size",
           "question": "Credit Union / Bank Asset Size?",
           "type": "optional",
+          "subAudience": null,
           "standard": [
             "More than $10 billion (accepted)",
             "$4 billion - <$10 billion (accepted)",
@@ -6824,6 +6840,7 @@ const BRANDS = [
           "id": "cu-bank-asset-size",
           "question": "Credit Union / Bank Asset Size?",
           "type": "optional",
+          "subAudience": null,
           "standard": [
             "More than $10 billion (accepted)",
             "$4 billion - <$10 billion (accepted)",
@@ -8814,6 +8831,7 @@ const BRANDS = [
     "isCustom": null,
     "logoUrl": "https://www.globest.com/_nuxt/img/globest-blue.743e64e.png",
     "subAudiences": null,
+    "subAudienceCombos": {},
     "accountReps": [
       {
         "name": "Eric Gordon",
@@ -10190,6 +10208,7 @@ const BRANDS = [
     "isCustom": null,
     "logoUrl": "https://hrexecutive.com/wp-content/uploads/HR_Executive_logo_RGB.png",
     "subAudiences": null,
+    "subAudienceCombos": {},
     "accountReps": [
       {
         "name": "Steve Menc",
@@ -11404,6 +11423,7 @@ const BRANDS = [
     "isCustom": null,
     "logoUrl": "https://districtadministration.com/wp-content/uploads/District-Administration-Logo-full-color-1-300x80.png",
     "subAudiences": null,
+    "subAudienceCombos": {},
     "accountReps": [
       {
         "name": "Amanda Holsclaw",
@@ -11424,6 +11444,7 @@ const BRANDS = [
           "id": "da-job-title",
           "question": "What is your job title?",
           "type": "optional",
+          "subAudience": null,
           "standard": [
             "Superintendent",
             "Assistant/Deputy/Associate/Regional Superintendent"
@@ -11447,6 +11468,7 @@ const BRANDS = [
           "id": "da-district-size",
           "question": "School Districts Size: # of students",
           "type": "optional",
+          "subAudience": null,
           "standard": [],
           "optional": [
             "1 - 249",
@@ -11464,6 +11486,7 @@ const BRANDS = [
           "id": "da-job-title",
           "question": "What is your job title?",
           "type": "optional",
+          "subAudience": null,
           "standard": [
             "Superintendent",
             "Assistant/Deputy/Associate/Regional Superintendent"
@@ -11489,6 +11512,7 @@ const BRANDS = [
           "id": "da-job-title",
           "question": "What is your job title?",
           "type": "optional",
+          "subAudience": null,
           "standard": [
             "Superintendent",
             "Assistant/Deputy/Associate/Regional Superintendent"
@@ -11512,6 +11536,7 @@ const BRANDS = [
           "id": "da-district-size",
           "question": "School Districts Size: # of students",
           "type": "optional",
+          "subAudience": null,
           "standard": [],
           "optional": [
             "1 - 249",
@@ -13358,6 +13383,7 @@ const BRANDS = [
     "isCustom": null,
     "logoUrl": "https://universitybusiness.com/wp-content/uploads/2022/08/ublogo2.png",
     "subAudiences": null,
+    "subAudienceCombos": {},
     "accountReps": [
       {
         "name": "Caliann Mitoulis",
@@ -13374,6 +13400,7 @@ const BRANDS = [
           "id": "ub-job-title",
           "question": "What is your job title?",
           "type": "optional",
+          "subAudience": null,
           "standard": [
             "Provost",
             "Chief Academic Officer (CAO)"
@@ -13396,6 +13423,7 @@ const BRANDS = [
           "id": "ub-discipline",
           "question": "Discipline? (Select all that apply)",
           "type": "optional",
+          "subAudience": null,
           "standard": [],
           "optional": [
             "Agriculture/Animal Science",
@@ -13425,6 +13453,7 @@ const BRANDS = [
           "id": "ub-institution-type",
           "question": "Institution Type? (select all that apply)",
           "type": "optional",
+          "subAudience": null,
           "standard": [],
           "optional": [
             "Public 2 year",
@@ -13438,6 +13467,7 @@ const BRANDS = [
           "id": "ub-enrollment-size",
           "question": "Enrollment Size? (select all that apply)",
           "type": "optional",
+          "subAudience": null,
           "standard": [],
           "optional": [
             "Under 500",
@@ -13452,6 +13482,7 @@ const BRANDS = [
           "id": "ub-job-title",
           "question": "What is your job title?",
           "type": "optional",
+          "subAudience": null,
           "standard": [
             "Provost",
             "Chief Academic Officer (CAO)"
@@ -13474,6 +13505,7 @@ const BRANDS = [
           "id": "ub-discipline",
           "question": "Discipline? (Select all that apply)",
           "type": "optional",
+          "subAudience": null,
           "standard": [],
           "optional": [
             "Agriculture/Animal Science",
@@ -13503,6 +13535,7 @@ const BRANDS = [
           "id": "ub-institution-type",
           "question": "Institution Type? (select all that apply)",
           "type": "optional",
+          "subAudience": null,
           "standard": [],
           "optional": [
             "Public 2 year",
@@ -13516,6 +13549,7 @@ const BRANDS = [
           "id": "ub-enrollment-size",
           "question": "Enrollment Size? (select all that apply)",
           "type": "optional",
+          "subAudience": null,
           "standard": [],
           "optional": [
             "Under 500",
@@ -13530,6 +13564,7 @@ const BRANDS = [
           "id": "ub-job-title",
           "question": "What is your job title?",
           "type": "optional",
+          "subAudience": null,
           "standard": [
             "Provost",
             "Chief Academic Officer (CAO)"
@@ -15383,6 +15418,7 @@ const BRANDS = [
     "isCustom": true,
     "logoUrl": null,
     "subAudiences": null,
+    "subAudienceCombos": {},
     "accountReps": [],
     "customQuestions": {},
     "filterOverrides": {}
@@ -15420,6 +15456,30 @@ const tealSoft = "#DFF6F8";
 // ---------------------------------------------------------------------------
 // Excel export — builds the downloadable workbook from the submitted payload.
 // ---------------------------------------------------------------------------
+// Computes a package's filter sections (universal + brand overrides) as if
+// targetSubAudience were the selected sub-audience — a plain, direct match,
+// no combo-union logic here. Used once per "display group" below, so a
+// combination sub-audience (e.g. "Brokers & HR") can show its two source
+// sub-audiences as fully separate, non-merged sections.
+function computeGroupSections(pkg, brand, activePkg, targetSubAudience) {
+  const base = pkg.sections || {};
+  const overrides = (brand && brand.filterOverrides && brand.filterOverrides[activePkg]) || [];
+  const merged = {};
+  Object.keys(base).forEach((cat) => {
+    merged[cat] = { standard: new Set(base[cat].standard), optional: new Set(base[cat].optional) };
+  });
+  overrides.forEach((o) => {
+    if (o.subAudience !== null && o.subAudience !== targetSubAudience) return;
+    if (!merged[o.category]) merged[o.category] = { standard: new Set(), optional: new Set() };
+    merged[o.category][o.type === "standard" ? "standard" : "optional"].add(o.label);
+  });
+  const result = {};
+  Object.keys(merged).forEach((cat) => {
+    result[cat] = { standard: [...merged[cat].standard], optional: [...merged[cat].optional] };
+  });
+  return result;
+}
+
 function sanitizeForFilename(s) {
   return String(s || "").replace(/[\\/:*?"<>|]/g, "").trim();
 }
@@ -15471,9 +15531,27 @@ function buildSubmissionWorkbook(payload) {
   const usedSheetNames = new Set(["Overview"]);
   categoriesSeen.forEach((cat) => {
     const rows = [["Filter", "Type"]];
-    payload.filters
-      .filter((f) => f.category === cat)
-      .forEach((f) => rows.push([f.value, f.source === "standard" ? "Standard" : "Optional"]));
+    const rowsForCategory = payload.filters.filter((f) => f.category === cat);
+    // If any row in this category carries a group tag (e.g. "Benefits
+    // Brokers" vs "Human Resources" under a combination sub-audience like
+    // "Brokers & HR"), group the rows under a sub-header per group instead
+    // of listing them flat — keeps the two audiences visibly distinct
+    // within the same sheet, never mixed together.
+    const hasGroups = rowsForCategory.some((f) => f.group);
+    if (hasGroups) {
+      const groupsSeen = [];
+      rowsForCategory.forEach((f) => {
+        if (!groupsSeen.includes(f.group)) groupsSeen.push(f.group);
+      });
+      groupsSeen.forEach((groupName) => {
+        rows.push([`— ${groupName} —`, ""]);
+        rowsForCategory
+          .filter((f) => f.group === groupName)
+          .forEach((f) => rows.push([f.value, f.source === "standard" ? "Standard" : "Optional"]));
+      });
+    } else {
+      rowsForCategory.forEach((f) => rows.push([f.value, f.source === "standard" ? "Standard" : "Optional"]));
+    }
     const sheet = XLSX.utils.aoa_to_sheet(rows);
     sheet["!cols"] = [{ wch: 50 }, { wch: 12 }];
     let sheetName = sanitizeSheetName(cat);
@@ -15620,38 +15698,48 @@ export default function PackageFormPrototype() {
   // Overrides only ever ADD to a category's standard/optional lists.
   // Category order: universal categories first (in their data order), then
   // any override-only categories appended in the order they first appear.
-  const mergedSections = useMemo(() => {
-    const base = pkg.sections || {};
-    const overrides = (brand && brand.filterOverrides && brand.filterOverrides[activePkg]) || [];
-    const merged = {};
-    Object.keys(base).forEach((cat) => {
-      merged[cat] = { standard: [...base[cat].standard], optional: [...base[cat].optional] };
+  // For a normal sub-audience (or none), this is a single "group". For a
+  // combination sub-audience (e.g. "Brokers & HR"), this becomes two (or
+  // more) fully separate groups — one per source sub-audience — each with
+  // its own independent filter sections, never merged together.
+  const displayGroups = useMemo(() => {
+    const comboSources = (brand && brand.subAudienceCombos && brand.subAudienceCombos[subAudience]) || null;
+    const groupDefs =
+      comboSources && comboSources.length > 0
+        ? comboSources.map((name) => ({ key: name, label: name }))
+        : [{ key: subAudience || "", label: null }];
+    return groupDefs.map((g) => {
+      const sections = computeGroupSections(pkg, brand, activePkg, g.key);
+      const keys = Object.keys(sections);
+      const known = CATEGORY_ORDER.filter((c) => keys.includes(c));
+      const extra = keys.filter((c) => !CATEGORY_ORDER.includes(c));
+      // Custom questions scoped to this group's specific sub-audience, plus
+      // any unscoped (blank subAudience) questions that apply everywhere —
+      // same blank-means-universal pattern as filter overrides.
+      const allQuestions = (brand && brand.customQuestions ? brand.customQuestions[activePkg] : null) || [];
+      const groupQuestions = allQuestions.filter((q) => !q.subAudience || q.subAudience === g.key);
+      return {
+        key: g.key,
+        label: g.label,
+        sections,
+        categoryList: [...known, ...extra],
+        requiredQuestions: groupQuestions.filter((q) => q.type === "required"),
+        optionalQuestions: groupQuestions.filter((q) => q.type !== "required"),
+      };
     });
-    overrides.forEach((o) => {
-      if (o.subAudience !== null && o.subAudience !== subAudience) return;
-      if (!merged[o.category]) merged[o.category] = { standard: [], optional: [] };
-      (o.type === "standard" ? merged[o.category].standard : merged[o.category].optional).push(o.label);
-    });
-    return merged;
   }, [pkg, brand, activePkg, subAudience]);
 
-  const categoryList = (() => {
-    const keys = Object.keys(mergedSections);
-    const known = CATEGORY_ORDER.filter((c) => keys.includes(c));
-    const extra = keys.filter((c) => !CATEGORY_ORDER.includes(c));
-    return [...known, ...extra];
-  })();
+  const isMultiGroup = displayGroups.length > 1;
 
-  const optSelKey = (cat) => `${brand ? brand.id : ""}:${subAudience || ""}:${activePkg}:${cat}`;
+  const optSelKey = (groupKey, cat) => `${brand ? brand.id : ""}:${groupKey}:${activePkg}:${cat}`;
+  const questionSetKey = (groupKey) => (brand ? `${brand.id}:${groupKey}:${activePkg}` : null);
+  const selectedQIdsFor = (groupKey) => {
+    const key = questionSetKey(groupKey);
+    return (key && selectedCustomQuestions[key]) || [];
+  };
 
-  const availableQuestions = (brand && brand.customQuestions ? brand.customQuestions[activePkg] : null) || [];
-  const requiredQuestions = availableQuestions.filter((q) => q.type === "required");
-  const optionalQuestions = availableQuestions.filter((q) => q.type !== "required");
-  const questionSetKey = brand ? `${brand.id}:${activePkg}` : null;
-  const selectedQIds = (questionSetKey && selectedCustomQuestions[questionSetKey]) || [];
-
-  const toggleOptional = (category, label) => {
-    const key = optSelKey(category);
+  const toggleOptional = (groupKey, category, label) => {
+    const key = optSelKey(groupKey, category);
     setOptionalSelections((prev) => {
       const set = new Set(prev[key] || []);
       set.has(label) ? set.delete(label) : set.add(label);
@@ -15659,10 +15747,11 @@ export default function PackageFormPrototype() {
     });
   };
 
-  const toggleCustomQuestion = (qId) => {
-    if (!questionSetKey) return;
+  const toggleCustomQuestion = (groupKey, qId) => {
+    const key = questionSetKey(groupKey);
+    if (!key) return;
     setSelectedCustomQuestions((prev) => {
-      const current = prev[questionSetKey] || [];
+      const current = prev[key] || [];
       let next;
       if (current.includes(qId)) {
         next = current.filter((id) => id !== qId);
@@ -15671,12 +15760,12 @@ export default function PackageFormPrototype() {
       } else {
         next = current;
       }
-      return { ...prev, [questionSetKey]: next };
+      return { ...prev, [key]: next };
     });
   };
 
-  const toggleCustomQAnswer = (qId, label) => {
-    const key = `${questionSetKey}:${qId}`;
+  const toggleCustomQAnswer = (groupKey, qId, label) => {
+    const key = `${questionSetKey(groupKey)}:${qId}`;
     setCustomQAnswerSelections((prev) => {
       const set = new Set(prev[key] || []);
       set.has(label) ? set.delete(label) : set.add(label);
@@ -15687,27 +15776,39 @@ export default function PackageFormPrototype() {
   const payload = useMemo(() => {
     if (stage !== "packages" || !brand) return null;
     const filters = [];
-    categoryList.forEach((cat) => {
-      const section = mergedSections[cat];
-      section.standard.forEach((f) => filters.push({ category: cat, value: f, source: "standard" }));
-      (optionalSelections[optSelKey(cat)] || new Set()).forEach((f) => filters.push({ category: cat, value: f, source: "optional" }));
-    });
+    const customQuestions = [];
+    let optionalQuestionCount = 0;
 
-    const buildQuestionEntry = (qDef, isRequired) => {
-      const answerKey = `${questionSetKey}:${qDef.id}`;
-      const selectedAnswers = customQAnswerSelections[answerKey] || new Set();
-      const qFilters = [];
-      qDef.standard.forEach((f) => qFilters.push({ value: f, source: "standard" }));
-      selectedAnswers.forEach((f) => qFilters.push({ value: f, source: "optional" }));
-      return { question: qDef.question, filters: qFilters, required: isRequired };
-    };
+    displayGroups.forEach((group) => {
+      group.categoryList.forEach((cat) => {
+        const section = group.sections[cat];
+        section.standard.forEach((f) =>
+          filters.push({ category: cat, value: f, source: "standard", group: isMultiGroup ? group.label : null })
+        );
+        (optionalSelections[optSelKey(group.key, cat)] || new Set()).forEach((f) =>
+          filters.push({ category: cat, value: f, source: "optional", group: isMultiGroup ? group.label : null })
+        );
+      });
 
-    const requiredQuestionEntries = requiredQuestions.map((qDef) => buildQuestionEntry(qDef, true));
-    const selectedOptionalEntries = selectedQIds.map((qId) => {
-      const qDef = optionalQuestions.find((q) => q.id === qId);
-      return buildQuestionEntry(qDef, false);
+      const buildQuestionEntry = (qDef, isRequired) => {
+        const answerKey = `${questionSetKey(group.key)}:${qDef.id}`;
+        const selectedAnswers = customQAnswerSelections[answerKey] || new Set();
+        const qFilters = [];
+        qDef.standard.forEach((f) => qFilters.push({ value: f, source: "standard" }));
+        selectedAnswers.forEach((f) => qFilters.push({ value: f, source: "optional" }));
+        return { question: qDef.question, filters: qFilters, required: isRequired, group: isMultiGroup ? group.label : null };
+      };
+
+      group.requiredQuestions.forEach((qDef) => customQuestions.push(buildQuestionEntry(qDef, true)));
+      const groupSelectedQIds = selectedQIdsFor(group.key);
+      groupSelectedQIds.forEach((qId) => {
+        const qDef = group.optionalQuestions.find((q) => q.id === qId);
+        if (qDef) {
+          customQuestions.push(buildQuestionEntry(qDef, false));
+          optionalQuestionCount += 1;
+        }
+      });
     });
-    const customQuestions = [...requiredQuestionEntries, ...selectedOptionalEntries];
 
     const selectedRep = (brand.accountReps || []).find((r) => r.email === accountRep) || null;
 
@@ -15724,9 +15825,9 @@ export default function PackageFormPrototype() {
       package: pkg.name,
       filters,
       customQuestions,
-      customQuestionCost: selectedOptionalEntries.length * CUSTOM_QUESTION_COST,
+      customQuestionCost: optionalQuestionCount * CUSTOM_QUESTION_COST,
     };
-  }, [stage, pkg, mergedSections, categoryList, optionalSelections, activePkg, brand, subAudience, customBrandName, accountRep, selectedQIds, requiredQuestions, optionalQuestions, questionSetKey, customQAnswerSelections, contactName, contactEmail, contactCompany, captchaChecked]);
+  }, [stage, pkg, displayGroups, isMultiGroup, optionalSelections, activePkg, brand, subAudience, customBrandName, accountRep, selectedCustomQuestions, customQAnswerSelections, contactName, contactEmail, contactCompany, captchaChecked]);
 
   return (
     <div style={{ background: paper, color: ink, minHeight: "100%", fontFamily: "'Inter', ui-sans-serif, system-ui, sans-serif" }} className="p-6 md:p-10">
@@ -15948,120 +16049,131 @@ export default function PackageFormPrototype() {
               })}
             </div>
 
-            {categoryList.length === 0 ? (
-              <div style={{ background: "#FBF0E8", border: "1px solid #E8B98C", borderRadius: "12px", padding: "1.1rem 1.25rem", marginBottom: "1.25rem", fontSize: "0.86rem", color: "#7A4A1F" }}>
-                No filters are configured yet for {brand.isCustom ? customBrandName || "this brand" : brand.name}
-                {subAudience ? ` · ${subAudience}` : ""} in the {pkg.name} package. Add rows to the Filters sheet (universal or scoped to this brand/sub-audience) to populate this screen.
-              </div>
-            ) : (
-              <>
-                {/* ---- Section 1: locked, included filters ---- */}
-                <SectionBlock title={`Included in ${pkg.name} Package`} subtitle="No action needed">
-                  {categoryList.map((cat) => {
-                    const section = mergedSections[cat];
-                    if (section.standard.length === 0) return null;
-                    return (
-                      <FilterGroup key={cat} label={cat}>
-                        {section.standard.map((label) => (
-                          <LockedRow key={label} label={label} />
-                        ))}
-                      </FilterGroup>
-                    );
-                  })}
+            {displayGroups.map((group) => (
+              <React.Fragment key={group.key || "single"}>
+                {isMultiGroup && (
+                  <div style={{ fontWeight: 800, fontSize: "1.05rem", color: navy, marginTop: "0.5rem", marginBottom: "0.85rem" }}>
+                    {group.label}
+                  </div>
+                )}
 
-                  {requiredQuestions.length > 0 && (
-                    <div>
-                      <div style={{ fontWeight: 700, fontSize: "0.95rem", color: ink, marginBottom: "0.6rem" }}>
-                        Required Custom Qualifying Questions
-                      </div>
-                      <div className="flex flex-col gap-4">
-                        {requiredQuestions.map((q) => {
-                          const answerKey = `${questionSetKey}:${q.id}`;
+                {group.categoryList.length === 0 ? (
+                  <div style={{ background: "#FBF0E8", border: "1px solid #E8B98C", borderRadius: "12px", padding: "1.1rem 1.25rem", marginBottom: "1.25rem", fontSize: "0.86rem", color: "#7A4A1F" }}>
+                    No filters are configured yet for {brand.isCustom ? customBrandName || "this brand" : brand.name}
+                    {group.label ? ` · ${group.label}` : subAudience ? ` · ${subAudience}` : ""} in the {pkg.name} package. Add rows to the Filters sheet (universal or scoped to this brand/sub-audience) to populate this screen.
+                  </div>
+                ) : (
+                  <>
+                    {/* ---- Section 1: locked, included filters ---- */}
+                    <SectionBlock title={`Included in ${pkg.name} Package`} subtitle="No action needed">
+                      {group.categoryList.map((cat) => {
+                        const section = group.sections[cat];
+                        if (section.standard.length === 0) return null;
+                        return (
+                          <FilterGroup key={cat} label={cat}>
+                            {section.standard.map((label) => (
+                              <LockedRow key={label} label={label} />
+                            ))}
+                          </FilterGroup>
+                        );
+                      })}
+
+                      {group.requiredQuestions.length > 0 && (
+                        <div>
+                          <div style={{ fontWeight: 700, fontSize: "0.95rem", color: ink, marginBottom: "0.6rem" }}>
+                            Required Custom Qualifying Questions
+                          </div>
+                          <div className="flex flex-col gap-4">
+                            {group.requiredQuestions.map((q) => {
+                              const answerKey = `${questionSetKey(group.key)}:${q.id}`;
+                              const selectedAnswers = customQAnswerSelections[answerKey] || new Set();
+                              return (
+                                <div key={q.id}>
+                                  <div style={{ fontSize: "0.86rem", fontWeight: 600, color: ink, marginBottom: "0.5rem" }}>
+                                    {q.question}
+                                  </div>
+                                  <div className="flex flex-col gap-2">
+                                    {q.standard.map((label) => (
+                                      <LockedRow key={label} label={label} />
+                                    ))}
+                                    {q.optional.map((label) => (
+                                      <OptionRow
+                                        key={label}
+                                        label={label}
+                                        checked={selectedAnswers.has(label)}
+                                        onToggle={() => toggleCustomQAnswer(group.key, q.id, label)}
+                                      />
+                                    ))}
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      )}
+                    </SectionBlock>
+
+                    {/* ---- Section 2: optional, editable filters ---- */}
+                    <SectionBlock
+                      title="Add Additional Selections"
+                      subtitle="If available, select anything beyond the default selections to include in your package"
+                    >
+                      {group.categoryList.map((cat) => {
+                        const section = group.sections[cat];
+                        if (section.optional.length === 0) return null;
+                        const selectedOptional = optionalSelections[optSelKey(group.key, cat)] || new Set();
+                        return (
+                          <FilterGroup key={cat} label={cat}>
+                            {section.optional.map((label) => (
+                              <OptionRow key={label} label={label} checked={selectedOptional.has(label)} onToggle={() => toggleOptional(group.key, cat, label)} />
+                            ))}
+                          </FilterGroup>
+                        );
+                      })}
+                    </SectionBlock>
+
+                    {/* ---- Section 3: optional custom qualifying questions ---- */}
+                    {group.optionalQuestions.length > 0 && (
+                      <SectionBlock
+                        title="Optional Custom Qualifying Questions"
+                        subtitle={`Each additional question adds a $${CUSTOM_QUESTION_COST}/lead cost. Select up to ${MAX_CUSTOM_QUESTIONS} questions and any additional qualifying answers.`}
+                      >
+                        <div style={{ fontSize: "0.78rem", color: inkSoft, marginTop: "-0.6rem", marginBottom: "0.2rem" }}>
+                          {selectedQIdsFor(group.key).length} of {MAX_CUSTOM_QUESTIONS} selected
+                        </div>
+                        {group.optionalQuestions.map((q) => {
+                          const groupSelectedQIds = selectedQIdsFor(group.key);
+                          const checked = groupSelectedQIds.includes(q.id);
+                          const atCap = groupSelectedQIds.length >= MAX_CUSTOM_QUESTIONS && !checked;
+                          const answerKey = `${questionSetKey(group.key)}:${q.id}`;
                           const selectedAnswers = customQAnswerSelections[answerKey] || new Set();
                           return (
                             <div key={q.id}>
-                              <div style={{ fontSize: "0.86rem", fontWeight: 600, color: ink, marginBottom: "0.5rem" }}>
-                                {q.question}
-                              </div>
-                              <div className="flex flex-col gap-2">
-                                {q.standard.map((label) => (
-                                  <LockedRow key={label} label={label} />
-                                ))}
-                                {q.optional.map((label) => (
-                                  <OptionRow
-                                    key={label}
-                                    label={label}
-                                    checked={selectedAnswers.has(label)}
-                                    onToggle={() => toggleCustomQAnswer(q.id, label)}
-                                  />
-                                ))}
-                              </div>
+                              <QuestionRow label={q.question} checked={checked} disabled={atCap} onToggle={() => toggleCustomQuestion(group.key, q.id)} cost={CUSTOM_QUESTION_COST} />
+                              {checked && (q.standard.length > 0 || q.optional.length > 0) && (
+                                <div style={{ paddingLeft: "1.9rem", marginTop: "0.5rem" }} className="flex flex-col gap-2">
+                                  {q.standard.map((label) => (
+                                    <LockedRow key={label} label={label} />
+                                  ))}
+                                  {q.optional.map((label) => (
+                                    <OptionRow
+                                      key={label}
+                                      label={label}
+                                      checked={selectedAnswers.has(label)}
+                                      onToggle={() => toggleCustomQAnswer(group.key, q.id, label)}
+                                    />
+                                  ))}
+                                </div>
+                              )}
                             </div>
                           );
                         })}
-                      </div>
-                    </div>
-                  )}
-                </SectionBlock>
-
-                {/* ---- Section 2: optional, editable filters ---- */}
-                <SectionBlock
-                  title="Add Additional Selections"
-                  subtitle="If available, select anything beyond the default selections to include in your package"
-                >
-                  {categoryList.map((cat) => {
-                    const section = mergedSections[cat];
-                    if (section.optional.length === 0) return null;
-                    const selectedOptional = optionalSelections[optSelKey(cat)] || new Set();
-                    return (
-                      <FilterGroup key={cat} label={cat}>
-                        {section.optional.map((label) => (
-                          <OptionRow key={label} label={label} checked={selectedOptional.has(label)} onToggle={() => toggleOptional(cat, label)} />
-                        ))}
-                      </FilterGroup>
-                    );
-                  })}
-                </SectionBlock>
-              </>
-            )}
-
-            {/* ---- Section 3: optional custom qualifying questions ---- */}
-            {optionalQuestions.length > 0 && (
-              <SectionBlock
-                title="Optional Custom Qualifying Questions"
-                subtitle={`Each additional question adds a $${CUSTOM_QUESTION_COST}/lead cost. Select up to ${MAX_CUSTOM_QUESTIONS} questions and any additional qualifying answers.`}
-              >
-                <div style={{ fontSize: "0.78rem", color: inkSoft, marginTop: "-0.6rem", marginBottom: "0.2rem" }}>
-                  {selectedQIds.length} of {MAX_CUSTOM_QUESTIONS} selected
-                </div>
-                {optionalQuestions.map((q) => {
-                  const checked = selectedQIds.includes(q.id);
-                  const atCap = selectedQIds.length >= MAX_CUSTOM_QUESTIONS && !checked;
-                  const answerKey = `${questionSetKey}:${q.id}`;
-                  const selectedAnswers = customQAnswerSelections[answerKey] || new Set();
-                  return (
-                    <div key={q.id}>
-                      <QuestionRow label={q.question} checked={checked} disabled={atCap} onToggle={() => toggleCustomQuestion(q.id)} cost={CUSTOM_QUESTION_COST} />
-                      {checked && (q.standard.length > 0 || q.optional.length > 0) && (
-                        <div style={{ paddingLeft: "1.9rem", marginTop: "0.5rem" }} className="flex flex-col gap-2">
-                          {q.standard.map((label) => (
-                            <LockedRow key={label} label={label} />
-                          ))}
-                          {q.optional.map((label) => (
-                            <OptionRow
-                              key={label}
-                              label={label}
-                              checked={selectedAnswers.has(label)}
-                              onToggle={() => toggleCustomQAnswer(q.id, label)}
-                            />
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </SectionBlock>
-            )}
+                      </SectionBlock>
+                    )}
+                  </>
+                )}
+              </React.Fragment>
+            ))}
 
             {/* ---- Contact info (required to submit) ---- */}
             <SectionBlock title="Your information" subtitle="Required to submit your selections">
