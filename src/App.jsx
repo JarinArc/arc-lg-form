@@ -3107,7 +3107,6 @@ const BRANDS = [
     "subAudiences": [
       "Entire PC360 Audience",
       "Agents & Brokers",
-      "Carriers",
       "Claims"
     ],
     "subAudienceCombos": {},
@@ -10206,7 +10205,7 @@ const BRANDS = [
     "id": "HRE",
     "name": "HR Executive",
     "isCustom": null,
-    "logoUrl": "https://hrexecutive.com/wp-content/uploads/HR_Executive_logo_RGB.png",
+    "logoUrl": "https://hrexecutive.com/_nuxt/img/logo-header-hr-executive.733ef74.png",
     "subAudiences": null,
     "subAudienceCombos": {},
     "accountReps": [
@@ -15830,7 +15829,7 @@ export default function PackageFormPrototype() {
   }, [stage, pkg, displayGroups, isMultiGroup, optionalSelections, activePkg, brand, subAudience, customBrandName, accountRep, selectedCustomQuestions, customQAnswerSelections, contactName, contactEmail, contactCompany, captchaChecked]);
 
   return (
-    <div style={{ background: paper, color: ink, minHeight: "100%", fontFamily: "'Inter', ui-sans-serif, system-ui, sans-serif" }} className="p-6 md:p-10">
+    <div style={{ background: paper, color: ink, minHeight: "100vh", fontFamily: "'Inter', ui-sans-serif, system-ui, sans-serif" }} className="p-6 md:p-10">
       <style>{`
         .arc-form-wrap { container-type: inline-size; }
         .arc-checkbox-grid { display: flex; flex-direction: column; gap: 0.5rem; }
