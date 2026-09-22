@@ -58,6 +58,36 @@ const BRANDS = [
         "email": "kelly.davisson@arc-network.com"
       }
     ],
+    "selectionMinimums": [
+      {
+        "subAudience": "Human Resources",
+        "package": "targeted",
+        "category": "Industry/Sub-Industry",
+        "questionId": null,
+        "minimum": 3
+      },
+      {
+        "subAudience": "Human Resources",
+        "package": "precision",
+        "category": "Industry/Sub-Industry",
+        "questionId": null,
+        "minimum": 3
+      },
+      {
+        "subAudience": "Benefits Brokers",
+        "package": "targeted",
+        "category": null,
+        "questionId": "group-size",
+        "minimum": 2
+      },
+      {
+        "subAudience": "Benefits Brokers",
+        "package": "precision",
+        "category": null,
+        "questionId": "group-size",
+        "minimum": 2
+      }
+    ],
     "customQuestions": {
       "targeted": [
         {
@@ -2113,6 +2143,7 @@ const BRANDS = [
         "email": "david.spindler@arc-network.com"
       }
     ],
+    "selectionMinimums": [],
     "customQuestions": {
       "targeted": [
         {
@@ -3118,6 +3149,36 @@ const BRANDS = [
       {
         "name": "Kelly Davisson",
         "email": "kelly.davisson@arc-network.com"
+      }
+    ],
+    "selectionMinimums": [
+      {
+        "subAudience": "Agents & Brokers",
+        "package": "targeted",
+        "category": "Number of Employees",
+        "questionId": null,
+        "minimum": 2
+      },
+      {
+        "subAudience": "Agents & Brokers",
+        "package": "precision",
+        "category": "Number of Employees",
+        "questionId": null,
+        "minimum": 2
+      },
+      {
+        "subAudience": "Claims",
+        "package": "targeted",
+        "category": "Number of Employees",
+        "questionId": null,
+        "minimum": 2
+      },
+      {
+        "subAudience": "Claims",
+        "package": "precision",
+        "category": "Number of Employees",
+        "questionId": null,
+        "minimum": 2
       }
     ],
     "customQuestions": {},
@@ -6815,6 +6876,7 @@ const BRANDS = [
         "email": "stacy.barrett@arc-network.com"
       }
     ],
+    "selectionMinimums": [],
     "customQuestions": {
       "precision": [
         {
@@ -8841,6 +8903,7 @@ const BRANDS = [
         "email": "elizabeth.ames@arc-network.com"
       }
     ],
+    "selectionMinimums": [],
     "customQuestions": {},
     "filterOverrides": {
       "reach": [
@@ -10218,6 +10281,22 @@ const BRANDS = [
         "email": "jill.schiffman@arc-network.com"
       }
     ],
+    "selectionMinimums": [
+      {
+        "subAudience": null,
+        "package": "targeted",
+        "category": "Industry/Sub-Industry",
+        "questionId": null,
+        "minimum": 3
+      },
+      {
+        "subAudience": null,
+        "package": "precision",
+        "category": "Industry/Sub-Industry",
+        "questionId": null,
+        "minimum": 3
+      }
+    ],
     "customQuestions": {},
     "filterOverrides": {
       "reach": [
@@ -11437,6 +11516,7 @@ const BRANDS = [
         "email": "caliann.mitoulis@arc-network.com"
       }
     ],
+    "selectionMinimums": [],
     "customQuestions": {
       "targeted": [
         {
@@ -13393,6 +13473,7 @@ const BRANDS = [
         "email": "amanda.holsclaw@arc-network.com"
       }
     ],
+    "selectionMinimums": [],
     "customQuestions": {
       "precision": [
         {
@@ -15419,6 +15500,7 @@ const BRANDS = [
     "subAudiences": null,
     "subAudienceCombos": {},
     "accountReps": [],
+    "selectionMinimums": [],
     "customQuestions": {},
     "filterOverrides": {}
   }
@@ -15460,6 +15542,17 @@ const tealSoft = "#DFF6F8";
 // no combo-union logic here. Used once per "display group" below, so a
 // combination sub-audience (e.g. "Brokers & HR") can show its two source
 // sub-audiences as fully separate, non-merged sections.
+// Which SelectionMinimums rules apply to this specific group + package.
+// Blank subAudience/package on a rule means "applies regardless" (a
+// wildcard) — this is what lets one rule automatically cover both a
+// standalone sub-audience and its appearance inside a combination.
+function getApplicableMinimums(brand, groupKey, activePkg) {
+  const rules = (brand && brand.selectionMinimums) || [];
+  return rules.filter(
+    (r) => (!r.subAudience || r.subAudience === groupKey) && (!r.package || r.package === activePkg)
+  );
+}
+
 function computeGroupSections(pkg, brand, activePkg, targetSubAudience) {
   const base = pkg.sections || {};
   const overrides = (brand && brand.filterOverrides && brand.filterOverrides[activePkg]) || [];
@@ -15488,18 +15581,24 @@ function sanitizeSheetName(s) {
   return cleaned.length > 31 ? cleaned.slice(0, 31) : cleaned;
 }
 
-function formatDateDDMMYY(d) {
+function formatDateMMDDYY(d) {
   const dd = String(d.getDate()).padStart(2, "0");
   const mm = String(d.getMonth() + 1).padStart(2, "0");
   const yy = String(d.getFullYear()).slice(-2);
-  return `${dd}${mm}${yy}`;
+  return `${mm}${dd}${yy}`;
+}
+
+function formatSubmissionDateTime(d) {
+  const datePart = d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+  const timePart = d.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+  return `${datePart}, ${timePart}`;
 }
 
 function buildSubmissionFilename(payload) {
   const brandPart = sanitizeForFilename(payload.brand) || "Brand";
   const companyPart = sanitizeForFilename(payload.contact.company) || "Company";
   const packagePart = sanitizeForFilename(payload.package) || "Package";
-  return `${brandPart}_${companyPart}_${packagePart}_${formatDateDDMMYY(new Date())}.xlsx`;
+  return `${brandPart}_${companyPart}_${packagePart}_${formatDateMMDDYY(new Date())}.xlsx`;
 }
 
 function buildSubmissionWorkbook(payload) {
@@ -15507,6 +15606,7 @@ function buildSubmissionWorkbook(payload) {
 
   // ---- Overview ----
   const overviewRows = [["Field", "Value"]];
+  overviewRows.push(["Submission Date", formatSubmissionDateTime(new Date())]);
   overviewRows.push(["Brand", payload.brand]);
   if (payload.subAudience) overviewRows.push(["Sub-Audience", payload.subAudience]);
   overviewRows.push(["Package", payload.package]);
@@ -15645,13 +15745,6 @@ export default function PackageFormPrototype() {
   const [deliveryStatus, setDeliveryStatus] = useState(null); // null | 'sending' | 'sent' | 'error'
 
   const emailLooksValid = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
-  const isFormValid =
-    accountRep.trim().length > 0 &&
-    contactName.trim().length > 0 &&
-    contactEmail.trim().length > 0 &&
-    emailLooksValid(contactEmail) &&
-    contactCompany.trim().length > 0 &&
-    captchaChecked;
 
   const updateContactField = (setter) => (v) => {
     setter(v);
@@ -15724,6 +15817,7 @@ export default function PackageFormPrototype() {
         categoryList: [...known, ...extra],
         requiredQuestions: groupQuestions.filter((q) => q.type === "required"),
         optionalQuestions: groupQuestions.filter((q) => q.type !== "required"),
+        minimumRules: getApplicableMinimums(brand, g.key, activePkg),
       };
     });
   }, [pkg, brand, activePkg, subAudience]);
@@ -15736,6 +15830,46 @@ export default function PackageFormPrototype() {
     const key = questionSetKey(groupKey);
     return (key && selectedCustomQuestions[key]) || [];
   };
+
+  // For a given group + rule, how many are currently selected, and whether
+  // that meets the rule's minimum. A rule targets EITHER a filter category
+  // (locked filters in that category always count, plus whatever the user
+  // has checked) OR a custom question's answers (questionId set instead).
+  // For a required question the rule always applies; for an optional one,
+  // it only applies once the user has actually selected that question —
+  // otherwise there's nothing to validate yet, so it's trivially satisfied.
+  const getMinimumStatus = (group, rule) => {
+    if (rule.questionId) {
+      const qDef =
+        group.requiredQuestions.find((q) => q.id === rule.questionId) ||
+        group.optionalQuestions.find((q) => q.id === rule.questionId);
+      if (!qDef) return { count: 0, minimum: rule.minimum, satisfied: true, questionActive: false };
+      const isRequired = group.requiredQuestions.some((q) => q.id === rule.questionId);
+      const isActive = isRequired || selectedQIdsFor(group.key).includes(rule.questionId);
+      if (!isActive) return { count: 0, minimum: rule.minimum, satisfied: true, questionActive: false };
+      const answerKey = `${questionSetKey(group.key)}:${qDef.id}`;
+      const selectedCount = (customQAnswerSelections[answerKey] || new Set()).size;
+      const count = qDef.standard.length + selectedCount;
+      return { count, minimum: rule.minimum, satisfied: count >= rule.minimum, questionActive: true };
+    }
+    const section = group.sections[rule.category] || { standard: [], optional: [] };
+    const selectedCount = (optionalSelections[optSelKey(group.key, rule.category)] || new Set()).size;
+    const count = section.standard.length + selectedCount;
+    return { count, minimum: rule.minimum, satisfied: count >= rule.minimum };
+  };
+
+  const allMinimumsSatisfied = displayGroups.every((group) =>
+    group.minimumRules.every((rule) => getMinimumStatus(group, rule).satisfied)
+  );
+
+  const isFormValid =
+    accountRep.trim().length > 0 &&
+    contactName.trim().length > 0 &&
+    contactEmail.trim().length > 0 &&
+    emailLooksValid(contactEmail) &&
+    contactCompany.trim().length > 0 &&
+    captchaChecked &&
+    allMinimumsSatisfied;
 
   const toggleOptional = (groupKey, category, label) => {
     const key = optSelKey(groupKey, category);
@@ -15969,16 +16103,16 @@ export default function PackageFormPrototype() {
             <button
               onClick={goBackFromSubaudience}
               className="flex items-center gap-1.5"
-              style={{ background: "none", border: "none", cursor: "pointer", color: inkSoft, fontSize: "0.8rem", marginBottom: "1.25rem", padding: 0 }}
+              style={{ background: navy, border: "none", borderRadius: "8px", cursor: "pointer", color: "#FFFFFF", fontSize: "0.82rem", fontWeight: 700, marginBottom: "0.5rem", padding: "0.5rem 0.9rem" }}
             >
               <ArrowLeft size={14} />
-              {brand.name} — change brand
+              Back
             </button>
+            <div style={{ fontSize: "0.78rem", color: inkSoft, marginBottom: "1rem" }}>{brand.name}</div>
 
             {brand.logoUrl && (
               <img src={brand.logoUrl} alt="" style={{ height: "32px", maxWidth: "220px", objectFit: "contain", marginBottom: "0.75rem" }} />
             )}
-            <div style={{ fontWeight: 600, fontSize: "1.05rem", marginBottom: "0.3rem" }}>{brand.name}</div>
             <p style={{ color: inkSoft, fontSize: "0.85rem", marginBottom: "1.1rem" }}>Select audience segment to target</p>
 
             <div className="flex flex-col gap-2">
@@ -16011,12 +16145,15 @@ export default function PackageFormPrototype() {
             <button
               onClick={goBackFromPackages}
               className="flex items-center gap-1.5"
-              style={{ background: "none", border: "none", cursor: "pointer", color: inkSoft, fontSize: "0.8rem", marginBottom: "1rem", padding: 0 }}
+              style={{ background: navy, border: "none", borderRadius: "8px", cursor: "pointer", color: "#FFFFFF", fontSize: "0.82rem", fontWeight: 700, marginBottom: "0.5rem", padding: "0.5rem 0.9rem" }}
             >
               <ArrowLeft size={14} />
-              {brand.isCustom ? customBrandName || "Custom brand" : brand.name}
-              {subAudience ? ` · ${subAudience}` : ""} — {brandNeedsSubAudience(brand) ? "change target audience" : "change brand"}
+              Back
             </button>
+            <div style={{ fontSize: "0.78rem", color: inkSoft, marginBottom: "1rem" }}>
+              {brand.isCustom ? customBrandName || "Custom brand" : brand.name}
+              {subAudience ? ` · ${subAudience}` : ""}
+            </div>
 
             {brand.logoUrl && (
               <img src={brand.logoUrl} alt="" style={{ height: "32px", maxWidth: "220px", objectFit: "contain", marginBottom: "1rem" }} />
@@ -16086,11 +16223,18 @@ export default function PackageFormPrototype() {
                             {group.requiredQuestions.map((q) => {
                               const answerKey = `${questionSetKey(group.key)}:${q.id}`;
                               const selectedAnswers = customQAnswerSelections[answerKey] || new Set();
+                              const qRule = group.minimumRules.find((r) => r.questionId === q.id);
+                              const qStatus = qRule ? getMinimumStatus(group, qRule) : null;
                               return (
                                 <div key={q.id}>
                                   <div style={{ fontSize: "0.86rem", fontWeight: 600, color: ink, marginBottom: "0.5rem" }}>
                                     {q.question}
                                   </div>
+                                  {qStatus && !qStatus.satisfied && (
+                                    <div style={{ marginBottom: "0.5rem", fontSize: "0.78rem", color: "#C23B3B", fontWeight: 600 }}>
+                                      Select at least {qStatus.minimum} answers to continue ({qStatus.count} of {qStatus.minimum} selected)
+                                    </div>
+                                  )}
                                   <div className="flex flex-col gap-2">
                                     {q.standard.map((label) => (
                                       <LockedRow key={label} label={label} />
@@ -16121,8 +16265,20 @@ export default function PackageFormPrototype() {
                         const section = group.sections[cat];
                         if (section.optional.length === 0) return null;
                         const selectedOptional = optionalSelections[optSelKey(group.key, cat)] || new Set();
+                        const rule = group.minimumRules.find((r) => r.category === cat);
+                        const status = rule ? getMinimumStatus(group, rule) : null;
                         return (
-                          <FilterGroup key={cat} label={cat}>
+                          <FilterGroup
+                            key={cat}
+                            label={cat}
+                            belowLabel={
+                              status && !status.satisfied ? (
+                                <div style={{ marginBottom: "0.6rem", fontSize: "0.78rem", color: "#C23B3B", fontWeight: 600 }}>
+                                  Select at least {status.minimum} {cat} filters to continue ({status.count} of {status.minimum} selected)
+                                </div>
+                              ) : null
+                            }
+                          >
                             {section.optional.map((label) => (
                               <OptionRow key={label} label={label} checked={selectedOptional.has(label)} onToggle={() => toggleOptional(group.key, cat, label)} />
                             ))}
@@ -16135,7 +16291,7 @@ export default function PackageFormPrototype() {
                     {group.optionalQuestions.length > 0 && (
                       <SectionBlock
                         title="Optional Custom Qualifying Questions"
-                        subtitle={`Each additional question adds a $${CUSTOM_QUESTION_COST}/lead cost. Select up to ${MAX_CUSTOM_QUESTIONS} questions and any additional qualifying answers.`}
+                        subtitle={`Select up to ${MAX_CUSTOM_QUESTIONS} questions and any additional qualifying answers.`}
                       >
                         <div style={{ fontSize: "0.78rem", color: inkSoft, marginTop: "-0.6rem", marginBottom: "0.2rem" }}>
                           {selectedQIdsFor(group.key).length} of {MAX_CUSTOM_QUESTIONS} selected
@@ -16146,11 +16302,18 @@ export default function PackageFormPrototype() {
                           const atCap = groupSelectedQIds.length >= MAX_CUSTOM_QUESTIONS && !checked;
                           const answerKey = `${questionSetKey(group.key)}:${q.id}`;
                           const selectedAnswers = customQAnswerSelections[answerKey] || new Set();
+                          const qRule = group.minimumRules.find((r) => r.questionId === q.id);
+                          const qStatus = checked && qRule ? getMinimumStatus(group, qRule) : null;
                           return (
                             <div key={q.id}>
-                              <QuestionRow label={q.question} checked={checked} disabled={atCap} onToggle={() => toggleCustomQuestion(group.key, q.id)} cost={CUSTOM_QUESTION_COST} />
+                              <QuestionRow label={q.question} checked={checked} disabled={atCap} onToggle={() => toggleCustomQuestion(group.key, q.id)} />
                               {checked && (q.standard.length > 0 || q.optional.length > 0) && (
                                 <div style={{ paddingLeft: "1.9rem", marginTop: "0.5rem" }} className="flex flex-col gap-2">
+                                  {qStatus && !qStatus.satisfied && (
+                                    <div style={{ marginBottom: "0.2rem", fontSize: "0.78rem", color: "#C23B3B", fontWeight: 600 }}>
+                                      Select at least {qStatus.minimum} answers to continue ({qStatus.count} of {qStatus.minimum} selected)
+                                    </div>
+                                  )}
                                   {q.standard.map((label) => (
                                     <LockedRow key={label} label={label} />
                                   ))}
@@ -16233,6 +16396,7 @@ export default function PackageFormPrototype() {
                     const params = new URLSearchParams({
                       filename,
                       file_url: fileUrl,
+                      submissionDate: formatSubmissionDateTime(new Date()),
                       brand: payload.brand,
                       subAudience: payload.subAudience || "",
                       package: payload.package,
@@ -16345,10 +16509,11 @@ function SectionBlock({ title, subtitle, children }) {
   );
 }
 
-function FilterGroup({ label, children }) {
+function FilterGroup({ label, belowLabel, children }) {
   return (
     <div>
       <div style={{ fontWeight: 700, fontSize: "0.95rem", color: ink, marginBottom: "0.6rem" }}>{label}</div>
+      {belowLabel}
       <div className="arc-checkbox-grid">{children}</div>
     </div>
   );
@@ -16406,7 +16571,7 @@ function OptionRow({ label, checked, onToggle }) {
   );
 }
 
-function QuestionRow({ label, checked, disabled, onToggle, cost }) {
+function QuestionRow({ label, checked, disabled, onToggle }) {
   return (
     <button
       onClick={disabled ? undefined : onToggle}
@@ -16438,7 +16603,6 @@ function QuestionRow({ label, checked, disabled, onToggle, cost }) {
         {checked && <Check size={13} color="#FFFFFF" strokeWidth={2.5} />}
       </div>
       <span style={{ fontSize: "0.86rem", color: ink, flex: 1 }}>{label}</span>
-      <span style={{ fontSize: "0.74rem", color: inkSoft, fontWeight: 600, flexShrink: 0 }}>+${cost}/lead</span>
     </button>
   );
 }
