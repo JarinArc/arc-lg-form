@@ -16051,7 +16051,16 @@ export default function PackageFormPrototype() {
                         style={{ height: "24px", maxWidth: "100%", objectFit: "contain", marginBottom: "0.5rem", display: "block" }}
                       />
                     )}
-                    {b.name}
+                    {b.isCustom ? (
+                      <>
+                        <div style={{ fontWeight: 700, fontSize: "0.92rem" }}>Lead Gen Select</div>
+                        <div style={{ fontSize: "0.74rem", color: inkSoft, marginTop: "0.15rem", fontWeight: 400 }}>
+                          Custom Quote For All Brands
+                        </div>
+                      </>
+                    ) : (
+                      b.name
+                    )}
                   </button>
                 );
               })}
