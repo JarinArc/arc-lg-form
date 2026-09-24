@@ -15916,14 +15916,14 @@ function buildSubmissionWorkbook(payload) {
 
   // ---- Custom questions (required ones always included, plus any selected optional ones) ----
   if (payload.customQuestions.length > 0) {
-    const rows = [["Question", "Required", "Answer", "Type"]];
+    const rows = [["Question", "Answer", "Type"]];
     payload.customQuestions.forEach((q) => {
       q.filters.forEach((f) =>
-        rows.push([q.question, q.required ? "Yes" : "No", f.value, f.source === "standard" ? "Standard" : "Optional"])
+        rows.push([q.question, f.value, f.source === "standard" ? "Standard" : "Optional"])
       );
     });
     const sheet = XLSX.utils.aoa_to_sheet(rows);
-    sheet["!cols"] = [{ wch: 45 }, { wch: 10 }, { wch: 40 }, { wch: 12 }];
+    sheet["!cols"] = [{ wch: 45 }, { wch: 40 }, { wch: 12 }];
     XLSX.utils.book_append_sheet(wb, sheet, "Custom Questions");
   }
 
