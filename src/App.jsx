@@ -8936,7 +8936,17 @@ const BRANDS = [
           "type": "optional",
           "subAudience": null,
           "standard": [],
-          "optional": []
+          "optional": [
+            "Hotel/Motel",
+            "Multifamily",
+            "Industrial",
+            "Office",
+            "Retail",
+            "Senior Housing",
+            "Student Housing",
+            "Net Lease",
+            "Healthcare Real Estate"
+          ]
         }
       ],
       "precision": [
@@ -8962,7 +8972,17 @@ const BRANDS = [
           "type": "optional",
           "subAudience": null,
           "standard": [],
-          "optional": []
+          "optional": [
+            "Hotel/Motel",
+            "Multifamily",
+            "Industrial",
+            "Office",
+            "Retail",
+            "Senior Housing",
+            "Student Housing",
+            "Net Lease",
+            "Healthcare Real Estate"
+          ]
         }
       ],
       "reach": [
