@@ -14,19 +14,19 @@ const PACKAGES = [
   {
     "id": "reach",
     "name": "Reach",
-    "blurb": "Widest reach of our audience",
+    "blurb": "Widest audience segment meant for maximum exposure",
     "sections": {}
   },
   {
     "id": "targeted",
     "name": "Targeted",
-    "blurb": "Targeted focus on your core audience",
+    "blurb": "Drive stronger response with a refined audience",
     "sections": {}
   },
   {
     "id": "precision",
     "name": "Precision",
-    "blurb": "Precision leads to target just who you want",
+    "blurb": "Win your top prospects with a highly defined ICP",
     "sections": {}
   }
 ];
