@@ -16014,6 +16014,7 @@ export default function PackageFormPrototype() {
   const [submitted, setSubmitted] = useState(false);
   const [submittedFilename, setSubmittedFilename] = useState(null);
   const [deliveryStatus, setDeliveryStatus] = useState(null); // null | 'sending' | 'sent' | 'error'
+  const [deliveryErrorMessage, setDeliveryErrorMessage] = useState(null);
 
   const emailLooksValid = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
 
@@ -16023,6 +16024,7 @@ export default function PackageFormPrototype() {
       setSubmitted(false);
       setSubmittedFilename(null);
       setDeliveryStatus(null);
+      setDeliveryErrorMessage(null);
     }
   };
   const toggleCaptcha = () => {
@@ -16031,6 +16033,7 @@ export default function PackageFormPrototype() {
       setSubmitted(false);
       setSubmittedFilename(null);
       setDeliveryStatus(null);
+      setDeliveryErrorMessage(null);
     }
   };
 
@@ -16051,6 +16054,7 @@ export default function PackageFormPrototype() {
     setSubmitted(false);
     setSubmittedFilename(null);
     setDeliveryStatus(null);
+      setDeliveryErrorMessage(null);
     setStage("brand");
   };
 
@@ -16271,6 +16275,11 @@ export default function PackageFormPrototype() {
                 </span>
                 {deliveryStatus === "sent" && <CheckCircle2 size={14} color="#1F8A5C" />}
                 {deliveryStatus === "error" && <XCircle size={14} color="#C23B3B" />}
+              </div>
+            )}
+            {deliveryStatus === "error" && deliveryErrorMessage && (
+              <div style={{ fontSize: "0.74rem", color: "#C23B3B", marginTop: "0.4rem", maxWidth: "26rem", margin: "0.4rem auto 0" }}>
+                {deliveryErrorMessage}
               </div>
             )}
             <button
@@ -16655,6 +16664,7 @@ export default function PackageFormPrototype() {
 
                 if (SUBMISSION_WEBHOOK_URL) {
                   setDeliveryStatus("sending");
+                  setDeliveryErrorMessage(null);
                   try {
                     // Upload the real binary file to our own Pages Function first
                     // (same-origin, so no CORS concerns), and get back a public URL.
@@ -16670,7 +16680,16 @@ export default function PackageFormPrototype() {
                       headers: { "X-Filename": filename },
                       body: blob,
                     });
-                    if (!uploadRes.ok) throw new Error("Upload to storage failed");
+                    if (!uploadRes.ok) {
+                      let serverDetail = `HTTP ${uploadRes.status}`;
+                      try {
+                        const errJson = await uploadRes.json();
+                        if (errJson && errJson.error) serverDetail = errJson.error;
+                      } catch (parseErr) {
+                        // response wasn't JSON — keep the HTTP status as the detail
+                      }
+                      throw new Error(`Upload failed: ${serverDetail}`);
+                    }
                     const { url: fileUrl } = await uploadRes.json();
 
                     const params = new URLSearchParams({
@@ -16692,8 +16711,10 @@ export default function PackageFormPrototype() {
                       body: params,
                     });
                     setDeliveryStatus("sent");
+                    setDeliveryErrorMessage(null);
                   } catch (err) {
                     setDeliveryStatus("error");
+                    setDeliveryErrorMessage(err && err.message ? err.message : String(err));
                   }
                 }
               }}
