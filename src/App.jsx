@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { Lock, Check, ArrowLeft, ShieldCheck, CheckCircle2, XCircle } from "lucide-react";
+import { Lock, Check, ArrowLeft, ShieldCheck, CheckCircle2, XCircle, AlertTriangle } from "lucide-react";
 import * as XLSX from "xlsx";
 
 // ---------------------------------------------------------------------------
@@ -16274,11 +16274,20 @@ export default function PackageFormPrototype() {
                   Downloaded <strong style={{ color: ink }}>{submittedFilename}</strong>
                 </span>
                 {deliveryStatus === "sent" && <CheckCircle2 size={14} color="#1F8A5C" />}
+                {deliveryStatus === "partial" && <AlertTriangle size={14} color="#B8860B" />}
                 {deliveryStatus === "error" && <XCircle size={14} color="#C23B3B" />}
               </div>
             )}
-            {deliveryStatus === "error" && deliveryErrorMessage && (
-              <div style={{ fontSize: "0.74rem", color: "#C23B3B", marginTop: "0.4rem", maxWidth: "26rem", margin: "0.4rem auto 0" }}>
+            {(deliveryStatus === "error" || deliveryStatus === "partial") && deliveryErrorMessage && (
+              <div
+                style={{
+                  fontSize: "0.74rem",
+                  color: deliveryStatus === "partial" ? "#8A6D1F" : "#C23B3B",
+                  marginTop: "0.4rem",
+                  maxWidth: "26rem",
+                  margin: "0.4rem auto 0",
+                }}
+              >
                 {deliveryErrorMessage}
               </div>
             )}
@@ -16665,12 +16674,16 @@ export default function PackageFormPrototype() {
                 if (SUBMISSION_WEBHOOK_URL) {
                   setDeliveryStatus("sending");
                   setDeliveryErrorMessage(null);
+
+                  // The upload and the webhook are handled as two INDEPENDENT
+                  // steps now — a failed upload no longer prevents the webhook
+                  // from firing. Worst case, the team still gets notified of
+                  // the submission even without the file attached, rather than
+                  // the whole thing vanishing silently.
+                  let fileUrl = "";
+                  let uploadErrorDetail = null;
+
                   try {
-                    // Upload the real binary file to our own Pages Function first
-                    // (same-origin, so no CORS concerns), and get back a public URL.
-                    // Zapier then fetches the file directly from that URL — a normal
-                    // file download — instead of us squeezing base64 file content
-                    // through the webhook, which is what kept breaking.
                     const fileBytes = XLSX.write(wb, { bookType: "xlsx", type: "array" });
                     const blob = new Blob([fileBytes], {
                       type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
@@ -16687,7 +16700,7 @@ export default function PackageFormPrototype() {
                       // a connectivity-level failure, not something our server
                       // responded to. Safari's generic message for this is
                       // literally "Load failed"; Chrome's is "Failed to fetch".
-                      throw new Error(`File upload — connection failed: ${networkErr && networkErr.message ? networkErr.message : networkErr}`);
+                      throw new Error(`connection failed: ${networkErr && networkErr.message ? networkErr.message : networkErr}`);
                     }
                     if (!uploadRes.ok) {
                       let serverDetail = `HTTP ${uploadRes.status}`;
@@ -16697,37 +16710,61 @@ export default function PackageFormPrototype() {
                       } catch (parseErr) {
                         // response wasn't JSON — keep the HTTP status as the detail
                       }
-                      throw new Error(`File upload failed: ${serverDetail}`);
+                      throw new Error(serverDetail);
                     }
-                    const { url: fileUrl } = await uploadRes.json();
+                    const uploadJson = await uploadRes.json();
+                    fileUrl = uploadJson.url;
+                  } catch (uploadErr) {
+                    uploadErrorDetail = uploadErr && uploadErr.message ? uploadErr.message : String(uploadErr);
+                  }
 
-                    const params = new URLSearchParams({
-                      filename,
-                      file_url: fileUrl,
-                      submissionDate: formatSubmissionDateTime(new Date()),
-                      brand: payload.brand,
-                      subAudience: payload.subAudience || "",
-                      package: payload.package,
-                      accountRepName: payload.accountRep ? payload.accountRep.name : "",
-                      accountRepEmail: payload.accountRep ? payload.accountRep.email : "",
-                      contactName: payload.contact.name,
-                      contactEmail: payload.contact.email,
-                      contactCompany: payload.contact.company,
+                  // Always attempt the webhook — even with an empty file_url —
+                  // so the team is notified regardless of whether the upload
+                  // itself succeeded.
+                  const params = new URLSearchParams({
+                    filename,
+                    file_url: fileUrl,
+                    fileUploadStatus: fileUrl ? "uploaded" : `failed: ${uploadErrorDetail || "unknown error"}`,
+                    submissionDate: formatSubmissionDateTime(new Date()),
+                    brand: payload.brand,
+                    subAudience: payload.subAudience || "",
+                    package: payload.package,
+                    accountRepName: payload.accountRep ? payload.accountRep.name : "",
+                    accountRepEmail: payload.accountRep ? payload.accountRep.email : "",
+                    contactName: payload.contact.name,
+                    contactEmail: payload.contact.email,
+                    contactCompany: payload.contact.company,
+                  });
+
+                  let webhookErrorDetail = null;
+                  try {
+                    await fetch(SUBMISSION_WEBHOOK_URL, {
+                      method: "POST",
+                      mode: "no-cors",
+                      body: params,
                     });
-                    try {
-                      await fetch(SUBMISSION_WEBHOOK_URL, {
-                        method: "POST",
-                        mode: "no-cors",
-                        body: params,
-                      });
-                    } catch (webhookErr) {
-                      throw new Error(`Automation delivery — connection failed: ${webhookErr && webhookErr.message ? webhookErr.message : webhookErr}`);
-                    }
+                  } catch (webhookErr) {
+                    webhookErrorDetail = webhookErr && webhookErr.message ? webhookErr.message : String(webhookErr);
+                  }
+
+                  if (!uploadErrorDetail && !webhookErrorDetail) {
                     setDeliveryStatus("sent");
                     setDeliveryErrorMessage(null);
-                  } catch (err) {
+                  } else if (uploadErrorDetail && !webhookErrorDetail) {
+                    setDeliveryStatus("partial");
+                    setDeliveryErrorMessage(
+                      `File upload failed. Please save your download and send your version to your sales rep. (${uploadErrorDetail})`
+                    );
+                  } else if (!uploadErrorDetail && webhookErrorDetail) {
+                    setDeliveryStatus("partial");
+                    setDeliveryErrorMessage(
+                      `File uploaded, but the automation notification failed (${webhookErrorDetail}) — the file is stored, but your team wasn't notified.`
+                    );
+                  } else {
                     setDeliveryStatus("error");
-                    setDeliveryErrorMessage(err && err.message ? err.message : String(err));
+                    setDeliveryErrorMessage(
+                      `Both the file upload and the automation notification failed (upload: ${uploadErrorDetail}; notification: ${webhookErrorDetail}).`
+                    );
                   }
                 }
               }}
