@@ -16675,11 +16675,20 @@ export default function PackageFormPrototype() {
                     const blob = new Blob([fileBytes], {
                       type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     });
-                    const uploadRes = await fetch("/api/upload", {
-                      method: "POST",
-                      headers: { "X-Filename": filename },
-                      body: blob,
-                    });
+                    let uploadRes;
+                    try {
+                      uploadRes = await fetch("/api/upload", {
+                        method: "POST",
+                        headers: { "X-Filename": filename },
+                        body: blob,
+                      });
+                    } catch (networkErr) {
+                      // The fetch call itself never completed (no response at all) —
+                      // a connectivity-level failure, not something our server
+                      // responded to. Safari's generic message for this is
+                      // literally "Load failed"; Chrome's is "Failed to fetch".
+                      throw new Error(`File upload — connection failed: ${networkErr && networkErr.message ? networkErr.message : networkErr}`);
+                    }
                     if (!uploadRes.ok) {
                       let serverDetail = `HTTP ${uploadRes.status}`;
                       try {
@@ -16688,7 +16697,7 @@ export default function PackageFormPrototype() {
                       } catch (parseErr) {
                         // response wasn't JSON — keep the HTTP status as the detail
                       }
-                      throw new Error(`Upload failed: ${serverDetail}`);
+                      throw new Error(`File upload failed: ${serverDetail}`);
                     }
                     const { url: fileUrl } = await uploadRes.json();
 
@@ -16705,11 +16714,15 @@ export default function PackageFormPrototype() {
                       contactEmail: payload.contact.email,
                       contactCompany: payload.contact.company,
                     });
-                    await fetch(SUBMISSION_WEBHOOK_URL, {
-                      method: "POST",
-                      mode: "no-cors",
-                      body: params,
-                    });
+                    try {
+                      await fetch(SUBMISSION_WEBHOOK_URL, {
+                        method: "POST",
+                        mode: "no-cors",
+                        body: params,
+                      });
+                    } catch (webhookErr) {
+                      throw new Error(`Automation delivery — connection failed: ${webhookErr && webhookErr.message ? webhookErr.message : webhookErr}`);
+                    }
                     setDeliveryStatus("sent");
                     setDeliveryErrorMessage(null);
                   } catch (err) {
