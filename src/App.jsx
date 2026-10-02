@@ -16250,6 +16250,9 @@ export default function PackageFormPrototype() {
         {stage !== "confirmation" && (
           <div className="mb-8">
             <h1 style={{ fontSize: "1.5rem", fontWeight: 600, letterSpacing: "-0.01em" }}>Lead Gen Package Configuration</h1>
+            <p style={{ color: "#C2691D", fontSize: "0.85rem", fontWeight: 600, margin: "0.5rem 0 0" }}>
+              Submit selections on desktop computer only
+            </p>
             <div style={{ marginTop: "0.5rem" }}>
               <p style={{ color: inkSoft, fontSize: "0.9rem", margin: 0 }}>1. Select a media brand</p>
               <p style={{ color: inkSoft, fontSize: "0.9rem", margin: 0 }}>2. Select and configure audience target and filters</p>
@@ -16315,7 +16318,7 @@ export default function PackageFormPrototype() {
           <>
             <div style={{ fontWeight: 600, fontSize: "0.95rem", marginBottom: "0.75rem" }}>Select a Media Brand</div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mb-6">
-              {BRANDS.map((b) => {
+              {BRANDS.filter((b) => !b.isCustom).map((b) => {
                 const active = b.id === brandId;
                 return (
                   <button
