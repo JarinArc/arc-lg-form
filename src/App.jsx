@@ -11767,7 +11767,7 @@ const BRANDS = [
     "id": "DA",
     "name": "District Administration",
     "isCustom": null,
-    "logoUrl": "https://districtadministration.com/wp-content/uploads/District-Administration-Logo-full-color-1-300x80.png",
+    "logoUrl": "https://districtadministration.com/_nuxt/img/logo-header-district-administration.9cb8a04.png",
     "subAudiences": null,
     "subAudienceCombos": {},
     "accountReps": [
@@ -11778,10 +11778,6 @@ const BRANDS = [
       {
         "name": "Fern Sheinman",
         "email": "Fern.Sheinman@arc-network.com"
-      },
-      {
-        "name": "Caliann Mitoulis",
-        "email": "caliann.mitoulis@arc-network.com"
       }
     ],
     "selectionMinimums": [],
@@ -12850,7 +12846,7 @@ const BRANDS = [
           "subAudience": null,
           "category": "Job Area/Job Function",
           "label": "Executives - Principal",
-          "type": "standard"
+          "type": "optional"
         },
         {
           "subAudience": null,
@@ -13731,17 +13727,13 @@ const BRANDS = [
     "id": "UB",
     "name": "University Business",
     "isCustom": null,
-    "logoUrl": "https://universitybusiness.com/wp-content/uploads/2022/08/ublogo2.png",
+    "logoUrl": "https://universitybusiness.com/_nuxt/img/logo-header-university-business.3901a48.png",
     "subAudiences": null,
     "subAudienceCombos": {},
     "accountReps": [
       {
         "name": "Caliann Mitoulis",
         "email": "caliann.mitoulis@arc-network.com"
-      },
-      {
-        "name": "Amanda Holsclaw",
-        "email": "amanda.holsclaw@arc-network.com"
       }
     ],
     "selectionMinimums": [],
@@ -13767,7 +13759,8 @@ const BRANDS = [
             "Registrar",
             "Dean",
             "Bursar/Financial Aid",
-            "Enrollment"
+            "Enrollment",
+            "Other (open text)"
           ]
         },
         {
@@ -13849,7 +13842,8 @@ const BRANDS = [
             "Registrar",
             "Dean",
             "Bursar/Financial Aid",
-            "Enrollment"
+            "Enrollment",
+            "Other (open text)"
           ]
         },
         {
@@ -13931,7 +13925,8 @@ const BRANDS = [
             "Registrar",
             "Dean",
             "Bursar/Financial Aid",
-            "Enrollment"
+            "Enrollment",
+            "Other (open text)"
           ]
         }
       ]
