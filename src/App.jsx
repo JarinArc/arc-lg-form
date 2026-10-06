@@ -622,7 +622,7 @@ const BRANDS = [
         {
           "subAudience": "Benefits Brokers",
           "category": "Job Area/Job Function",
-          "label": "InsuranceSenior Management",
+          "label": "Insurance - Senior Management",
           "type": "optional"
         },
         {
@@ -1248,7 +1248,7 @@ const BRANDS = [
         {
           "subAudience": "Benefits Brokers",
           "category": "Job Area/Job Function",
-          "label": "InsuranceSenior Management",
+          "label": "Insurance - Senior Management",
           "type": "standard"
         },
         {
@@ -1910,7 +1910,7 @@ const BRANDS = [
         {
           "subAudience": "Benefits Brokers",
           "category": "Job Area/Job Function",
-          "label": "InsuranceSenior Management",
+          "label": "Insurance - Senior Management",
           "type": "optional"
         },
         {
