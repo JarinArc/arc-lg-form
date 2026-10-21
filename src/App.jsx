@@ -113,10 +113,9 @@ const BRANDS = [
           "question": "Do you or your organization work with groups of the following size? (must select at least two options)",
           "type": "optional",
           "subAudience": "Benefits Brokers",
-          "standard": [
-            "50 lives or fewer"
-          ],
+          "standard": [],
           "optional": [
+            "50 lives or fewer",
             "51 - 100 lives",
             "101 - 500 lives ",
             "501 - 1,000 lives ",
@@ -16101,6 +16100,12 @@ export default function PackageFormPrototype() {
     return (key && selectedCustomQuestions[key]) || [];
   };
 
+  // The most optional questions a person can pick in this group: the global
+  // cap, or fewer if the group simply doesn't have that many to choose from.
+  // Drives the section copy, the "X of Y selected" counter, and the cap itself
+  // so all three always agree.
+  const maxQuestionsFor = (group) => Math.min(MAX_CUSTOM_QUESTIONS, group.optionalQuestions.length);
+
   // For a given group + rule, how many are currently selected, and whether
   // that meets the rule's minimum. A rule targets EITHER a filter category
   // (locked filters in that category always count, plus whatever the user
@@ -16153,12 +16158,14 @@ export default function PackageFormPrototype() {
   const toggleCustomQuestion = (groupKey, qId) => {
     const key = questionSetKey(groupKey);
     if (!key) return;
+    const targetGroup = displayGroups.find((g) => g.key === groupKey);
+    const limit = targetGroup ? maxQuestionsFor(targetGroup) : MAX_CUSTOM_QUESTIONS;
     setSelectedCustomQuestions((prev) => {
       const current = prev[key] || [];
       let next;
       if (current.includes(qId)) {
         next = current.filter((id) => id !== qId);
-      } else if (current.length < MAX_CUSTOM_QUESTIONS) {
+      } else if (current.length < limit) {
         next = [...current, qId];
       } else {
         next = current;
@@ -16587,15 +16594,15 @@ export default function PackageFormPrototype() {
                     {group.optionalQuestions.length > 0 && (
                       <SectionBlock
                         title="Optional Custom Qualifying Questions"
-                        subtitle={`Select up to ${MAX_CUSTOM_QUESTIONS} questions and any additional qualifying answers.`}
+                        subtitle={`Select up to ${maxQuestionsFor(group)} ${maxQuestionsFor(group) === 1 ? "question" : "questions"} and any additional qualifying answers.`}
                       >
                         <div style={{ fontSize: "0.78rem", color: inkSoft, marginTop: "-0.6rem", marginBottom: "0.2rem" }}>
-                          {selectedQIdsFor(group.key).length} of {MAX_CUSTOM_QUESTIONS} selected
+                          {selectedQIdsFor(group.key).length} of {maxQuestionsFor(group)} selected
                         </div>
                         {group.optionalQuestions.map((q) => {
                           const groupSelectedQIds = selectedQIdsFor(group.key);
                           const checked = groupSelectedQIds.includes(q.id);
-                          const atCap = groupSelectedQIds.length >= MAX_CUSTOM_QUESTIONS && !checked;
+                          const atCap = groupSelectedQIds.length >= maxQuestionsFor(group) && !checked;
                           const answerKey = `${questionSetKey(group.key)}:${q.id}`;
                           const selectedAnswers = customQAnswerSelections[answerKey] || new Set();
                           const qRule = group.minimumRules.find((r) => r.questionId === q.id);
